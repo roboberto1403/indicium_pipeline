@@ -1,0 +1,6 @@
+.env
+Makefile
+docker-compose.yml
+init.sh
+northwind.sql
+setup.sh
