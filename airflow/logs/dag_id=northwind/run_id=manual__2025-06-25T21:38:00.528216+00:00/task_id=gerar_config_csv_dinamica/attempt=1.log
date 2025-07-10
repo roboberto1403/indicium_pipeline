@@ -1,0 +1,30 @@
+[2025-06-25T21:38:55.648+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: northwind.gerar_config_csv_dinamica manual__2025-06-25T21:38:00.528216+00:00 [queued]>
+[2025-06-25T21:38:55.660+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: northwind.gerar_config_csv_dinamica manual__2025-06-25T21:38:00.528216+00:00 [queued]>
+[2025-06-25T21:38:55.661+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-06-25T21:38:55.680+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): gerar_config_csv_dinamica> on 2025-06-25 21:38:00.528216+00:00
+[2025-06-25T21:38:55.688+0000] {standard_task_runner.py:60} INFO - Started process 216 to run task
+[2025-06-25T21:38:55.693+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'northwind', 'gerar_config_csv_dinamica', 'manual__2025-06-25T21:38:00.528216+00:00', '--job-id', '212', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmp8p5te1n1']
+[2025-06-25T21:38:55.696+0000] {standard_task_runner.py:88} INFO - Job 212: Subtask gerar_config_csv_dinamica
+[2025-06-25T21:38:55.754+0000] {task_command.py:423} INFO - Running <TaskInstance: northwind.gerar_config_csv_dinamica manual__2025-06-25T21:38:00.528216+00:00 [running]> on host 6afc1f3750fb
+[2025-06-25T21:38:55.850+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='lrbf@cin.ufpe.br' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='northwind' AIRFLOW_CTX_TASK_ID='gerar_config_csv_dinamica' AIRFLOW_CTX_EXECUTION_DATE='2025-06-25T21:38:00.528216+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-25T21:38:00.528216+00:00'
+[2025-06-25T21:38:55.853+0000] {logging_mixin.py:188} INFO - DEBUG: Diretório base da entidade NÃO EXISTE para 'order_details': /opt/output_data/csv/order_details
+[2025-06-25T21:38:55.854+0000] {logging_mixin.py:188} INFO - DEBUG: Diretório base da entidade NÃO EXISTE para 'public-categories': /opt/output_data/postgres/public-categories
+[2025-06-25T21:38:55.854+0000] {logging_mixin.py:188} INFO - DEBUG: Diretório base da entidade NÃO EXISTE para 'public-products': /opt/output_data/postgres/public-products
+[2025-06-25T21:38:55.854+0000] {logging_mixin.py:188} INFO - DEBUG: Diretório base da entidade NÃO EXISTE para 'public-suppliers': /opt/output_data/postgres/public-suppliers
+[2025-06-25T21:38:55.855+0000] {logging_mixin.py:188} INFO - DEBUG: Diretório base da entidade NÃO EXISTE para 'public-orders': /opt/output_data/postgres/public-orders
+[2025-06-25T21:38:55.855+0000] {logging_mixin.py:188} INFO - DEBUG: Diretório base da entidade NÃO EXISTE para 'public-customers': /opt/output_data/postgres/public-customers
+[2025-06-25T21:38:55.855+0000] {logging_mixin.py:188} INFO - DEBUG: Diretório base da entidade NÃO EXISTE para 'public-employees': /opt/output_data/postgres/public-employees
+[2025-06-25T21:38:55.855+0000] {logging_mixin.py:188} INFO - DEBUG: Diretório base da entidade NÃO EXISTE para 'public-employee_territories': /opt/output_data/postgres/public-employee_territories
+[2025-06-25T21:38:55.855+0000] {logging_mixin.py:188} INFO - DEBUG: Diretório base da entidade NÃO EXISTE para 'public-territories': /opt/output_data/postgres/public-territories
+[2025-06-25T21:38:55.855+0000] {logging_mixin.py:188} INFO - DEBUG: Diretório base da entidade NÃO EXISTE para 'public-region': /opt/output_data/postgres/public-region
+[2025-06-25T21:38:55.856+0000] {logging_mixin.py:188} INFO - DEBUG: Diretório base da entidade NÃO EXISTE para 'public-shippers': /opt/output_data/postgres/public-shippers
+[2025-06-25T21:38:55.856+0000] {logging_mixin.py:188} INFO - DEBUG: Diretório base da entidade NÃO EXISTE para 'public-us_states': /opt/output_data/postgres/public-us_states
+[2025-06-25T21:38:55.856+0000] {logging_mixin.py:188} INFO - ✔️ Configuração JSON final para tap-csv-latest:
+{
+  "files": []
+}
+[2025-06-25T21:38:55.856+0000] {logging_mixin.py:188} INFO - AVISO: A lista de arquivos CSV gerada para carga está vazia. Nenhuma tabela será carregada. VERIFIQUE AS ETAPAS DE EXTRAÇÃO E OS CAMINHOS DOS ARQUIVOS.
+[2025-06-25T21:38:55.856+0000] {python.py:201} INFO - Done. Returned value was: {"files": []}
+[2025-06-25T21:38:55.883+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=northwind, task_id=gerar_config_csv_dinamica, execution_date=20250625T213800, start_date=20250625T213855, end_date=20250625T213855
+[2025-06-25T21:38:55.909+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-06-25T21:38:55.940+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

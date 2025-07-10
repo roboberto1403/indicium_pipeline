@@ -1,0 +1,47 @@
+[2025-07-01T20:36:28.071+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: northwind.carregamento_postgres manual__2025-07-01T20:35:01.928206+00:00 [queued]>
+[2025-07-01T20:36:28.082+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: northwind.carregamento_postgres manual__2025-07-01T20:35:01.928206+00:00 [queued]>
+[2025-07-01T20:36:28.082+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-07-01T20:36:28.102+0000] {taskinstance.py:2191} INFO - Executing <Task(DockerOperator): carregamento_postgres> on 2025-07-01 20:35:01.928206+00:00
+[2025-07-01T20:36:28.111+0000] {standard_task_runner.py:60} INFO - Started process 196 to run task
+[2025-07-01T20:36:28.125+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'northwind', 'carregamento_postgres', 'manual__2025-07-01T20:35:01.928206+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/northwind.py', '--cfg-path', '/tmp/tmpmqe1o_3y']
+[2025-07-01T20:36:28.127+0000] {standard_task_runner.py:88} INFO - Job 5: Subtask carregamento_postgres
+[2025-07-01T20:36:28.250+0000] {task_command.py:423} INFO - Running <TaskInstance: northwind.carregamento_postgres manual__2025-07-01T20:35:01.928206+00:00 [running]> on host add15e81f04d
+[2025-07-01T20:36:28.395+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='lrbf@cin.ufpe.br' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='northwind' AIRFLOW_CTX_TASK_ID='carregamento_postgres' AIRFLOW_CTX_EXECUTION_DATE='2025-07-01T20:35:01.928206+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-07-01T20:35:01.928206+00:00'
+[2025-07-01T20:36:28.474+0000] {docker.py:359} INFO - Starting docker container from image meltano:latest
+[2025-07-01T20:36:29.138+0000] {docker.py:429} INFO - Running meltano install...
+[2025-07-01T20:36:32.380+0000] {docker.py:429} INFO - [2m2025-07-01T20:36:32.379554Z[0m [[32m[1minfo     [0m] [1mInstalling 7 plugins          [0m
+[2025-07-01T20:36:32.399+0000] {docker.py:429} INFO - [2m2025-07-01T20:36:32.398389Z[0m [[32m[1minfo     [0m] [1mInstalling extractor 'tap-postgres'[0m
+[2025-07-01T20:36:32.426+0000] {docker.py:429} INFO - [2m2025-07-01T20:36:32.425155Z[0m [[32m[1minfo     [0m] [1mInstalling extractor 'tap-csv'[0m
+[2025-07-01T20:36:32.475+0000] {docker.py:429} INFO - [2m2025-07-01T20:36:32.474814Z[0m [[32m[1minfo     [0m] [1mInstalling extractor 'tap-csv-latest'[0m
+[2025-07-01T20:36:32.524+0000] {docker.py:429} INFO - [2m2025-07-01T20:36:32.522269Z[0m [[32m[1minfo     [0m] [1mInstalling loader 'target-postgres'[0m
+[2025-07-01T20:36:32.612+0000] {docker.py:429} INFO - [2m2025-07-01T20:36:32.610729Z[0m [[32m[1minfo     [0m] [1mInstalling loader 'target-csv'[0m
+[2025-07-01T20:36:32.704+0000] {docker.py:429} INFO - [2m2025-07-01T20:36:32.703287Z[0m [[32m[1minfo     [0m] [1mInstalling loader 'target-csv-postgres'[0m
+[2025-07-01T20:36:32.792+0000] {docker.py:429} INFO - [2m2025-07-01T20:36:32.790687Z[0m [[32m[1minfo     [0m] [1mInstalling loader 'target-csv-csv'[0m
+[2025-07-01T20:36:35.695+0000] {docker.py:429} INFO - [2m2025-07-01T20:36:35.693414Z[0m [[32m[1minfo     [0m] [1mInstalled extractor 'tap-postgres'[0m
+[2025-07-01T20:36:35.940+0000] {docker.py:429} INFO - [2m2025-07-01T20:36:35.939560Z[0m [[32m[1minfo     [0m] [1mInstalled loader 'target-postgres'[0m
+[2025-07-01T20:36:43.458+0000] {docker.py:429} INFO - [2m2025-07-01T20:36:43.456841Z[0m [[32m[1minfo     [0m] [1mInstalled extractor 'tap-csv-latest'[0m
+[2025-07-01T20:36:44.224+0000] {docker.py:429} INFO - [2m2025-07-01T20:36:44.223234Z[0m [[32m[1minfo     [0m] [1mInstalled extractor 'tap-csv' [0m
+[2025-07-01T20:36:46.100+0000] {docker.py:429} INFO - [2m2025-07-01T20:36:46.098840Z[0m [[32m[1minfo     [0m] [1mInstalled loader 'target-csv' [0m
+[2025-07-01T20:36:46.644+0000] {docker.py:429} INFO - [2m2025-07-01T20:36:46.643906Z[0m [[32m[1minfo     [0m] [1mInstalled loader 'target-csv-csv'[0m
+[2025-07-01T20:36:47.003+0000] {docker.py:429} INFO - [2m2025-07-01T20:36:47.003158Z[0m [[32m[1minfo     [0m] [1mInstalled loader 'target-csv-postgres'[0m
+[2025-07-01T20:36:47.004+0000] {docker.py:429} INFO - [2m2025-07-01T20:36:47.003525Z[0m [[32m[1minfo     [0m] [1mInstalled 7/7 plugins         [0m
+[2025-07-01T20:36:48.246+0000] {docker.py:429} INFO - Meltano install completed. Executing command: meltano tap-csv --config CONFIG --discover > /opt/meltano/config/tap-csv-latest.json & meltano el tap-csv --config target-postgres
+[2025-07-01T20:36:49.663+0000] {docker.py:429} INFO - Usage: meltano [OPTIONS] COMMAND [ARGS]...
+Try 'meltano --help' for help.
+
+Error: No such command 'tap-csv'.
+[2025-07-01T20:36:50.093+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/docker/operators/docker.py", line 502, in execute
+    return self._run_image()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/docker/operators/docker.py", line 376, in _run_image
+    return self._run_image_with_mounts(self.mounts, add_tmp_variable=False)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/docker/operators/docker.py", line 437, in _run_image_with_mounts
+    raise DockerContainerFailedException(f"Docker container failed: {result!r}", logs=log_lines)
+airflow.providers.docker.exceptions.DockerContainerFailedException: Docker container failed: {'StatusCode': 2}
+[2025-07-01T20:36:50.103+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=northwind, task_id=carregamento_postgres, execution_date=20250701T203501, start_date=20250701T203628, end_date=20250701T203650
+[2025-07-01T20:36:50.132+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 5 for task carregamento_postgres (Docker container failed: {'StatusCode': 2}; 196)
+[2025-07-01T20:36:50.150+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-07-01T20:36:50.188+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

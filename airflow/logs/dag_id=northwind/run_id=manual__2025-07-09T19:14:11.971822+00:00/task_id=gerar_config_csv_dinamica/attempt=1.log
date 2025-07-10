@@ -1,0 +1,45 @@
+[2025-07-09T19:14:46.818+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: northwind.gerar_config_csv_dinamica manual__2025-07-09T19:14:11.971822+00:00 [queued]>
+[2025-07-09T19:14:46.828+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: northwind.gerar_config_csv_dinamica manual__2025-07-09T19:14:11.971822+00:00 [queued]>
+[2025-07-09T19:14:46.828+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-07-09T19:14:46.840+0000] {taskinstance.py:2191} INFO - Executing <Task(DockerOperator): gerar_config_csv_dinamica> on 2025-07-09 19:14:11.971822+00:00
+[2025-07-09T19:14:46.844+0000] {standard_task_runner.py:60} INFO - Started process 194 to run task
+[2025-07-09T19:14:46.847+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'northwind', 'gerar_config_csv_dinamica', 'manual__2025-07-09T19:14:11.971822+00:00', '--job-id', '67', '--raw', '--subdir', 'DAGS_FOLDER/northwind.py', '--cfg-path', '/tmp/tmpzl8vwhfy']
+[2025-07-09T19:14:46.849+0000] {standard_task_runner.py:88} INFO - Job 67: Subtask gerar_config_csv_dinamica
+[2025-07-09T19:14:46.897+0000] {task_command.py:423} INFO - Running <TaskInstance: northwind.gerar_config_csv_dinamica manual__2025-07-09T19:14:11.971822+00:00 [running]> on host 2acad222a407
+[2025-07-09T19:14:46.974+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='lrbf@cin.ufpe.br' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='northwind' AIRFLOW_CTX_TASK_ID='gerar_config_csv_dinamica' AIRFLOW_CTX_EXECUTION_DATE='2025-07-09T19:14:11.971822+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-07-09T19:14:11.971822+00:00'
+[2025-07-09T19:14:47.027+0000] {docker.py:359} INFO - Starting docker container from image meltano:latest
+[2025-07-09T19:14:47.312+0000] {docker.py:429} INFO - Running meltano install...
+[2025-07-09T19:14:48.552+0000] {docker.py:429} INFO - [2m2025-07-09T19:14:48.551098Z[0m [[32m[1minfo     [0m] [1mInstalling 7 plugins          [0m
+[2025-07-09T19:14:48.563+0000] {docker.py:429} INFO - [2m2025-07-09T19:14:48.563065Z[0m [[32m[1minfo     [0m] [1mInstalling extractor 'tap-postgres'[0m
+[2025-07-09T19:14:48.598+0000] {docker.py:429} INFO - [2m2025-07-09T19:14:48.597102Z[0m [[32m[1minfo     [0m] [1mInstalling extractor 'tap-csv'[0m
+[2025-07-09T19:14:48.633+0000] {docker.py:429} INFO - [2m2025-07-09T19:14:48.632499Z[0m [[32m[1minfo     [0m] [1mInstalling extractor 'tap-csv-latest'[0m
+[2025-07-09T19:14:48.658+0000] {docker.py:429} INFO - [2m2025-07-09T19:14:48.657795Z[0m [[32m[1minfo     [0m] [1mInstalling loader 'target-postgres'[0m
+[2025-07-09T19:14:48.689+0000] {docker.py:429} INFO - [2m2025-07-09T19:14:48.688661Z[0m [[32m[1minfo     [0m] [1mInstalling loader 'target-csv'[0m
+[2025-07-09T19:14:48.722+0000] {docker.py:429} INFO - [2m2025-07-09T19:14:48.721770Z[0m [[32m[1minfo     [0m] [1mInstalling loader 'target-csv-postgres'[0m
+[2025-07-09T19:14:48.760+0000] {docker.py:429} INFO - [2m2025-07-09T19:14:48.757601Z[0m [[32m[1minfo     [0m] [1mInstalling loader 'target-csv-csv'[0m
+[2025-07-09T19:14:49.667+0000] {docker.py:429} INFO - [2m2025-07-09T19:14:49.667092Z[0m [[32m[1minfo     [0m] [1mInstalled extractor 'tap-postgres'[0m
+[2025-07-09T19:14:49.792+0000] {docker.py:429} INFO - [2m2025-07-09T19:14:49.792218Z[0m [[32m[1minfo     [0m] [1mInstalled loader 'target-postgres'[0m
+[2025-07-09T19:14:51.581+0000] {docker.py:429} INFO - [2m2025-07-09T19:14:51.580313Z[0m [[32m[1minfo     [0m] [1mInstalled extractor 'tap-csv' [0m
+[2025-07-09T19:14:51.605+0000] {docker.py:429} INFO - [2m2025-07-09T19:14:51.604844Z[0m [[32m[1minfo     [0m] [1mInstalled extractor 'tap-csv-latest'[0m
+[2025-07-09T19:14:52.720+0000] {docker.py:429} INFO - [2m2025-07-09T19:14:52.719848Z[0m [[32m[1minfo     [0m] [1mInstalled loader 'target-csv' [0m
+[2025-07-09T19:14:52.824+0000] {docker.py:429} INFO - [2m2025-07-09T19:14:52.823797Z[0m [[32m[1minfo     [0m] [1mInstalled loader 'target-csv-csv'[0m
+[2025-07-09T19:14:52.879+0000] {docker.py:429} INFO - [2m2025-07-09T19:14:52.879006Z[0m [[32m[1minfo     [0m] [1mInstalled loader 'target-csv-postgres'[0m
+[2025-07-09T19:14:52.880+0000] {docker.py:429} INFO - [2m2025-07-09T19:14:52.879440Z[0m [[32m[1minfo     [0m] [1mInstalled 7/7 plugins         [0m
+[2025-07-09T19:14:53.723+0000] {docker.py:429} INFO - Meltano install completed. Executing command: python /opt/meltano/scripts/generate_csv_config.py
+[2025-07-09T19:14:53.758+0000] {docker.py:429} INFO - ATENÇÃO: Diretório de data '/opt/output_data/csv/order_details/2025-07-09' não encontrado para 'order_details'. Pulando esta entidade.
+ATENÇÃO: Diretório de data '/opt/output_data/postgres/public-categories/2025-07-09' não encontrado para 'public-categories'. Pulando esta entidade.
+ATENÇÃO: Diretório de data '/opt/output_data/postgres/public-products/2025-07-09' não encontrado para 'public-products'. Pulando esta entidade.
+ATENÇÃO: Diretório de data '/opt/output_data/postgres/public-suppliers/2025-07-09' não encontrado para 'public-suppliers'. Pulando esta entidade.
+ATENÇÃO: Diretório de data '/opt/output_data/postgres/public-orders/2025-07-09' não encontrado para 'public-orders'. Pulando esta entidade.
+ATENÇÃO: Diretório de data '/opt/output_data/postgres/public-customers/2025-07-09' não encontrado para 'public-customers'. Pulando esta entidade.
+ATENÇÃO: Diretório de data '/opt/output_data/postgres/public-employees/2025-07-09' não encontrado para 'public-employees'. Pulando esta entidade.
+ATENÇÃO: Diretório de data '/opt/output_data/postgres/public-employee_territories/2025-07-09' não encontrado para 'public-employee_territories'. Pulando esta entidade.
+ATENÇÃO: Diretório de data '/opt/output_data/postgres/public-territories/2025-07-09' não encontrado para 'public-territories'. Pulando esta entidade.
+ATENÇÃO: Diretório de data '/opt/output_data/postgres/public-region/2025-07-09' não encontrado para 'public-region'. Pulando esta entidade.
+ATENÇÃO: Diretório de data '/opt/output_data/postgres/public-shippers/2025-07-09' não encontrado para 'public-shippers'. Pulando esta entidade.
+ATENÇÃO: Diretório de data '/opt/output_data/postgres/public-us_states/2025-07-09' não encontrado para 'public-us_states'. Pulando esta entidade.
+[2025-07-09T19:14:53.758+0000] {docker.py:429} INFO - AVISO: A lista de arquivos CSV gerada está vazia. Verifique se os arquivos foram criados e as paths estão corretas.
+[2025-07-09T19:14:53.759+0000] {docker.py:429} INFO - []
+[2025-07-09T19:14:53.972+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=northwind, task_id=gerar_config_csv_dinamica, execution_date=20250709T191411, start_date=20250709T191446, end_date=20250709T191453
+[2025-07-09T19:14:54.018+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-07-09T19:14:54.043+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

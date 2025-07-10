@@ -1,0 +1,23 @@
+[2025-06-26T16:59:57.851+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: northwind.gerar_config_target_postgres_dinamica manual__2025-06-26T16:59:03.154428+00:00 [queued]>
+[2025-06-26T16:59:57.868+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: northwind.gerar_config_target_postgres_dinamica manual__2025-06-26T16:59:03.154428+00:00 [queued]>
+[2025-06-26T16:59:57.869+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-06-26T16:59:57.899+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): gerar_config_target_postgres_dinamica> on 2025-06-26 16:59:03.154428+00:00
+[2025-06-26T16:59:57.914+0000] {standard_task_runner.py:60} INFO - Started process 199 to run task
+[2025-06-26T16:59:57.921+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'northwind', 'gerar_config_target_postgres_dinamica', 'manual__2025-06-26T16:59:03.154428+00:00', '--job-id', '301', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpcg0zd6_4']
+[2025-06-26T16:59:57.925+0000] {standard_task_runner.py:88} INFO - Job 301: Subtask gerar_config_target_postgres_dinamica
+[2025-06-26T16:59:58.004+0000] {task_command.py:423} INFO - Running <TaskInstance: northwind.gerar_config_target_postgres_dinamica manual__2025-06-26T16:59:03.154428+00:00 [running]> on host 6afc1f3750fb
+[2025-06-26T16:59:58.126+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='lrbf@cin.ufpe.br' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='northwind' AIRFLOW_CTX_TASK_ID='gerar_config_target_postgres_dinamica' AIRFLOW_CTX_EXECUTION_DATE='2025-06-26T16:59:03.154428+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-26T16:59:03.154428+00:00'
+[2025-06-26T16:59:58.129+0000] {logging_mixin.py:188} INFO - ✔️ Configuração JSON final para target-postgres:
+{
+  "host": "db_target",
+  "port": 5432,
+  "user": "postgres",
+  "password": "B&t034685970",
+  "database": "northwind_final",
+  "default_target_schema": "public",
+  "dialect+driver": "postgresql+psycopg2"
+}
+[2025-06-26T16:59:58.130+0000] {python.py:201} INFO - Done. Returned value was: {"host": "db_target", "port": 5432, "user": "postgres", "password": "B&t034685970", "database": "northwind_final", "default_target_schema": "public", "dialect+driver": "postgresql+psycopg2"}
+[2025-06-26T16:59:58.172+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=northwind, task_id=gerar_config_target_postgres_dinamica, execution_date=20250626T165903, start_date=20250626T165957, end_date=20250626T165958
+[2025-06-26T16:59:58.216+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-06-26T16:59:58.245+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

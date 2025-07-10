@@ -1,0 +1,36 @@
+[2025-07-01T13:30:21.466+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: northwind.check_xcom_content manual__2025-07-01T13:29:30.148101+00:00 [queued]>
+[2025-07-01T13:30:21.474+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: northwind.check_xcom_content manual__2025-07-01T13:29:30.148101+00:00 [queued]>
+[2025-07-01T13:30:21.475+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-07-01T13:30:21.488+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): check_xcom_content> on 2025-07-01 13:29:30.148101+00:00
+[2025-07-01T13:30:21.493+0000] {standard_task_runner.py:60} INFO - Started process 186 to run task
+[2025-07-01T13:30:21.497+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'northwind', 'check_xcom_content', 'manual__2025-07-01T13:29:30.148101+00:00', '--job-id', '46', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmp079ahge9']
+[2025-07-01T13:30:21.499+0000] {standard_task_runner.py:88} INFO - Job 46: Subtask check_xcom_content
+[2025-07-01T13:30:21.559+0000] {task_command.py:423} INFO - Running <TaskInstance: northwind.check_xcom_content manual__2025-07-01T13:29:30.148101+00:00 [running]> on host a0138d8cef03
+[2025-07-01T13:30:21.636+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='lrbf@cin.ufpe.br' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='northwind' AIRFLOW_CTX_TASK_ID='check_xcom_content' AIRFLOW_CTX_EXECUTION_DATE='2025-07-01T13:29:30.148101+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-07-01T13:29:30.148101+00:00'
+[2025-07-01T13:30:21.651+0000] {logging_mixin.py:188} INFO - 
+--- Conteúdo do XCom puxado de 'gerar_config_csv_dinamica' ---
+[2025-07-01T13:30:21.651+0000] {logging_mixin.py:188} INFO - ✔️ Configuração para tap-csv-latest gerada com sucesso em: /opt/meltano/config/tap-csv-latest.json
+[2025-07-01T13:30:21.652+0000] {logging_mixin.py:188} INFO - 
+❌ ERRO: Falha ao parsear o conteúdo do XCom como JSON: Expecting value: line 1 column 1 (char 0)
+[2025-07-01T13:30:21.652+0000] {logging_mixin.py:188} INFO - Conteúdo bruto do XCom (primeiros 200 caracteres): ✔️ Configuração para tap-csv-latest gerada com sucesso em: /opt/meltano/config/tap-csv-latest.json...
+[2025-07-01T13:30:21.652+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/dag.py", line 68, in _check_xcom_content
+    parsed_json = json.loads(csv_config_json_str)
+  File "/usr/local/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/local/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/local/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[2025-07-01T13:30:21.666+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=northwind, task_id=check_xcom_content, execution_date=20250701T132930, start_date=20250701T133021, end_date=20250701T133021
+[2025-07-01T13:30:21.682+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 46 for task check_xcom_content (Expecting value: line 1 column 1 (char 0); 186)
+[2025-07-01T13:30:21.713+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-07-01T13:30:21.735+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

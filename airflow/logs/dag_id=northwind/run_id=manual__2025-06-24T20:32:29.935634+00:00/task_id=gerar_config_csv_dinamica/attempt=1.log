@@ -1,0 +1,30 @@
+[2025-06-24T20:33:23.772+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: northwind.gerar_config_csv_dinamica manual__2025-06-24T20:32:29.935634+00:00 [queued]>
+[2025-06-24T20:33:23.783+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: northwind.gerar_config_csv_dinamica manual__2025-06-24T20:32:29.935634+00:00 [queued]>
+[2025-06-24T20:33:23.783+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-06-24T20:33:23.796+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): gerar_config_csv_dinamica> on 2025-06-24 20:32:29.935634+00:00
+[2025-06-24T20:33:23.802+0000] {standard_task_runner.py:60} INFO - Started process 209 to run task
+[2025-06-24T20:33:23.806+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'northwind', 'gerar_config_csv_dinamica', 'manual__2025-06-24T20:32:29.935634+00:00', '--job-id', '102', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmponb5_yec']
+[2025-06-24T20:33:23.808+0000] {standard_task_runner.py:88} INFO - Job 102: Subtask gerar_config_csv_dinamica
+[2025-06-24T20:33:23.852+0000] {task_command.py:423} INFO - Running <TaskInstance: northwind.gerar_config_csv_dinamica manual__2025-06-24T20:32:29.935634+00:00 [running]> on host 2f206bf85820
+[2025-06-24T20:33:23.928+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='lrbf@cin.ufpe.br' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='northwind' AIRFLOW_CTX_TASK_ID='gerar_config_csv_dinamica' AIRFLOW_CTX_EXECUTION_DATE='2025-06-24T20:32:29.935634+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-24T20:32:29.935634+00:00'
+[2025-06-24T20:33:23.931+0000] {logging_mixin.py:188} INFO - ATENÇÃO: Diretório de data '2025-06-24' não encontrado para 'order_details' em /opt/output_data/csv/order_details. Isso pode indicar que a extração anterior falhou ou que a data está incorreta. Pulando esta entidade.
+[2025-06-24T20:33:23.931+0000] {logging_mixin.py:188} INFO - ATENÇÃO: Diretório de data '2025-06-24' não encontrado para 'public-categories' em /opt/output_data/postgres/public-categories. Isso pode indicar que a extração anterior falhou ou que a data está incorreta. Pulando esta entidade.
+[2025-06-24T20:33:23.931+0000] {logging_mixin.py:188} INFO - ATENÇÃO: Diretório de data '2025-06-24' não encontrado para 'public-products' em /opt/output_data/postgres/public-products. Isso pode indicar que a extração anterior falhou ou que a data está incorreta. Pulando esta entidade.
+[2025-06-24T20:33:23.931+0000] {logging_mixin.py:188} INFO - ATENÇÃO: Diretório de data '2025-06-24' não encontrado para 'public-suppliers' em /opt/output_data/postgres/public-suppliers. Isso pode indicar que a extração anterior falhou ou que a data está incorreta. Pulando esta entidade.
+[2025-06-24T20:33:23.931+0000] {logging_mixin.py:188} INFO - ATENÇÃO: Diretório de data '2025-06-24' não encontrado para 'public-orders' em /opt/output_data/postgres/public-orders. Isso pode indicar que a extração anterior falhou ou que a data está incorreta. Pulando esta entidade.
+[2025-06-24T20:33:23.931+0000] {logging_mixin.py:188} INFO - ATENÇÃO: Diretório de data '2025-06-24' não encontrado para 'public-customers' em /opt/output_data/postgres/public-customers. Isso pode indicar que a extração anterior falhou ou que a data está incorreta. Pulando esta entidade.
+[2025-06-24T20:33:23.932+0000] {logging_mixin.py:188} INFO - ATENÇÃO: Diretório de data '2025-06-24' não encontrado para 'public-employees' em /opt/output_data/postgres/public-employees. Isso pode indicar que a extração anterior falhou ou que a data está incorreta. Pulando esta entidade.
+[2025-06-24T20:33:23.932+0000] {logging_mixin.py:188} INFO - ATENÇÃO: Diretório de data '2025-06-24' não encontrado para 'public-employee_territories' em /opt/output_data/postgres/public-employee_territories. Isso pode indicar que a extração anterior falhou ou que a data está incorreta. Pulando esta entidade.
+[2025-06-24T20:33:23.932+0000] {logging_mixin.py:188} INFO - ATENÇÃO: Diretório de data '2025-06-24' não encontrado para 'public-territories' em /opt/output_data/postgres/public-territories. Isso pode indicar que a extração anterior falhou ou que a data está incorreta. Pulando esta entidade.
+[2025-06-24T20:33:23.932+0000] {logging_mixin.py:188} INFO - ATENÇÃO: Diretório de data '2025-06-24' não encontrado para 'public-region' em /opt/output_data/postgres/public-region. Isso pode indicar que a extração anterior falhou ou que a data está incorreta. Pulando esta entidade.
+[2025-06-24T20:33:23.932+0000] {logging_mixin.py:188} INFO - ATENÇÃO: Diretório de data '2025-06-24' não encontrado para 'public-shippers' em /opt/output_data/postgres/public-shippers. Isso pode indicar que a extração anterior falhou ou que a data está incorreta. Pulando esta entidade.
+[2025-06-24T20:33:23.932+0000] {logging_mixin.py:188} INFO - ATENÇÃO: Diretório de data '2025-06-24' não encontrado para 'public-us_states' em /opt/output_data/postgres/public-us_states. Isso pode indicar que a extração anterior falhou ou que a data está incorreta. Pulando esta entidade.
+[2025-06-24T20:33:23.932+0000] {logging_mixin.py:188} INFO - ✔️ Configuração JSON final para tap-csv-latest:
+{
+  "files": []
+}
+[2025-06-24T20:33:23.932+0000] {logging_mixin.py:188} INFO - AVISO: A lista de arquivos CSV gerada para carga está vazia. Nenhuma tabela será carregada.
+[2025-06-24T20:33:23.933+0000] {python.py:201} INFO - Done. Returned value was: {"files": []}
+[2025-06-24T20:33:23.953+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=northwind, task_id=gerar_config_csv_dinamica, execution_date=20250624T203229, start_date=20250624T203323, end_date=20250624T203323
+[2025-06-24T20:33:23.980+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-06-24T20:33:23.998+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,155 @@
+[2025-06-24T20:46:37.524+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: northwind.carregamento_postgres manual__2025-06-24T20:40:46.253506+00:00 [queued]>
+[2025-06-24T20:46:37.537+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: northwind.carregamento_postgres manual__2025-06-24T20:40:46.253506+00:00 [queued]>
+[2025-06-24T20:46:37.537+0000] {taskinstance.py:2170} INFO - Starting attempt 2 of 2
+[2025-06-24T20:46:37.553+0000] {taskinstance.py:2191} INFO - Executing <Task(DockerOperator): carregamento_postgres> on 2025-06-24 20:40:46.253506+00:00
+[2025-06-24T20:46:37.564+0000] {standard_task_runner.py:60} INFO - Started process 260 to run task
+[2025-06-24T20:46:37.574+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'northwind', 'carregamento_postgres', 'manual__2025-06-24T20:40:46.253506+00:00', '--job-id', '110', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmp1bjdvtub']
+[2025-06-24T20:46:37.581+0000] {standard_task_runner.py:88} INFO - Job 110: Subtask carregamento_postgres
+[2025-06-24T20:46:37.719+0000] {task_command.py:423} INFO - Running <TaskInstance: northwind.carregamento_postgres manual__2025-06-24T20:40:46.253506+00:00 [running]> on host 2f206bf85820
+[2025-06-24T20:46:37.866+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='lrbf@cin.ufpe.br' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='northwind' AIRFLOW_CTX_TASK_ID='carregamento_postgres' AIRFLOW_CTX_EXECUTION_DATE='2025-06-24T20:40:46.253506+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-24T20:40:46.253506+00:00'
+[2025-06-24T20:46:38.047+0000] {docker.py:359} INFO - Starting docker container from image meltano:latest
+[2025-06-24T20:46:38.750+0000] {docker.py:429} INFO - Running meltano install...
+[2025-06-24T20:46:40.843+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:40.842662Z[0m [[32m[1minfo     [0m] [1mInstalling 7 plugins          [0m
+[2025-06-24T20:46:40.855+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:40.854486Z[0m [[32m[1minfo     [0m] [1mInstalling extractor 'tap-postgres'[0m
+[2025-06-24T20:46:40.870+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:40.869747Z[0m [[32m[1minfo     [0m] [1mInstalling extractor 'tap-csv'[0m
+[2025-06-24T20:46:40.884+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:40.883850Z[0m [[32m[1minfo     [0m] [1mInstalling extractor 'tap-csv-latest'[0m
+[2025-06-24T20:46:40.905+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:40.904898Z[0m [[32m[1minfo     [0m] [1mInstalling loader 'target-postgres'[0m
+[2025-06-24T20:46:40.927+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:40.926367Z[0m [[32m[1minfo     [0m] [1mInstalling loader 'target-csv'[0m
+[2025-06-24T20:46:40.949+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:40.949105Z[0m [[32m[1minfo     [0m] [1mInstalling loader 'target-csv-postgres'[0m
+[2025-06-24T20:46:40.974+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:40.974102Z[0m [[32m[1minfo     [0m] [1mInstalling loader 'target-csv-csv'[0m
+[2025-06-24T20:46:43.641+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:43.633226Z[0m [[32m[1minfo     [0m] [1mInstalled loader 'target-postgres'[0m
+[2025-06-24T20:46:43.650+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:43.639454Z[0m [[32m[1minfo     [0m] [1mInstalled extractor 'tap-postgres'[0m
+[2025-06-24T20:46:49.156+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:49.155166Z[0m [[32m[1minfo     [0m] [1mInstalled extractor 'tap-csv-latest'[0m
+[2025-06-24T20:46:49.168+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:49.167492Z[0m [[32m[1minfo     [0m] [1mInstalled extractor 'tap-csv' [0m
+[2025-06-24T20:46:49.708+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:49.708162Z[0m [[32m[1minfo     [0m] [1mInstalled loader 'target-csv' [0m
+[2025-06-24T20:46:50.328+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:50.327900Z[0m [[32m[1minfo     [0m] [1mInstalled loader 'target-csv-csv'[0m
+[2025-06-24T20:46:50.372+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:50.371284Z[0m [[32m[1minfo     [0m] [1mInstalled loader 'target-csv-postgres'[0m
+[2025-06-24T20:46:50.374+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:50.373034Z[0m [[32m[1minfo     [0m] [1mInstalled 7/7 plugins         [0m
+[2025-06-24T20:46:52.073+0000] {docker.py:429} INFO - Meltano install completed. Executing command: meltano el tap-csv-latest target-postgres
+[2025-06-24T20:46:50.856+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:50.855974Z[0m [[32m[1minfo     [0m] [1mEnvironment 'dev' is active   [0m
+[2025-06-24T20:46:51.348+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:51.347551Z[0m [[32m[1minfo     [0m] [1mRunning extract & load...     [0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m43cf2358-a897-4945-928b-a9c7a3d06a23[0m [36mstate_id[0m=[35m2025-06-24T204651--tap-csv-latest--target-postgres[0m
+[2025-06-24T20:46:52.318+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:52.317162Z[0m [[32m[1minfo     [0m] [1mNo CSV file definitions found.[0m [36mcmd_type[0m=[35mextractor[0m [36mname[0m=[35mtap-csv-latest[0m [36mrun_id[0m=[35m43cf2358-a897-4945-928b-a9c7a3d06a23[0m [36mstate_id[0m=[35m2025-06-24T204651--tap-csv-latest--target-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-24T20:46:52.369+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:52.369048Z[0m [[32m[1minfo     [0m] [1mtarget-postgres v0.4.3, Meltano SDK v0.47.2[0m [36mcmd_type[0m=[35mloader[0m [36mname[0m=[35mtarget-postgres[0m [36mrun_id[0m=[35m43cf2358-a897-4945-928b-a9c7a3d06a23[0m [36mstate_id[0m=[35m2025-06-24T204651--tap-csv-latest--target-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-24T20:46:52.370+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:52.369456Z[0m [[32m[1minfo     [0m] [1mSkipping parse of env var settings...[0m [36mcmd_type[0m=[35mloader[0m [36mname[0m=[35mtarget-postgres[0m [36mrun_id[0m=[35m43cf2358-a897-4945-928b-a9c7a3d06a23[0m [36mstate_id[0m=[35m2025-06-24T204651--tap-csv-latest--target-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-24T20:46:52.370+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:52.370004Z[0m [[32m[1minfo     [0m] [1mTraceback (most recent call last):[0m [36mcmd_type[0m=[35mloader[0m [36mname[0m=[35mtarget-postgres[0m [36mrun_id[0m=[35m43cf2358-a897-4945-928b-a9c7a3d06a23[0m [36mstate_id[0m=[35m2025-06-24T204651--tap-csv-latest--target-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-24T20:46:52.370+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:52.370358Z[0m [[32m[1minfo     [0m] [1m  File "/opt/meltano/.meltano/loaders/target-postgres/venv/bin/target-postgres", line 8, in <module>[0m [36mcmd_type[0m=[35mloader[0m [36mname[0m=[35mtarget-postgres[0m [36mrun_id[0m=[35m43cf2358-a897-4945-928b-a9c7a3d06a23[0m [36mstate_id[0m=[35m2025-06-24T204651--tap-csv-latest--target-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-24T20:46:52.371+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:52.370621Z[0m [[32m[1minfo     [0m] [1m    sys.exit(TargetPostgres.cli())[0m [36mcmd_type[0m=[35mloader[0m [36mname[0m=[35mtarget-postgres[0m [36mrun_id[0m=[35m43cf2358-a897-4945-928b-a9c7a3d06a23[0m [36mstate_id[0m=[35m2025-06-24T204651--tap-csv-latest--target-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-24T20:46:52.371+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:52.370953Z[0m [[32m[1minfo     [0m] [1m  File "/opt/meltano/.meltano/loaders/target-postgres/venv/lib/python3.10/site-packages/click/core.py", line 1442, in __call__[0m [36mcmd_type[0m=[35mloader[0m [36mname[0m=[35mtarget-postgres[0m [36mrun_id[0m=[35m43cf2358-a897-4945-928b-a9c7a3d06a23[0m [36mstate_id[0m=[35m2025-06-24T204651--tap-csv-latest--target-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-24T20:46:52.374+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:52.372338Z[0m [[32m[1minfo     [0m] [1m    return self.main(*args, **kwargs)[0m [36mcmd_type[0m=[35mloader[0m [36mname[0m=[35mtarget-postgres[0m [36mrun_id[0m=[35m43cf2358-a897-4945-928b-a9c7a3d06a23[0m [36mstate_id[0m=[35m2025-06-24T204651--tap-csv-latest--target-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-24T20:46:52.376+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:52.373191Z[0m [[32m[1minfo     [0m] [1m  File "/opt/meltano/.meltano/loaders/target-postgres/venv/lib/python3.10/site-packages/click/core.py", line 1363, in main[0m [36mcmd_type[0m=[35mloader[0m [36mname[0m=[35mtarget-postgres[0m [36mrun_id[0m=[35m43cf2358-a897-4945-928b-a9c7a3d06a23[0m [36mstate_id[0m=[35m2025-06-24T204651--tap-csv-latest--target-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-24T20:46:52.376+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:52.374297Z[0m [[32m[1minfo     [0m] [1m    rv = self.invoke(ctx)     [0m [36mcmd_type[0m=[35mloader[0m [36mname[0m=[35mtarget-postgres[0m [36mrun_id[0m=[35m43cf2358-a897-4945-928b-a9c7a3d06a23[0m [36mstate_id[0m=[35m2025-06-24T204651--tap-csv-latest--target-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-24T20:46:52.376+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:52.374651Z[0m [[32m[1minfo     [0m] [1m  File "/opt/meltano/.meltano/loaders/target-postgres/venv/lib/python3.10/site-packages/singer_sdk/plugin_base.py", line 97, in invoke[0m [36mcmd_type[0m=[35mloader[0m [36mname[0m=[35mtarget-postgres[0m [36mrun_id[0m=[35m43cf2358-a897-4945-928b-a9c7a3d06a23[0m [36mstate_id[0m=[35m2025-06-24T204651--tap-csv-latest--target-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-24T20:46:52.377+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:52.374996Z[0m [[32m[1minfo     [0m] [1m    return super().invoke(ctx)[0m [36mcmd_type[0m=[35mloader[0m [36mname[0m=[35mtarget-postgres[0m [36mrun_id[0m=[35m43cf2358-a897-4945-928b-a9c7a3d06a23[0m [36mstate_id[0m=[35m2025-06-24T204651--tap-csv-latest--target-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-24T20:46:52.377+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:52.375337Z[0m [[32m[1minfo     [0m] [1m  File "/opt/meltano/.meltano/loaders/target-postgres/venv/lib/python3.10/site-packages/click/core.py", line 1226, in invoke[0m [36mcmd_type[0m=[35mloader[0m [36mname[0m=[35mtarget-postgres[0m [36mrun_id[0m=[35m43cf2358-a897-4945-928b-a9c7a3d06a23[0m [36mstate_id[0m=[35m2025-06-24T204651--tap-csv-latest--target-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-24T20:46:52.377+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:52.375663Z[0m [[32m[1minfo     [0m] [1m    return ctx.invoke(self.callback, **ctx.params)[0m [36mcmd_type[0m=[35mloader[0m [36mname[0m=[35mtarget-postgres[0m [36mrun_id[0m=[35m43cf2358-a897-4945-928b-a9c7a3d06a23[0m [36mstate_id[0m=[35m2025-06-24T204651--tap-csv-latest--target-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-24T20:46:52.379+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:52.375956Z[0m [[32m[1minfo     [0m] [1m  File "/opt/meltano/.meltano/loaders/target-postgres/venv/lib/python3.10/site-packages/click/core.py", line 794, in invoke[0m [36mcmd_type[0m=[35mloader[0m [36mname[0m=[35mtarget-postgres[0m [36mrun_id[0m=[35m43cf2358-a897-4945-928b-a9c7a3d06a23[0m [36mstate_id[0m=[35m2025-06-24T204651--tap-csv-latest--target-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2m2025-06-24T20:46:52.376266Z[0m [[32m[1minfo     [0m] [1m    return callback(*args, **kwargs)[0m [36mcmd_type[0m=[35mloader[0m [36mname[0m=[35mtarget-postgres[0m [36mrun_id[0m=[35m43cf2358-a897-4945-928b-a9c7a3d06a23[0m [36mstate_id[0m=[35m2025-06-24T204651--tap-csv-latest--target-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2m2025-06-24T20:46:52.376551Z[0m [[32m[1minfo     [0m] [1m  File "/opt/meltano/.meltano/loaders/target-postgres/venv/lib/python3.10/site-packages/singer_sdk/target_base.py", line 583, in invoke[0m [36mcmd_type[0m=[35mloader[0m [36mname[0m=[35mtarget-postgres[0m [36mrun_id[0m=[35m43cf2358-a897-4945-928b-a9c7a3d06a23[0m [36mstate_id[0m=[35m2025-06-24T204651--tap-csv-latest--target-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2m2025-06-24T20:46:52.376954Z[0m [[32m[1minfo     [0m] [1m    target = cls(             [0m [36mcmd_type[0m=[35mloader[0m [36mname[0m=[35mtarget-postgres[0m [36mrun_id[0m=[35m43cf2358-a897-4945-928b-a9c7a3d06a23[0m [36mstate_id[0m=[35m2025-06-24T204651--tap-csv-latest--target-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2m2025-06-24T20:46:52.377250Z[0m [[32m[1minfo     [0m] [1m  File "/opt/meltano/.meltano/loaders/target-postgres/venv/lib/python3.10/site-packages/target_postgres/target.py", line 67, in __init__[0m [36mcmd_type[0m=[35mloader[0m [36mname[0m=[35mtarget-postgres[0m [36mrun_id[0m=[35m43cf2358-a897-4945-928b-a9c7a3d06a23[0m [36mstate_id[0m=[35m2025-06-24T204651--tap-csv-latest--target-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-24T20:46:52.380+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:52.378371Z[0m [[32m[1minfo     [0m] [1m    and self.config.get("dialect+driver") is not None[0m [36mcmd_type[0m=[35mloader[0m [36mname[0m=[35mtarget-postgres[0m [36mrun_id[0m=[35m43cf2358-a897-4945-928b-a9c7a3d06a23[0m [36mstate_id[0m=[35m2025-06-24T204651--tap-csv-latest--target-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-24T20:46:52.381+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:52.378888Z[0m [[32m[1minfo     [0m] [1mAssertionError: Need either the sqlalchemy_url to be set or host, port, user, password, and dialect+driver to be set[0m [36mcmd_type[0m=[35mloader[0m [36mname[0m=[35mtarget-postgres[0m [36mrun_id[0m=[35m43cf2358-a897-4945-928b-a9c7a3d06a23[0m [36mstate_id[0m=[35m2025-06-24T204651--tap-csv-latest--target-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-24T20:46:52.489+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:52.488496Z[0m [[31m[1merror    [0m] [1mExtraction failed             [0m [36mcode[0m=[35m1[0m [36mmessage[0m=[35m'No CSV file definitions found.'[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m43cf2358-a897-4945-928b-a9c7a3d06a23[0m [36mstate_id[0m=[35m2025-06-24T204651--tap-csv-latest--target-postgres[0m
+[2m2025-06-24T20:46:52.488781Z[0m [[31m[1merror    [0m] [1mLoading failed                [0m [36mcode[0m=[35m1[0m [36mmessage[0m=[35m'AssertionError: Need either the sqlalchemy_url to be set or host, port, user, password, and dialect+driver to be set'[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m43cf2358-a897-4945-928b-a9c7a3d06a23[0m [36mstate_id[0m=[35m2025-06-24T204651--tap-csv-latest--target-postgres[0m
+[2025-06-24T20:46:52.490+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:52.489220Z[0m [[32m[1minfo     [0m] [1mELT could not be completed: Extractor and loader failed.[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m43cf2358-a897-4945-928b-a9c7a3d06a23[0m [36mstate_id[0m=[35m2025-06-24T204651--tap-csv-latest--target-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-24T20:46:52.490+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:52.489510Z[0m [[32m[1minfo     [0m] [1mFor more detailed log messages re-run the command using 'meltano --log-level=debug ...' CLI flag.[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m43cf2358-a897-4945-928b-a9c7a3d06a23[0m [36mstate_id[0m=[35m2025-06-24T204651--tap-csv-latest--target-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-24T20:46:52.490+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:52.489736Z[0m [[32m[1minfo     [0m] [1mNote that you can also check the generated log file at '/opt/meltano/.meltano/logs/elt/2025-06-24T204651--tap-csv-latest--target-postgres/43cf2358-a897-4945-928b-a9c7a3d06a23/elt.log'.[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m43cf2358-a897-4945-928b-a9c7a3d06a23[0m [36mstate_id[0m=[35m2025-06-24T204651--tap-csv-latest--target-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-24T20:46:52.490+0000] {docker.py:429} INFO - [2m2025-06-24T20:46:52.489969Z[0m [[32m[1minfo     [0m] [1mFor more information on debugging and logging: https://docs.meltano.com/reference/command-line-interface#debugging[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m43cf2358-a897-4945-928b-a9c7a3d06a23[0m [36mstate_id[0m=[35m2025-06-24T204651--tap-csv-latest--target-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-24T20:46:52.503+0000] {docker.py:429} INFO - Need help fixing this problem? Visit http://melta.no/ for troubleshooting steps, or to
+join our friendly Slack community.
+
+ELT could not be completed: Extractor and loader failed.
+For more detailed log messages re-run the command using 'meltano --log-level=debug ...' CLI flag.
+Note that you can also check the generated log file at '/opt/meltano/.meltano/logs/elt/2025-06-24T204651--tap-csv-latest--target-postgres/43cf2358-a897-4945-928b-a9c7a3d06a23/elt.log'.
+For more information on debugging and logging: https://docs.meltano.com/reference/command-line-interface#debugging
+[2025-06-24T20:46:53.879+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/docker/operators/docker.py", line 502, in execute
+    return self._run_image()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/docker/operators/docker.py", line 376, in _run_image
+    return self._run_image_with_mounts(self.mounts, add_tmp_variable=False)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/docker/operators/docker.py", line 437, in _run_image_with_mounts
+    raise DockerContainerFailedException(f"Docker container failed: {result!r}", logs=log_lines)
+airflow.providers.docker.exceptions.DockerContainerFailedException: Docker container failed: {'StatusCode': 1}
+[2025-06-24T20:46:53.888+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=northwind, task_id=carregamento_postgres, execution_date=20250624T204046, start_date=20250624T204637, end_date=20250624T204653
+[2025-06-24T20:46:53.981+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.10/site-packages/***/utils/email.py:154 RemovedInAirflow3Warning: Fetching SMTP credentials from configuration variables will be deprecated in a future release. Please set credentials using a connection instead.
+[2025-06-24T20:46:53.982+0000] {configuration.py:1046} WARNING - section/key [smtp/smtp_user] not found in config
+[2025-06-24T20:46:53.983+0000] {email.py:270} INFO - Email alerting: attempt 1
+[2025-06-24T20:46:53.997+0000] {configuration.py:1046} WARNING - section/key [smtp/smtp_user] not found in config
+[2025-06-24T20:46:53.998+0000] {email.py:270} INFO - Email alerting: attempt 1
+[2025-06-24T20:46:53.999+0000] {taskinstance.py:826} ERROR - Failed to send email to: ['lrbf@cin.ufpe.br']
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 2334, in _run_raw_task
+    self._execute_task_with_callbacks(context, test_mode, session=session)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 2499, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 2516, in _execute_task
+    return _execute_task(self, context, task_orig)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/docker/operators/docker.py", line 502, in execute
+    return self._run_image()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/docker/operators/docker.py", line 376, in _run_image
+    return self._run_image_with_mounts(self.mounts, add_tmp_variable=False)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/docker/operators/docker.py", line 437, in _run_image_with_mounts
+    raise DockerContainerFailedException(f"Docker container failed: {result!r}", logs=log_lines)
+airflow.providers.docker.exceptions.DockerContainerFailedException: Docker container failed: {'StatusCode': 1}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 1000, in _email_alert
+    send_email(task.email, subject, html_content)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 80, in send_email
+    return backend(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 154, in send_email_smtp
+    send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 272, in send_mime_email
+    smtp_conn = _get_smtp_connection(smtp_host, smtp_port, smtp_timeout, smtp_ssl)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 316, in _get_smtp_connection
+    return smtplib.SMTP(host=host, port=port, timeout=timeout)
+  File "/usr/local/lib/python3.10/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/local/lib/python3.10/smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/usr/local/lib/python3.10/smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "/usr/local/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/local/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 824, in _handle_failure
+    task_instance.email_alert(error, failure_context["task"])
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 2946, in email_alert
+    _email_alert(task_instance=self, exception=exception, task=task)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 1002, in _email_alert
+    send_email(task.email, subject, html_content_err)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 80, in send_email
+    return backend(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 154, in send_email_smtp
+    send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 272, in send_mime_email
+    smtp_conn = _get_smtp_connection(smtp_host, smtp_port, smtp_timeout, smtp_ssl)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 316, in _get_smtp_connection
+    return smtplib.SMTP(host=host, port=port, timeout=timeout)
+  File "/usr/local/lib/python3.10/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/local/lib/python3.10/smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/usr/local/lib/python3.10/smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "/usr/local/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/local/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+[2025-06-24T20:46:54.028+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 110 for task carregamento_postgres (Docker container failed: {'StatusCode': 1}; 260)
+[2025-06-24T20:46:54.070+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-06-24T20:46:54.097+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

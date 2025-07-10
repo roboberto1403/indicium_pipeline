@@ -1,0 +1,118 @@
+[2025-06-17T17:12:09.882+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: northwind.extração_postgres manual__2025-06-17T15:01:11.513975+00:00 [queued]>
+[2025-06-17T17:12:09.954+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: northwind.extração_postgres manual__2025-06-17T15:01:11.513975+00:00 [queued]>
+[2025-06-17T17:12:09.954+0000] {taskinstance.py:2170} INFO - Starting attempt 2 of 2
+[2025-06-17T17:12:09.990+0000] {taskinstance.py:2191} INFO - Executing <Task(DockerOperator): extração_postgres> on 2025-06-17 15:01:11.513975+00:00
+[2025-06-17T17:12:09.999+0000] {standard_task_runner.py:60} INFO - Started process 211 to run task
+[2025-06-17T17:12:10.006+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'northwind', 'extração_postgres', 'manual__2025-06-17T15:01:11.513975+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpptrpxcn3']
+[2025-06-17T17:12:10.008+0000] {standard_task_runner.py:88} INFO - Job 9: Subtask extração_postgres
+[2025-06-17T17:12:10.065+0000] {task_command.py:423} INFO - Running <TaskInstance: northwind.extração_postgres manual__2025-06-17T15:01:11.513975+00:00 [running]> on host cbdfef5793b2
+[2025-06-17T17:12:10.286+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='lrbf@cin.ufpe.br' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='northwind' AIRFLOW_CTX_TASK_ID='extração_postgres' AIRFLOW_CTX_EXECUTION_DATE='2025-06-17T15:01:11.513975+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-17T15:01:11.513975+00:00'
+[2025-06-17T17:12:10.507+0000] {docker.py:359} INFO - Starting docker container from image indicium_pipeline-meltano:latest
+[2025-06-17T17:12:15.990+0000] {docker.py:429} INFO - [2m2025-06-17T17:12:15.989267Z[0m [[32m[1minfo     [0m] [1mEnvironment 'dev' is active   [0m
+[2025-06-17T17:12:16.320+0000] {docker.py:429} INFO - [2m2025-06-17T17:12:16.319604Z[0m [[33m[1mwarning  [0m] [1mThe `elt` command is deprecated in favor of `el`[0m
+[2025-06-17T17:12:16.716+0000] {docker.py:429} INFO - [2m2025-06-17T17:12:16.715309Z[0m [[32m[1minfo     [0m] [1mRunning extract & load...     [0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b1cf618-2bf5-4dc7-8802-ee138b7bdb06[0m [36mstate_id[0m=[35m2025-06-17T171216--tap-postgres--target-csv-postgres[0m
+[2025-06-17T17:12:16.965+0000] {docker.py:429} INFO - [2m2025-06-17T17:12:16.964966Z[0m [[32m[1minfo     [0m] [1mUsing systemdb state backend  [0m
+[2025-06-17T17:12:16.968+0000] {docker.py:429} INFO - [2m2025-06-17T17:12:16.967263Z[0m [[33m[1mwarning  [0m] [1mNo state was found, complete import.[0m
+[2025-06-17T17:12:16.977+0000] {docker.py:429} INFO - [2m2025-06-17T17:12:16.977040Z[0m [[32m[1minfo     [0m] [1mUsing custom catalog in /opt/meltano/catalog_discovery.json[0m
+[2025-06-17T17:12:16.989+0000] {docker.py:429} INFO - [2m2025-06-17T17:12:16.989036Z[0m [[32m[1minfo     [0m] [1mELT could not be completed: Cannot start extractor: Executable 'tap-postgres' could not be found. Extractor 'tap-postgres' may not have been installed yet using `meltano install extractor tap-postgres`, or the executable name may be incorrect..[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b1cf618-2bf5-4dc7-8802-ee138b7bdb06[0m [36mstate_id[0m=[35m2025-06-17T171216--tap-postgres--target-csv-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2m2025-06-17T17:12:16.989327Z[0m [[32m[1minfo     [0m] [1mFor more detailed log messages re-run the command using 'meltano --log-level=debug ...' CLI flag.[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b1cf618-2bf5-4dc7-8802-ee138b7bdb06[0m [36mstate_id[0m=[35m2025-06-17T171216--tap-postgres--target-csv-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-17T17:12:16.991+0000] {docker.py:429} INFO - [2m2025-06-17T17:12:16.989491Z[0m [[32m[1minfo     [0m] [1mNote that you can also check the generated log file at '/opt/meltano/.meltano/logs/elt/2025-06-17T171216--tap-postgres--target-csv-postgres/0b1cf618-2bf5-4dc7-8802-ee138b7bdb06/elt.log'.[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b1cf618-2bf5-4dc7-8802-ee138b7bdb06[0m [36mstate_id[0m=[35m2025-06-17T171216--tap-postgres--target-csv-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2m2025-06-17T17:12:16.989646Z[0m [[32m[1minfo     [0m] [1mFor more information on debugging and logging: https://docs.meltano.com/reference/command-line-interface#debugging[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b1cf618-2bf5-4dc7-8802-ee138b7bdb06[0m [36mstate_id[0m=[35m2025-06-17T171216--tap-postgres--target-csv-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-17T17:12:17.002+0000] {docker.py:429} INFO - Need help fixing this problem? Visit http://melta.no/ for troubleshooting steps, or to
+join our friendly Slack community.
+
+ELT could not be completed: Cannot start extractor: Executable 'tap-postgres' could not be found. Extractor 'tap-postgres' may not have been installed yet using `meltano install extractor tap-postgres`, or the executable name may be incorrect..
+For more detailed log messages re-run the command using 'meltano --log-level=debug ...' CLI flag.
+Note that you can also check the generated log file at '/opt/meltano/.meltano/logs/elt/2025-06-17T171216--tap-postgres--target-csv-postgres/0b1cf618-2bf5-4dc7-8802-ee138b7bdb06/elt.log'.
+For more information on debugging and logging: https://docs.meltano.com/reference/command-line-interface#debugging
+[2025-06-17T17:12:19.198+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/docker/operators/docker.py", line 502, in execute
+    return self._run_image()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/docker/operators/docker.py", line 376, in _run_image
+    return self._run_image_with_mounts(self.mounts, add_tmp_variable=False)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/docker/operators/docker.py", line 437, in _run_image_with_mounts
+    raise DockerContainerFailedException(f"Docker container failed: {result!r}", logs=log_lines)
+airflow.providers.docker.exceptions.DockerContainerFailedException: Docker container failed: {'StatusCode': 1}
+[2025-06-17T17:12:19.206+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=northwind, task_id=extração_postgres, execution_date=20250617T150111, start_date=20250617T171209, end_date=20250617T171219
+[2025-06-17T17:12:19.314+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.10/site-packages/***/utils/email.py:154 RemovedInAirflow3Warning: Fetching SMTP credentials from configuration variables will be deprecated in a future release. Please set credentials using a connection instead.
+[2025-06-17T17:12:19.315+0000] {configuration.py:1046} WARNING - section/key [smtp/smtp_user] not found in config
+[2025-06-17T17:12:19.316+0000] {email.py:270} INFO - Email alerting: attempt 1
+[2025-06-17T17:12:19.332+0000] {configuration.py:1046} WARNING - section/key [smtp/smtp_user] not found in config
+[2025-06-17T17:12:19.332+0000] {email.py:270} INFO - Email alerting: attempt 1
+[2025-06-17T17:12:19.334+0000] {taskinstance.py:826} ERROR - Failed to send email to: ['lrbf@cin.ufpe.br']
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 2334, in _run_raw_task
+    self._execute_task_with_callbacks(context, test_mode, session=session)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 2499, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 2516, in _execute_task
+    return _execute_task(self, context, task_orig)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/docker/operators/docker.py", line 502, in execute
+    return self._run_image()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/docker/operators/docker.py", line 376, in _run_image
+    return self._run_image_with_mounts(self.mounts, add_tmp_variable=False)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/docker/operators/docker.py", line 437, in _run_image_with_mounts
+    raise DockerContainerFailedException(f"Docker container failed: {result!r}", logs=log_lines)
+airflow.providers.docker.exceptions.DockerContainerFailedException: Docker container failed: {'StatusCode': 1}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 1000, in _email_alert
+    send_email(task.email, subject, html_content)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 80, in send_email
+    return backend(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 154, in send_email_smtp
+    send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 272, in send_mime_email
+    smtp_conn = _get_smtp_connection(smtp_host, smtp_port, smtp_timeout, smtp_ssl)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 316, in _get_smtp_connection
+    return smtplib.SMTP(host=host, port=port, timeout=timeout)
+  File "/usr/local/lib/python3.10/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/local/lib/python3.10/smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/usr/local/lib/python3.10/smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "/usr/local/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/local/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 824, in _handle_failure
+    task_instance.email_alert(error, failure_context["task"])
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 2946, in email_alert
+    _email_alert(task_instance=self, exception=exception, task=task)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 1002, in _email_alert
+    send_email(task.email, subject, html_content_err)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 80, in send_email
+    return backend(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 154, in send_email_smtp
+    send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 272, in send_mime_email
+    smtp_conn = _get_smtp_connection(smtp_host, smtp_port, smtp_timeout, smtp_ssl)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 316, in _get_smtp_connection
+    return smtplib.SMTP(host=host, port=port, timeout=timeout)
+  File "/usr/local/lib/python3.10/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/local/lib/python3.10/smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/usr/local/lib/python3.10/smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "/usr/local/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/local/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+[2025-06-17T17:12:19.361+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 9 for task extração_postgres (Docker container failed: {'StatusCode': 1}; 211)
+[2025-06-17T17:12:19.395+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-06-17T17:12:19.437+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

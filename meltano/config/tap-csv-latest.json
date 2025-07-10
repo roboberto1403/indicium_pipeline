@@ -1,0 +1,112 @@
+[
+  {
+    "entity": "order_details",
+    "path": "/opt/output_data/csv/order_details/2025-07-10/file.csv",
+    "keys": [
+      "order_id",
+      "product_id"
+    ],
+    "delimiter": ",",
+    "encoding": "utf-8"
+  },
+  {
+    "entity": "public-categories",
+    "path": "/opt/output_data/postgres/public-categories/2025-07-10/file.csv",
+    "keys": [
+      "category_id"
+    ],
+    "delimiter": ",",
+    "encoding": "utf-8"
+  },
+  {
+    "entity": "public-products",
+    "path": "/opt/output_data/postgres/public-products/2025-07-10/file.csv",
+    "keys": [
+      "product_id"
+    ],
+    "delimiter": ",",
+    "encoding": "utf-8"
+  },
+  {
+    "entity": "public-suppliers",
+    "path": "/opt/output_data/postgres/public-suppliers/2025-07-10/file.csv",
+    "keys": [
+      "supplier_id"
+    ],
+    "delimiter": ",",
+    "encoding": "utf-8"
+  },
+  {
+    "entity": "public-orders",
+    "path": "/opt/output_data/postgres/public-orders/2025-07-10/file.csv",
+    "keys": [
+      "order_id"
+    ],
+    "delimiter": ",",
+    "encoding": "utf-8"
+  },
+  {
+    "entity": "public-customers",
+    "path": "/opt/output_data/postgres/public-customers/2025-07-10/file.csv",
+    "keys": [
+      "customer_id"
+    ],
+    "delimiter": ",",
+    "encoding": "utf-8"
+  },
+  {
+    "entity": "public-employees",
+    "path": "/opt/output_data/postgres/public-employees/2025-07-10/file.csv",
+    "keys": [
+      "employee_id"
+    ],
+    "delimiter": ",",
+    "encoding": "utf-8"
+  },
+  {
+    "entity": "public-employee_territories",
+    "path": "/opt/output_data/postgres/public-employee_territories/2025-07-10/file.csv",
+    "keys": [
+      "employee_id",
+      "territory_id"
+    ],
+    "delimiter": ",",
+    "encoding": "utf-8"
+  },
+  {
+    "entity": "public-territories",
+    "path": "/opt/output_data/postgres/public-territories/2025-07-10/file.csv",
+    "keys": [
+      "territory_id"
+    ],
+    "delimiter": ",",
+    "encoding": "utf-8"
+  },
+  {
+    "entity": "public-region",
+    "path": "/opt/output_data/postgres/public-region/2025-07-10/file.csv",
+    "keys": [
+      "region_id"
+    ],
+    "delimiter": ",",
+    "encoding": "utf-8"
+  },
+  {
+    "entity": "public-shippers",
+    "path": "/opt/output_data/postgres/public-shippers/2025-07-10/file.csv",
+    "keys": [
+      "shipper_id"
+    ],
+    "delimiter": ",",
+    "encoding": "utf-8"
+  },
+  {
+    "entity": "public-us_states",
+    "path": "/opt/output_data/postgres/public-us_states/2025-07-10/file.csv",
+    "keys": [
+      "state_id"
+    ],
+    "delimiter": ",",
+    "encoding": "utf-8"
+  }
+]

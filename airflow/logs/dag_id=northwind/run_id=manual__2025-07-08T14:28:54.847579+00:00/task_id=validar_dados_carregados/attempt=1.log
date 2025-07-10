@@ -1,0 +1,45 @@
+[2025-07-08T14:30:25.100+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: northwind.validar_dados_carregados manual__2025-07-08T14:28:54.847579+00:00 [queued]>
+[2025-07-08T14:30:25.115+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: northwind.validar_dados_carregados manual__2025-07-08T14:28:54.847579+00:00 [queued]>
+[2025-07-08T14:30:25.116+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-07-08T14:30:25.142+0000] {taskinstance.py:2191} INFO - Executing <Task(PostgresOperator): validar_dados_carregados> on 2025-07-08 14:28:54.847579+00:00
+[2025-07-08T14:30:25.154+0000] {standard_task_runner.py:60} INFO - Started process 291 to run task
+[2025-07-08T14:30:25.159+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'northwind', 'validar_dados_carregados', 'manual__2025-07-08T14:28:54.847579+00:00', '--job-id', '63', '--raw', '--subdir', 'DAGS_FOLDER/northwind.py', '--cfg-path', '/tmp/tmpzoc1m9ui']
+[2025-07-08T14:30:25.161+0000] {standard_task_runner.py:88} INFO - Job 63: Subtask validar_dados_carregados
+[2025-07-08T14:30:25.228+0000] {task_command.py:423} INFO - Running <TaskInstance: northwind.validar_dados_carregados manual__2025-07-08T14:28:54.847579+00:00 [running]> on host eee4e987cd13
+[2025-07-08T14:30:25.350+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='lrbf@cin.ufpe.br' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='northwind' AIRFLOW_CTX_TASK_ID='validar_dados_carregados' AIRFLOW_CTX_EXECUTION_DATE='2025-07-08T14:28:54.847579+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-07-08T14:28:54.847579+00:00'
+[2025-07-08T14:30:25.351+0000] {sql.py:276} INFO - Executing: 
+            SELECT
+                o.order_id,
+                o.order_date,
+                o.customer_id,
+                od.product_id,
+                od.unit_price,
+                od.quantity,
+                od.discount
+            FROM
+                orders o
+            JOIN
+                order_details od ON o.order_id = od.order_id
+            LIMIT 20; -- Limitar a 20 linhas para não lotar os logs, se necessário
+        
+[2025-07-08T14:30:25.366+0000] {base.py:83} INFO - Using connection ID 'postgres_target_conn' for task execution.
+[2025-07-08T14:30:25.379+0000] {base.py:83} INFO - Using connection ID 'postgres_target_conn' for task execution.
+[2025-07-08T14:30:25.389+0000] {sql.py:450} INFO - Running statement: 
+            SELECT
+                o.order_id,
+                o.order_date,
+                o.customer_id,
+                od.product_id,
+                od.unit_price,
+                od.quantity,
+                od.discount
+            FROM
+                orders o
+            JOIN
+                order_details od ON o.order_id = od.order_id
+            LIMIT 20; -- Limitar a 20 linhas para não lotar os logs, se necessário
+        , parameters: None
+[2025-07-08T14:30:25.392+0000] {sql.py:459} INFO - Rows affected: 20
+[2025-07-08T14:30:25.450+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=northwind, task_id=validar_dados_carregados, execution_date=20250708T142854, start_date=20250708T143025, end_date=20250708T143025
+[2025-07-08T14:30:25.500+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-07-08T14:30:25.538+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,32 @@
+[2025-06-25T20:12:40.872+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: northwind.gerar_config_py manual__2025-06-25T20:12:05.237784+00:00 [queued]>
+[2025-06-25T20:12:40.884+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: northwind.gerar_config_py manual__2025-06-25T20:12:05.237784+00:00 [queued]>
+[2025-06-25T20:12:40.884+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-06-25T20:12:40.898+0000] {taskinstance.py:2191} INFO - Executing <Task(DockerOperator): gerar_config_py> on 2025-06-25 20:12:05.237784+00:00
+[2025-06-25T20:12:40.904+0000] {standard_task_runner.py:60} INFO - Started process 184 to run task
+[2025-06-25T20:12:40.908+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'northwind', 'gerar_config_py', 'manual__2025-06-25T20:12:05.237784+00:00', '--job-id', '132', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpatvozyvh']
+[2025-06-25T20:12:40.910+0000] {standard_task_runner.py:88} INFO - Job 132: Subtask gerar_config_py
+[2025-06-25T20:12:40.958+0000] {task_command.py:423} INFO - Running <TaskInstance: northwind.gerar_config_py manual__2025-06-25T20:12:05.237784+00:00 [running]> on host 6afc1f3750fb
+[2025-06-25T20:12:41.036+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='lrbf@cin.ufpe.br' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='northwind' AIRFLOW_CTX_TASK_ID='gerar_config_py' AIRFLOW_CTX_EXECUTION_DATE='2025-06-25T20:12:05.237784+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-25T20:12:05.237784+00:00'
+[2025-06-25T20:12:41.114+0000] {docker.py:359} INFO - Starting docker container from image meltano:latest
+[2025-06-25T20:12:41.386+0000] {docker.py:429} INFO - Running meltano install...
+[2025-06-25T20:12:42.582+0000] {docker.py:429} INFO - [2m2025-06-25T20:12:42.581331Z[0m [[32m[1minfo     [0m] [1mInstalling 7 plugins          [0m
+[2025-06-25T20:12:42.595+0000] {docker.py:429} INFO - [2m2025-06-25T20:12:42.594689Z[0m [[32m[1minfo     [0m] [1mInstalling extractor 'tap-postgres'[0m
+[2025-06-25T20:12:42.609+0000] {docker.py:429} INFO - [2m2025-06-25T20:12:42.608167Z[0m [[32m[1minfo     [0m] [1mInstalling extractor 'tap-csv'[0m
+[2025-06-25T20:12:42.621+0000] {docker.py:429} INFO - [2m2025-06-25T20:12:42.620780Z[0m [[32m[1minfo     [0m] [1mInstalling extractor 'tap-csv-latest'[0m
+[2025-06-25T20:12:42.647+0000] {docker.py:429} INFO - [2m2025-06-25T20:12:42.643274Z[0m [[32m[1minfo     [0m] [1mInstalling loader 'target-postgres'[0m
+[2025-06-25T20:12:42.668+0000] {docker.py:429} INFO - [2m2025-06-25T20:12:42.667877Z[0m [[32m[1minfo     [0m] [1mInstalling loader 'target-csv'[0m
+[2025-06-25T20:12:42.684+0000] {docker.py:429} INFO - [2m2025-06-25T20:12:42.683934Z[0m [[32m[1minfo     [0m] [1mInstalling loader 'target-csv-postgres'[0m
+[2025-06-25T20:12:42.709+0000] {docker.py:429} INFO - [2m2025-06-25T20:12:42.707588Z[0m [[32m[1minfo     [0m] [1mInstalling loader 'target-csv-csv'[0m
+[2025-06-25T20:12:43.934+0000] {docker.py:429} INFO - [2m2025-06-25T20:12:43.933542Z[0m [[32m[1minfo     [0m] [1mInstalled extractor 'tap-postgres'[0m
+[2025-06-25T20:12:43.973+0000] {docker.py:429} INFO - [2m2025-06-25T20:12:43.972498Z[0m [[32m[1minfo     [0m] [1mInstalled loader 'target-postgres'[0m
+[2025-06-25T20:12:47.886+0000] {docker.py:429} INFO - [2m2025-06-25T20:12:47.885773Z[0m [[32m[1minfo     [0m] [1mInstalled extractor 'tap-csv-latest'[0m
+[2025-06-25T20:12:48.025+0000] {docker.py:429} INFO - [2m2025-06-25T20:12:48.024610Z[0m [[32m[1minfo     [0m] [1mInstalled extractor 'tap-csv' [0m
+[2025-06-25T20:12:48.039+0000] {docker.py:429} INFO - [2m2025-06-25T20:12:48.038424Z[0m [[32m[1minfo     [0m] [1mInstalled loader 'target-csv' [0m
+[2025-06-25T20:12:48.563+0000] {docker.py:429} INFO - [2m2025-06-25T20:12:48.562515Z[0m [[32m[1minfo     [0m] [1mInstalled loader 'target-csv-csv'[0m
+[2025-06-25T20:12:48.609+0000] {docker.py:429} INFO - [2m2025-06-25T20:12:48.608425Z[0m [[32m[1minfo     [0m] [1mInstalled loader 'target-csv-postgres'[0m
+[2m2025-06-25T20:12:48.608714Z[0m [[32m[1minfo     [0m] [1mInstalled 7/7 plugins         [0m
+[2025-06-25T20:12:49.538+0000] {docker.py:429} INFO - Meltano install completed. Executing command: python3 scripts/generate_csv_config.py
+[2025-06-25T20:12:49.569+0000] {docker.py:429} INFO - ✔️ Configuração para tap-csv-latest gerada com sucesso em: /opt/meltano/config/tap-csv-latest.json
+[2025-06-25T20:12:49.790+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=northwind, task_id=gerar_config_py, execution_date=20250625T201205, start_date=20250625T201240, end_date=20250625T201249
+[2025-06-25T20:12:50.958+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-06-25T20:12:50.973+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

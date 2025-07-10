@@ -1,0 +1,674 @@
+[2025-07-01T20:05:37.252+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: northwind.carregamento_postgres manual__2025-07-01T19:59:27.292636+00:00 [queued]>
+[2025-07-01T20:05:37.260+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: northwind.carregamento_postgres manual__2025-07-01T19:59:27.292636+00:00 [queued]>
+[2025-07-01T20:05:37.260+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-07-01T20:05:37.271+0000] {taskinstance.py:2191} INFO - Executing <Task(DockerOperator): carregamento_postgres> on 2025-07-01 19:59:27.292636+00:00
+[2025-07-01T20:05:37.275+0000] {standard_task_runner.py:60} INFO - Started process 251 to run task
+[2025-07-01T20:05:37.279+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'northwind', 'carregamento_postgres', 'manual__2025-07-01T19:59:27.292636+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/northwind.py', '--cfg-path', '/tmp/tmp4h559uz5']
+[2025-07-01T20:05:37.281+0000] {standard_task_runner.py:88} INFO - Job 10: Subtask carregamento_postgres
+[2025-07-01T20:05:37.324+0000] {task_command.py:423} INFO - Running <TaskInstance: northwind.carregamento_postgres manual__2025-07-01T19:59:27.292636+00:00 [running]> on host 75ef599f9042
+[2025-07-01T20:05:37.384+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='lrbf@cin.ufpe.br' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='northwind' AIRFLOW_CTX_TASK_ID='carregamento_postgres' AIRFLOW_CTX_EXECUTION_DATE='2025-07-01T19:59:27.292636+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-07-01T19:59:27.292636+00:00'
+[2025-07-01T20:05:37.431+0000] {docker.py:359} INFO - Starting docker container from image meltano:latest
+[2025-07-01T20:05:37.699+0000] {docker.py:429} INFO - Running meltano install...
+[2025-07-01T20:05:38.891+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:38.891043Z[0m [[32m[1minfo     [0m] [1mInstalling 7 plugins          [0m
+[2025-07-01T20:05:38.902+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:38.901477Z[0m [[32m[1minfo     [0m] [1mInstalling extractor 'tap-postgres'[0m
+[2025-07-01T20:05:38.918+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:38.917467Z[0m [[32m[1minfo     [0m] [1mInstalling extractor 'tap-csv'[0m
+[2025-07-01T20:05:38.934+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:38.933519Z[0m [[32m[1minfo     [0m] [1mInstalling extractor 'tap-csv-latest'[0m
+[2025-07-01T20:05:38.953+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:38.952526Z[0m [[32m[1minfo     [0m] [1mInstalling loader 'target-postgres'[0m
+[2025-07-01T20:05:38.979+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:38.978316Z[0m [[32m[1minfo     [0m] [1mInstalling loader 'target-csv'[0m
+[2025-07-01T20:05:39.010+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:39.009593Z[0m [[32m[1minfo     [0m] [1mInstalling loader 'target-csv-postgres'[0m
+[2025-07-01T20:05:39.039+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:39.038347Z[0m [[32m[1minfo     [0m] [1mInstalling loader 'target-csv-csv'[0m
+[2025-07-01T20:05:39.938+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:39.937798Z[0m [[32m[1minfo     [0m] [1mInstalled extractor 'tap-postgres'[0m
+[2025-07-01T20:05:40.010+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:40.010292Z[0m [[32m[1minfo     [0m] [1mInstalled loader 'target-postgres'[0m
+[2025-07-01T20:05:45.556+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:45.555955Z[0m [[32m[1minfo     [0m] [1mInstalled extractor 'tap-csv-latest'[0m
+[2025-07-01T20:05:45.840+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:45.839750Z[0m [[32m[1minfo     [0m] [1mInstalled extractor 'tap-csv' [0m
+[2025-07-01T20:05:46.670+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:46.670195Z[0m [[32m[1minfo     [0m] [1mInstalled loader 'target-csv-postgres'[0m
+[2025-07-01T20:05:47.058+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:47.057528Z[0m [[32m[1minfo     [0m] [1mInstalled loader 'target-csv-csv'[0m
+[2025-07-01T20:05:47.493+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:47.492173Z[0m [[32m[1minfo     [0m] [1mInstalled loader 'target-csv' [0m
+[2m2025-07-01T20:05:47.492475Z[0m [[32m[1minfo     [0m] [1mInstalled 7/7 plugins         [0m
+[2025-07-01T20:05:48.434+0000] {docker.py:429} INFO - Meltano install completed. Executing command: bash -c echo '--- Conteúdo de meltano.yml ---' && cat /opt/meltano/meltano.yml && echo '--- Fim do meltano.yml Conteúdo ---' && echo '--- Conteúdo de tap-csv-latest.json ---' && cat /opt/meltano/config/tap-csv-latest.json && echo '--- Fim do tap-csv-latest.json Conteúdo ---' && meltano --log-level=debug el tap-csv-latest target-postgres
+[2025-07-01T20:05:48.450+0000] {docker.py:429} INFO - --- Conteúdo de meltano.yml ---
+[2025-07-01T20:05:48.453+0000] {docker.py:429} INFO - version: 1
+default_environment: dev
+project_id: 27934c9d-b36b-496d-97b1-46c3823b815c
+environments:
+- name: dev
+- name: staging
+- name: prod
+plugins:
+  extractors:
+  - name: tap-postgres
+    variant: meltanolabs
+    pip_url: meltanolabs-tap-postgres
+    config:
+      host: db_source # <--- NOME DO SERVIÇO DO SEU DB DE ORIGEM NO DOCKER COMPOSE
+      port: 5432
+      user: roboberto # <--- SEU USUÁRIO DE ORIGEM
+      password: beto12345 # <--- SUA SENHA DE ORIGEM
+      database: northwind # <--- SEU DB DE ORIGEM
+    select:
+    - public-us_states
+    - public-categories
+    - public-customer_demographics
+    - public-customers
+    - public-employee_territories
+    - public-employees
+    - public-orders
+    - public-products
+    - public-region
+    - public-shippers
+    - public-suppliers
+    - public-territories
+
+  - name: tap-csv
+    variant: meltanolabs
+    pip_url: git+https://github.com/MeltanoLabs/tap-csv.git
+    config:
+      files:
+      - entity: order_details
+        path: order_details.csv
+        keys: [order_id, product_id]
+        delimiter: ','
+        encoding: utf-8
+  - name: tap-csv-latest
+    namespace: tap-csv
+    variant: meltanolabs
+    pip_url: git+https://github.com/MeltanoLabs/tap-csv.git
+    executable: tap-csv
+    config:
+      # Use '_config' para apontar para o arquivo JSON gerado dinamicamente.
+      # O caminho deve ser o caminho ABSOLUTO dentro do contêiner Meltano.
+      _config: /opt/meltano/config/tap-csv-latest.json
+    # config:
+    #   csv_files_definition: "/opt/meltano/config/tap-csv-latest.json"
+
+  loaders:
+  - name: target-postgres
+    variant: meltanolabs
+    pip_url: meltanolabs-target-postgres
+    config:
+      host: db_target # <--- NOME DO SERVIÇO DO SEU DB DE DESTINO NO DOCKER COMPOSE
+      port: 5432
+      user: postgres # <--- SEU USUÁRIO DE DESTINO
+      password: B&t034685970 # <--- SUA SENHA DE DESTINO
+      database: northwind_final # <--- SEU DB DE DESTINO
+      default_target_schema: public
+      dialect+driver: postgresql+psycopg2
+
+  - name: target-csv
+    variant: singer-io
+    pip_url: git+https://github.com/singer-io/target-csv.git
+  - name: target-csv-postgres
+    namespace: target-csv-postgres
+    variant: local
+    pip_url: git+https://github.com/roboberto1403/target-csv-1
+    config:
+      destination_path: /opt/output_data/postgres
+      dialect: excel
+      schema: public
+
+    after_install:
+    - .meltano/loaders/target-csv-postgres/venv/bin/pip install setuptools
+  - name: target-csv-csv
+    namespace: target-csv-csv
+    variant: local
+    pip_url: git+https://github.com/roboberto1403/target-csv-2
+    config:
+      destination_path: /opt/output_data/csv
+      dialect: excel
+
+--- Fim do meltano.yml Conteúdo ---
+--- Conteúdo de tap-csv-latest.json ---
+[2025-07-01T20:05:48.454+0000] {docker.py:429} INFO - {
+  "files": [
+    {
+      "entity": "order_details",
+      "path": "/opt/output_data/csv/order_details/2025-07-01/file.csv",
+      "keys": [
+        "order_id",
+        "product_id"
+      ],
+      "delimiter": ",",
+      "encoding": "utf-8"
+    },
+    {
+      "entity": "public-categories",
+      "path": "/opt/output_data/postgres/public-categories/2025-07-01/file.csv",
+      "keys": [
+        "category_id"
+      ],
+      "delimiter": ",",
+      "encoding": "utf-8"
+    },
+    {
+      "entity": "public-products",
+      "path": "/opt/output_data/postgres/public-products/2025-07-01/file.csv",
+      "keys": [
+        "product_id"
+      ],
+      "delimiter": ",",
+      "encoding": "utf-8"
+    },
+    {
+      "entity": "public-suppliers",
+      "path": "/opt/output_data/postgres/public-suppliers/2025-07-01/file.csv",
+      "keys": [
+        "supplier_id"
+      ],
+      "delimiter": ",",
+      "encoding": "utf-8"
+    },
+    {
+      "entity": "public-orders",
+      "path": "/opt/output_data/postgres/public-orders/2025-07-01/file.csv",
+      "keys": [
+        "order_id"
+      ],
+      "delimiter": ",",
+      "encoding": "utf-8"
+    },
+    {
+      "entity": "public-customers",
+      "path": "/opt/output_data/postgres/public-customers/2025-07-01/file.csv",
+      "keys": [
+        "customer_id"
+      ],
+      "delimiter": ",",
+      "encoding": "utf-8"
+    },
+    {
+      "entity": "public-employees",
+      "path": "/opt/output_data/postgres/public-employees/2025-07-01/file.csv",
+      "keys": [
+        "employee_id"
+      ],
+      "delimiter": ",",
+      "encoding": "utf-8"
+    },
+    {
+      "entity": "public-employee_territories",
+      "path": "/opt/output_data/postgres/public-employee_territories/2025-07-01/file.csv",
+      "keys": [
+        "employee_id",
+        "territory_id"
+      ],
+      "delimiter": ",",
+      "encoding": "utf-8"
+    },
+    {
+      "entity": "public-territories",
+      "path": "/opt/output_data/postgres/public-territories/2025-07-01/file.csv",
+      "keys": [
+        "territory_id"
+      ],
+      "delimiter": ",",
+      "encoding": "utf-8"
+    },
+    {
+      "entity": "public-region",
+      "path": "/opt/output_data/postgres/public-region/2025-07-01/file.csv",
+      "keys": [
+        "region_id"
+      ],
+      "delimiter": ",",
+      "encoding": "utf-8"
+    },
+    {
+      "entity": "public-shippers",
+      "path": "/opt/output_data/postgres/public-shippers/2025-07-01/file.csv",
+      "keys": [
+        "shipper_id"
+      ],
+      "delimiter": ",",
+      "encoding": "utf-8"
+    },
+    {
+      "entity": "public-us_states",
+      "path": "/opt/output_data/postgres/public-us_states/2025-07-01/file.csv",
+      "keys": [
+        "state_id"
+      ],
+      "delimiter": ",",
+      "encoding": "utf-8"
+    }
+  ]
+}
+[2025-07-01T20:05:48.455+0000] {docker.py:429} INFO - --- Fim do tap-csv-latest.json Conteúdo ---
+[2025-07-01T20:05:49.686+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:49.686098Z[0m [[32m[1mdebug    [0m] [1mMeltano 3.7.9, Python 3.9.23, Linux (x86_64)[0m
+[2025-07-01T20:05:49.690+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:49.689601Z[0m [[32m[1mdebug    [0m] [1m/etc/timezone found, contents:
+ Etc/UTC
+[0m
+[2025-07-01T20:05:49.690+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:49.690000Z[0m [[32m[1mdebug    [0m] [1m/etc/localtime found          [0m
+[2025-07-01T20:05:49.691+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:49.690733Z[0m [[32m[1mdebug    [0m] [1m2 found:
+ {'/etc/timezone': 'Etc/UTC', '/etc/localtime is a symlink to': 'Etc/UTC'}[0m
+[2025-07-01T20:05:49.694+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:49.694012Z[0m [[32m[1minfo     [0m] [1mEnvironment 'dev' is active   [0m
+[2025-07-01T20:05:49.718+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:49.717650Z[0m [[32m[1mdebug    [0m] [1mCreating DB engine for project at '/opt/meltano' with DB URI 'sqlite:////opt/meltano/.meltano/meltano.db'[0m
+[2025-07-01T20:05:49.935+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:49.934006Z[0m [[32m[1mdebug    [0m] [1mFound plugin parent           [0m [36mparent[0m=[35mtarget-postgres[0m [36mplugin[0m=[35mtarget-postgres[0m [36msource[0m=[35mLOCKFILE[0m
+[2025-07-01T20:05:49.990+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:49.990138Z[0m [[32m[1mdebug    [0m] [1mVariable '$TARGET_POSTGRES_SCHEMA' is not set in the provided env dictionary.[0m
+[2025-07-01T20:05:50.023+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:50.022226Z[0m [[32m[1mdebug    [0m] [1mSkipped installing extractor 'tap-csv-latest'[0m
+[2025-07-01T20:05:50.085+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:50.085142Z[0m [[32m[1mdebug    [0m] [1mVariable '$TARGET_POSTGRES_SCHEMA' is not set in the provided env dictionary.[0m
+[2025-07-01T20:05:50.135+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:50.134470Z[0m [[32m[1mdebug    [0m] [1mVariable '$TARGET_POSTGRES_SCHEMA' is not set in the provided env dictionary.[0m
+[2025-07-01T20:05:50.137+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:50.136839Z[0m [[32m[1mdebug    [0m] [1mSkipped installing loader 'target-postgres'[0m
+[2025-07-01T20:05:50.137+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:50.137150Z[0m [[32m[1mdebug    [0m] [1mInstalled 0/2 plugins         [0m
+[2m2025-07-01T20:05:50.137266Z[0m [[32m[1mdebug    [0m] [1mSkipped installing 2/2 plugins[0m
+[2025-07-01T20:05:50.139+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:50.139218Z[0m [[32m[1minfo     [0m] [1mRunning extract & load...     [0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m2dd3b5cf-f616-4897-ad8d-af94093cfb76[0m [36mstate_id[0m=[35m2025-07-01T200549--tap-csv-latest--target-postgres[0m
+[2025-07-01T20:05:50.162+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:50.162064Z[0m [[32m[1mdebug    [0m] [1mCreated configuration at /opt/meltano/.meltano/run/elt/2025-07-01T200549--tap-csv-latest--target-postgres/2dd3b5cf-f616-4897-ad8d-af94093cfb76/tap.bfd04c0f-028c-49cc-af01-ed53128bac78.config.json[0m
+[2025-07-01T20:05:50.163+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:50.163036Z[0m [[32m[1mdebug    [0m] [1mCould not find tap.properties.json in /opt/meltano/.meltano/extractors/tap-csv-latest/tap.properties.json, skipping.[0m
+[2025-07-01T20:05:50.163+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:50.163516Z[0m [[32m[1mdebug    [0m] [1mCould not find tap.properties.cache_key in /opt/meltano/.meltano/extractors/tap-csv-latest/tap.properties.cache_key, skipping.[0m
+[2025-07-01T20:05:50.164+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:50.163856Z[0m [[32m[1mdebug    [0m] [1mCould not find state.json in /opt/meltano/.meltano/extractors/tap-csv-latest/state.json, skipping.[0m
+[2025-07-01T20:05:50.164+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:50.164174Z[0m [[32m[1mdebug    [0m] [1mCould not find tap.singer_sdk_logging.json in /opt/meltano/.meltano/extractors/tap-csv-latest/tap.singer_sdk_logging.json, skipping.[0m
+[2025-07-01T20:05:50.164+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:50.164485Z[0m [[32m[1mdebug    [0m] [1mCould not find tap.pipelinewise_logging.conf in /opt/meltano/.meltano/extractors/tap-csv-latest/tap.pipelinewise_logging.conf, skipping.[0m
+[2025-07-01T20:05:50.222+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:50.221641Z[0m [[32m[1mdebug    [0m] [1mVariable '$TARGET_POSTGRES_SCHEMA' is not set in the provided env dictionary.[0m
+[2025-07-01T20:05:50.269+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:50.269149Z[0m [[32m[1mdebug    [0m] [1mVariable '$TARGET_POSTGRES_SCHEMA' is not set in the provided env dictionary.[0m
+[2025-07-01T20:05:50.272+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:50.272135Z[0m [[32m[1mdebug    [0m] [1mCreated configuration at /opt/meltano/.meltano/run/elt/2025-07-01T200549--tap-csv-latest--target-postgres/2dd3b5cf-f616-4897-ad8d-af94093cfb76/target.9a2192bc-f562-4bcd-91b4-33c2d4936207.config.json[0m
+[2025-07-01T20:05:50.274+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:50.274047Z[0m [[32m[1mdebug    [0m] [1mCould not find target.singer_sdk_logging.json in /opt/meltano/.meltano/loaders/target-postgres/target.singer_sdk_logging.json, skipping.[0m
+[2025-07-01T20:05:50.275+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:50.274472Z[0m [[32m[1mdebug    [0m] [1mCould not find target.pipelinewise_logging.conf in /opt/meltano/.meltano/loaders/target-postgres/target.pipelinewise_logging.conf, skipping.[0m
+[2025-07-01T20:05:50.279+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:50.279184Z[0m [[32m[1mdebug    [0m] [1mInvoking: ['/opt/meltano/.meltano/extractors/tap-csv-latest/venv/bin/tap-csv', '--config', '/opt/meltano/.meltano/run/elt/2025-07-01T200549--tap-csv-latest--target-postgres/2dd3b5cf-f616-4897-ad8d-af94093cfb76/tap.bfd04c0f-028c-49cc-af01-ed53128bac78.config.json'][0m
+[2025-07-01T20:05:50.295+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:50.294216Z[0m [[32m[1mdebug    [0m] [1mInvoking: ['/opt/meltano/.meltano/loaders/target-postgres/venv/bin/target-postgres', '--config', '/opt/meltano/.meltano/run/elt/2025-07-01T200549--tap-csv-latest--target-postgres/2dd3b5cf-f616-4897-ad8d-af94093cfb76/target.9a2192bc-f562-4bcd-91b4-33c2d4936207.config.json'][0m
+[2025-07-01T20:05:51.098+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:51.097874Z[0m [[32m[1minfo     [0m] [1mNo CSV file definitions found.[0m [36mcmd_type[0m=[35mextractor[0m [36mname[0m=[35mtap-csv-latest[0m [36mrun_id[0m=[35m2dd3b5cf-f616-4897-ad8d-af94093cfb76[0m [36mstate_id[0m=[35m2025-07-01T200549--tap-csv-latest--target-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2025-07-01T20:05:51.306+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:51.306091Z[0m [[32m[1minfo     [0m] [1mtarget-postgres v0.4.3, Meltano SDK v0.47.4[0m [36mcmd_type[0m=[35mloader[0m [36mname[0m=[35mtarget-postgres[0m [36mrun_id[0m=[35m2dd3b5cf-f616-4897-ad8d-af94093cfb76[0m [36mstate_id[0m=[35m2025-07-01T200549--tap-csv-latest--target-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2025-07-01T20:05:51.308+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:51.307996Z[0m [[32m[1minfo     [0m] [1m/opt/meltano/.meltano/loaders/target-postgres/venv/lib/python3.9/site-packages/singer_sdk/plugin_base.py:715: SingerSDKDeprecationWarning: Passing a list of config file paths is deprecated. Please pass the config as a dictionary instead.[0m [36mcmd_type[0m=[35mloader[0m [36mname[0m=[35mtarget-postgres[0m [36mrun_id[0m=[35m2dd3b5cf-f616-4897-ad8d-af94093cfb76[0m [36mstate_id[0m=[35m2025-07-01T200549--tap-csv-latest--target-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2025-07-01T20:05:51.308+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:51.308301Z[0m [[32m[1minfo     [0m] [1m  super().__init__(           [0m [36mcmd_type[0m=[35mloader[0m [36mname[0m=[35mtarget-postgres[0m [36mrun_id[0m=[35m2dd3b5cf-f616-4897-ad8d-af94093cfb76[0m [36mstate_id[0m=[35m2025-07-01T200549--tap-csv-latest--target-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2025-07-01T20:05:51.309+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:51.308511Z[0m [[32m[1minfo     [0m] [1m                              [0m [36mcmd_type[0m=[35mloader[0m [36mname[0m=[35mtarget-postgres[0m [36mrun_id[0m=[35m2dd3b5cf-f616-4897-ad8d-af94093cfb76[0m [36mstate_id[0m=[35m2025-07-01T200549--tap-csv-latest--target-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2025-07-01T20:05:51.309+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:51.308710Z[0m [[32m[1minfo     [0m] [1mSkipping parse of env var settings...[0m [36mcmd_type[0m=[35mloader[0m [36mname[0m=[35mtarget-postgres[0m [36mrun_id[0m=[35m2dd3b5cf-f616-4897-ad8d-af94093cfb76[0m [36mstate_id[0m=[35m2025-07-01T200549--tap-csv-latest--target-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2025-07-01T20:05:51.309+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:51.308990Z[0m [[32m[1minfo     [0m] [1mThe `dialect+driver` configuration option is deprecated. Please set it to `postgresql+psycopg`, as this will be the hard-coded value in the future.[0m [36mcmd_type[0m=[35mloader[0m [36mname[0m=[35mtarget-postgres[0m [36mrun_id[0m=[35m2dd3b5cf-f616-4897-ad8d-af94093cfb76[0m [36mstate_id[0m=[35m2025-07-01T200549--tap-csv-latest--target-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2025-07-01T20:05:51.309+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:51.309196Z[0m [[32m[1minfo     [0m] [1mReader 'target-postgres' completed processing 0 lines of input (0 schemas, 0 records, 0 batch manifests, 0 state messages, 0 activate version messages).[0m [36mcmd_type[0m=[35mloader[0m [36mname[0m=[35mtarget-postgres[0m [36mrun_id[0m=[35m2dd3b5cf-f616-4897-ad8d-af94093cfb76[0m [36mstate_id[0m=[35m2025-07-01T200549--tap-csv-latest--target-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2025-07-01T20:05:51.388+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:51.387944Z[0m [[32m[1mdebug    [0m] [1mDeleted configuration at /opt/meltano/.meltano/run/elt/2025-07-01T200549--tap-csv-latest--target-postgres/2dd3b5cf-f616-4897-ad8d-af94093cfb76/target.9a2192bc-f562-4bcd-91b4-33c2d4936207.config.json[0m
+[2m2025-07-01T20:05:51.388323Z[0m [[32m[1mdebug    [0m] [1mDeleted configuration at /opt/meltano/.meltano/run/elt/2025-07-01T200549--tap-csv-latest--target-postgres/2dd3b5cf-f616-4897-ad8d-af94093cfb76/tap.bfd04c0f-028c-49cc-af01-ed53128bac78.config.json[0m
+[2025-07-01T20:05:51.389+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:51.388520Z[0m [[31m[1merror    [0m] [1mExtraction failed             [0m [36mcode[0m=[35m1[0m [36mmessage[0m=[35m'No CSV file definitions found.'[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m2dd3b5cf-f616-4897-ad8d-af94093cfb76[0m [36mstate_id[0m=[35m2025-07-01T200549--tap-csv-latest--target-postgres[0m
+[2025-07-01T20:05:51.587+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:51.388791Z[0m [[32m[1mdebug    [0m] [1mELT could not be completed: Extractor failed.
+For more detailed log messages re-run the command using 'meltano --log-level=debug ...' CLI flag.
+Note that you can also check the generated log file at '/opt/meltano/.meltano/logs/elt/2025-07-01T200549--tap-csv-latest--target-postgres/2dd3b5cf-f616-4897-ad8d-af94093cfb76/elt.log'.
+For more information on debugging and logging: https://docs.meltano.com/reference/command-line-interface#debugging[0m
+[31m╭─[0m[31m────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────[0m[31m─╮[0m
+[31m│[0m [2m/venv/lib/python3.9/site-packages/meltano/cli/[0m[1melt.py[0m:508 in _run_elt         [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m   [2m505 [0m[2m│   │   │   [0m[94mif[0m elt_context.only_transform:                             [31m│[0m
+[31m│[0m   [2m506 [0m[2m│   │   │   │   [0mlog.info([33m"[0m[33mExtract & load skipped.[0m[33m"[0m)                    [31m│[0m
+[31m│[0m   [2m507 [0m[2m│   │   │   [0m[94melse[0m:                                                      [31m│[0m
+[31m│[0m [31m❱ [0m508 [2m│   │   │   │   [0m[94mawait[0m _run_extract_load(log, elt_context, output_logge [31m│[0m
+[31m│[0m   [2m509 [0m[2m│   │   │   [0m                                                           [31m│[0m
+[31m│[0m   [2m510 [0m[2m│   │   │   [0m[94mif[0m elt_context.transformer:                                [31m│[0m
+[31m│[0m   [2m511 [0m[2m│   │   │   │   [0mlog.warning(                                           [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m [2m/venv/lib/python3.9/site-packages/meltano/cli/[0m[1melt.py[0m:581 in                  [31m│[0m
+[31m│[0m _run_extract_load                                                            [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m   [2m578 [0m[2m│   │   │   [0m[94mwith[0m loader_log.line_writer() [94mas[0m loader_log_writer:        [31m│[0m
+[31m│[0m   [2m579 [0m[2m│   │   │   │   [0m[94mwith[0m extractor_out_writer_ctxmgr() [94mas[0m extractor_out_wr [31m│[0m
+[31m│[0m   [2m580 [0m[2m│   │   │   │   │   [0m[94mwith[0m loader_out_writer_ctxmgr() [94mas[0m loader_out_writ [31m│[0m
+[31m│[0m [31m❱ [0m581 [2m│   │   │   │   │   │   [0m[94mawait[0m singer_runner.run(                       [31m│[0m
+[31m│[0m   [2m582 [0m[2m│   │   │   │   │   │   │   [0m**kwargs,                                  [31m│[0m
+[31m│[0m   [2m583 [0m[2m│   │   │   │   │   │   │   [0mextractor_log=extractor_log_writer,        [31m│[0m
+[31m│[0m   [2m584 [0m[2m│   │   │   │   │   │   │   [0mloader_log=loader_log_writer,              [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m [2m/venv/lib/python3.9/site-packages/meltano/core/runner/[0m[1msinger.py[0m:229 in run   [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m   [2m226 [0m[2m│   │   │   [0mtap.prepared([96mself[0m.context.session),                        [31m│[0m
+[31m│[0m   [2m227 [0m[2m│   │   │   [0mtarget.prepared([96mself[0m.context.session),                     [31m│[0m
+[31m│[0m   [2m228 [0m[2m│   │   [0m):                                                             [31m│[0m
+[31m│[0m [31m❱ [0m229 [2m│   │   │   [0m[94mawait[0m [96mself[0m.invoke(  [2m# noqa: RET503[0m                         [31m│[0m
+[31m│[0m   [2m230 [0m[2m│   │   │   │   [0mtap,                                                   [31m│[0m
+[31m│[0m   [2m231 [0m[2m│   │   │   │   [0mtarget,                                                [31m│[0m
+[31m│[0m   [2m232 [0m[2m│   │   │   │   [0mextractor_log=extractor_log,                           [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m [2m/venv/lib/python3.9/site-packages/meltano/core/runner/[0m[1msinger.py[0m:203 in       [31m│[0m
+[31m│[0m invoke                                                                       [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m   [2m200 [0m[2m│   │   │   │   [0m{PluginType.EXTRACTORS: tap_code, PluginType.LOADERS:  [31m│[0m
+[31m│[0m   [2m201 [0m[2m│   │   │   [0m)                                                          [31m│[0m
+[31m│[0m   [2m202 [0m[2m│   │   [0m[94mif[0m tap_code:                                                   [31m│[0m
+[31m│[0m [31m❱ [0m203 [2m│   │   │   [0m[94mraise[0m RunnerError([33m"[0m[33mExtractor failed[0m[33m"[0m, {PluginType.EXTRACTO [31m│[0m
+[31m│[0m   [2m204 [0m[2m│   │   [0m[94mif[0m target_code:                                                [31m│[0m
+[31m│[0m   [2m205 [0m[2m│   │   │   [0m[94mraise[0m RunnerError([33m"[0m[33mLoader failed[0m[33m"[0m, {PluginType.LOADERS: ta [31m│[0m
+[31m│[0m   [2m206 [0m                                                                       [31m│[0m
+[31m╰──────────────────────────────────────────────────────────────────────────────╯[0m
+[1;91mRunnerError: [0mExtractor failed
+
+[3mThe above exception was the direct cause of the following exception:[0m
+
+[31m╭─[0m[31m────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────[0m[31m─╮[0m
+[31m│[0m [2m/venv/lib/python3.9/site-packages/meltano/cli/[0m[1melt.py[0m:475 in _redirect_output [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m   [2m472 [0m[2m│   [0m[94mwith[0m meltano_stdout.redirect_logging(ignore_errors=(CliError,)):   [31m│[0m
+[31m│[0m   [2m473 [0m[2m│   │   [0m[94masync[0m [94mwith[0m meltano_stdout.redirect_stdout(), meltano_stderr.re [31m│[0m
+[31m│[0m   [2m474 [0m[2m│   │   │   [0m[94mtry[0m:                                                       [31m│[0m
+[31m│[0m [31m❱ [0m475 [2m│   │   │   │   [0m[94myield[0m                                                  [31m│[0m
+[31m│[0m   [2m476 [0m[2m│   │   │   [0m[94mexcept[0m CliError [94mas[0m err:                                    [31m│[0m
+[31m│[0m   [2m477 [0m[2m│   │   │   │   [0merr.print()                                            [31m│[0m
+[31m│[0m   [2m478 [0m[2m│   │   │   │   [0m[94mraise[0m                                                  [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m [2m/venv/lib/python3.9/site-packages/meltano/cli/[0m[1melt.py[0m:519 in _run_elt         [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m   [2m516 [0m[2m│   │   │   [0m[94melse[0m:                                                      [31m│[0m
+[31m│[0m   [2m517 [0m[2m│   │   │   │   [0mlog.info([33m"[0m[33mTransformation skipped.[0m[33m"[0m)                    [31m│[0m
+[31m│[0m   [2m518 [0m[2m│   │   [0m[94mexcept[0m RunnerError [94mas[0m err:                                     [31m│[0m
+[31m│[0m [31m❱ [0m519 [2m│   │   │   [0m[94mraise[0m CliError(                                            [31m│[0m
+[31m│[0m   [2m520 [0m[2m│   │   │   │   [0m[33mf[0m[33m"[0m[33mELT could not be completed: [0m[33m{[0merr[33m}[0m[33m.[0m[33m\n[0m[33mFor more detaile[0m [31m│[0m
+[31m│[0m   [2m521 [0m[2m│   │   │   │   [0m[33m"[0m[33mmessages re-run the command using [0m[33m'[0m[33mmeltano [0m[33m"[0m          [31m│[0m
+[31m│[0m   [2m522 [0m[2m│   │   │   │   [0m[33m"[0m[33m--log-level=debug ...[0m[33m'[0m[33m CLI flag.[0m[33m\n[0m[33mNote that you can a[0m [31m│[0m
+[31m╰──────────────────────────────────────────────────────────────────────────────╯[0m
+[1;91mCliError: [0mELT could not be completed: Extractor failed.
+For more detailed log messages re-run the command using [32m'meltano [0m
+[32m--log-[0m[32mlevel[0m[32m=[0m[32mdebug[0m[32m ...'[0m CLI flag.
+Note that you can also check the generated log file at 
+[32m'/opt/meltano/.meltano/logs/elt/2025-07-01T200549--tap-csv-latest--target-postgr[0m
+[32mes/2dd3b5cf-f616-4897-ad8d-af94093cfb76/elt.log'[0m.
+For more information on debugging and logging: 
+[4;94mhttps://docs.meltano.com/reference/command-line-interface#debugging[0m
+[2025-07-01T20:05:51.588+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:51.587805Z[0m [[32m[1minfo     [0m] [1mELT could not be completed: Extractor failed.[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m2dd3b5cf-f616-4897-ad8d-af94093cfb76[0m [36mstate_id[0m=[35m2025-07-01T200549--tap-csv-latest--target-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2025-07-01T20:05:51.588+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:51.588034Z[0m [[32m[1minfo     [0m] [1mFor more detailed log messages re-run the command using 'meltano --log-level=debug ...' CLI flag.[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m2dd3b5cf-f616-4897-ad8d-af94093cfb76[0m [36mstate_id[0m=[35m2025-07-01T200549--tap-csv-latest--target-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2025-07-01T20:05:51.588+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:51.588186Z[0m [[32m[1minfo     [0m] [1mNote that you can also check the generated log file at '/opt/meltano/.meltano/logs/elt/2025-07-01T200549--tap-csv-latest--target-postgres/2dd3b5cf-f616-4897-ad8d-af94093cfb76/elt.log'.[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m2dd3b5cf-f616-4897-ad8d-af94093cfb76[0m [36mstate_id[0m=[35m2025-07-01T200549--tap-csv-latest--target-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2025-07-01T20:05:51.588+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:51.588350Z[0m [[32m[1minfo     [0m] [1mFor more information on debugging and logging: https://docs.meltano.com/reference/command-line-interface#debugging[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m2dd3b5cf-f616-4897-ad8d-af94093cfb76[0m [36mstate_id[0m=[35m2025-07-01T200549--tap-csv-latest--target-postgres[0m [36mstdio[0m=[35mstderr[0m
+[2025-07-01T20:05:52.702+0000] {docker.py:429} INFO - [2m2025-07-01T20:05:51.597660Z[0m [[32m[1mdebug    [0m] [1mNeed help fixing this problem? Visit http://melta.no/ for troubleshooting steps, or to
+join our friendly Slack community.
+
+ELT could not be completed: Extractor failed.
+For more detailed log messages re-run the command using 'meltano --log-level=debug ...' CLI flag.
+Note that you can also check the generated log file at '/opt/meltano/.meltano/logs/elt/2025-07-01T200549--tap-csv-latest--target-postgres/2dd3b5cf-f616-4897-ad8d-af94093cfb76/elt.log'.
+For more information on debugging and logging: https://docs.meltano.com/reference/command-line-interface#debugging[0m
+[31m╭─[0m[31m────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────[0m[31m─╮[0m
+[31m│[0m [2m/venv/lib/python3.9/site-packages/meltano/cli/[0m[1melt.py[0m:508 in _run_elt         [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m   [2m505 [0m[2m│   │   │   [0m[94mif[0m elt_context.only_transform:                             [31m│[0m
+[31m│[0m   [2m506 [0m[2m│   │   │   │   [0mlog.info([33m"[0m[33mExtract & load skipped.[0m[33m"[0m)                    [31m│[0m
+[31m│[0m   [2m507 [0m[2m│   │   │   [0m[94melse[0m:                                                      [31m│[0m
+[31m│[0m [31m❱ [0m508 [2m│   │   │   │   [0m[94mawait[0m _run_extract_load(log, elt_context, output_logge [31m│[0m
+[31m│[0m   [2m509 [0m[2m│   │   │   [0m                                                           [31m│[0m
+[31m│[0m   [2m510 [0m[2m│   │   │   [0m[94mif[0m elt_context.transformer:                                [31m│[0m
+[31m│[0m   [2m511 [0m[2m│   │   │   │   [0mlog.warning(                                           [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m [2m/venv/lib/python3.9/site-packages/meltano/cli/[0m[1melt.py[0m:581 in                  [31m│[0m
+[31m│[0m _run_extract_load                                                            [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m   [2m578 [0m[2m│   │   │   [0m[94mwith[0m loader_log.line_writer() [94mas[0m loader_log_writer:        [31m│[0m
+[31m│[0m   [2m579 [0m[2m│   │   │   │   [0m[94mwith[0m extractor_out_writer_ctxmgr() [94mas[0m extractor_out_wr [31m│[0m
+[31m│[0m   [2m580 [0m[2m│   │   │   │   │   [0m[94mwith[0m loader_out_writer_ctxmgr() [94mas[0m loader_out_writ [31m│[0m
+[31m│[0m [31m❱ [0m581 [2m│   │   │   │   │   │   [0m[94mawait[0m singer_runner.run(                       [31m│[0m
+[31m│[0m   [2m582 [0m[2m│   │   │   │   │   │   │   [0m**kwargs,                                  [31m│[0m
+[31m│[0m   [2m583 [0m[2m│   │   │   │   │   │   │   [0mextractor_log=extractor_log_writer,        [31m│[0m
+[31m│[0m   [2m584 [0m[2m│   │   │   │   │   │   │   [0mloader_log=loader_log_writer,              [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m [2m/venv/lib/python3.9/site-packages/meltano/core/runner/[0m[1msinger.py[0m:229 in run   [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m   [2m226 [0m[2m│   │   │   [0mtap.prepared([96mself[0m.context.session),                        [31m│[0m
+[31m│[0m   [2m227 [0m[2m│   │   │   [0mtarget.prepared([96mself[0m.context.session),                     [31m│[0m
+[31m│[0m   [2m228 [0m[2m│   │   [0m):                                                             [31m│[0m
+[31m│[0m [31m❱ [0m229 [2m│   │   │   [0m[94mawait[0m [96mself[0m.invoke(  [2m# noqa: RET503[0m                         [31m│[0m
+[31m│[0m   [2m230 [0m[2m│   │   │   │   [0mtap,                                                   [31m│[0m
+[31m│[0m   [2m231 [0m[2m│   │   │   │   [0mtarget,                                                [31m│[0m
+[31m│[0m   [2m232 [0m[2m│   │   │   │   [0mextractor_log=extractor_log,                           [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m [2m/venv/lib/python3.9/site-packages/meltano/core/runner/[0m[1msinger.py[0m:203 in       [31m│[0m
+[31m│[0m invoke                                                                       [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m   [2m200 [0m[2m│   │   │   │   [0m{PluginType.EXTRACTORS: tap_code, PluginType.LOADERS:  [31m│[0m
+[31m│[0m   [2m201 [0m[2m│   │   │   [0m)                                                          [31m│[0m
+[31m│[0m   [2m202 [0m[2m│   │   [0m[94mif[0m tap_code:                                                   [31m│[0m
+[31m│[0m [31m❱ [0m203 [2m│   │   │   [0m[94mraise[0m RunnerError([33m"[0m[33mExtractor failed[0m[33m"[0m, {PluginType.EXTRACTO [31m│[0m
+[31m│[0m   [2m204 [0m[2m│   │   [0m[94mif[0m target_code:                                                [31m│[0m
+[31m│[0m   [2m205 [0m[2m│   │   │   [0m[94mraise[0m RunnerError([33m"[0m[33mLoader failed[0m[33m"[0m, {PluginType.LOADERS: ta [31m│[0m
+[31m│[0m   [2m206 [0m                                                                       [31m│[0m
+[31m╰──────────────────────────────────────────────────────────────────────────────╯[0m
+[1;91mRunnerError: [0mExtractor failed
+
+[3mThe above exception was the direct cause of the following exception:[0m
+
+[31m╭─[0m[31m────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────[0m[31m─╮[0m
+[31m│[0m [2m/venv/lib/python3.9/site-packages/meltano/cli/[0m[1m__init__.py[0m:104 in _run_cli    [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m   [2m101 [0m[2;33m│   [0m[33m"""[0m                                                                [31m│[0m
+[31m│[0m   [2m102 [0m[2m│   [0m[94mtry[0m:                                                               [31m│[0m
+[31m│[0m   [2m103 [0m[2m│   │   [0m[94mtry[0m:                                                           [31m│[0m
+[31m│[0m [31m❱ [0m104 [2m│   │   │   [0mcli(obj={[33m"[0m[33mproject[0m[33m"[0m: [94mNone[0m})                                 [31m│[0m
+[31m│[0m   [2m105 [0m[2m│   │   [0m[94mexcept[0m ProjectReadonly [94mas[0m err:                                 [31m│[0m
+[31m│[0m   [2m106 [0m[2m│   │   │   [0m[94mraise[0m CliError(                                            [31m│[0m
+[31m│[0m   [2m107 [0m[2m│   │   │   │   [0m[33mf[0m[33m"[0m[33mThe requested action could not be completed: [0m[33m{[0merr[33m}[0m[33m"[0m, [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m [2m/venv/lib/python3.9/site-packages/click/[0m[1mcore.py[0m:1161 in __call__             [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m   [2m1158 [0m[2m│   [0m                                                                  [31m│[0m
+[31m│[0m   [2m1159 [0m[2m│   [0m[94mdef[0m[90m [0m[92m__call__[0m([96mself[0m, *args: t.Any, **kwargs: t.Any) -> t.Any:       [31m│[0m
+[31m│[0m   [2m1160 [0m[2;90m│   │   [0m[33m"""Alias for :meth:`main`."""[0m                                 [31m│[0m
+[31m│[0m [31m❱ [0m1161 [2m│   │   [0m[94mreturn[0m [96mself[0m.main(*args, **kwargs)                             [31m│[0m
+[31m│[0m   [2m1162 [0m                                                                      [31m│[0m
+[31m│[0m   [2m1163 [0m                                                                      [31m│[0m
+[31m│[0m   [2m1164 [0m[94mclass[0m[90m [0m[4;92mCommand[0m(BaseCommand):                                           [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m [2m/venv/lib/python3.9/site-packages/meltano/cli/[0m[1mcli.py[0m:46 in main              [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m   [2m 43 [0m[2;33m│   │   │   [0m[33margs: Positional arguments for the Click group.[0m            [31m│[0m
+[31m│[0m   [2m 44 [0m[2;33m│   │   │   [0m[33mkwargs: Keyword arguments for the Click group.[0m             [31m│[0m
+[31m│[0m   [2m 45 [0m[2;33m│   │   [0m[33m"""[0m                                                            [31m│[0m
+[31m│[0m [31m❱ [0m 46 [2m│   │   [0m[94mreturn[0m [96msuper[0m().main(*args, windows_expand_args=[94mFalse[0m, **kwargs [31m│[0m
+[31m│[0m   [2m 47 [0m                                                                       [31m│[0m
+[31m│[0m   [2m 48 [0m                                                                       [31m│[0m
+[31m│[0m   [2m 49 [0m[1;95m@click[0m.group(                                                          [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m [2m/venv/lib/python3.9/site-packages/click/[0m[1mcore.py[0m:1082 in main                 [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m   [2m1079 [0m[2m│   │   [0m[94mtry[0m:                                                          [31m│[0m
+[31m│[0m   [2m1080 [0m[2m│   │   │   [0m[94mtry[0m:                                                      [31m│[0m
+[31m│[0m   [2m1081 [0m[2m│   │   │   │   [0m[94mwith[0m [96mself[0m.make_context(prog_name, args, **extra) [94mas[0m c [31m│[0m
+[31m│[0m [31m❱ [0m1082 [2m│   │   │   │   │   [0mrv = [96mself[0m.invoke(ctx)                             [31m│[0m
+[31m│[0m   [2m1083 [0m[2m│   │   │   │   │   [0m[94mif[0m [95mnot[0m standalone_mode:                           [31m│[0m
+[31m│[0m   [2m1084 [0m[2m│   │   │   │   │   │   [0m[94mreturn[0m rv                                     [31m│[0m
+[31m│[0m   [2m1085 [0m[2m│   │   │   │   │   [0m[2m# it's not safe to `ctx.exit(rv)` here![0m           [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m [2m/venv/lib/python3.9/site-packages/meltano/cli/[0m[1mutils.py[0m:582 in invoke         [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m   [2m579 [0m[2m│   │   │   [0mctx.obj[[33m"[0m[33mtracker[0m[33m"[0m].add_contexts(CliContext.from_click_cont [31m│[0m
+[31m│[0m   [2m580 [0m[2m│   │   [0m[2m# Typing these mixin hierarchies is a bit messy, so we'll just[0m [31m│[0m
+[31m│[0m   [2m581 [0m[2m│   │   [0m[2m# https://mypy.readthedocs.io/en/latest/more_types.html#mixin-[0m [31m│[0m
+[31m│[0m [31m❱ [0m582 [2m│   │   [0m[96msuper[0m().invoke(ctx)  [2m# type: ignore[misc][0m                      [31m│[0m
+[31m│[0m   [2m583 [0m                                                                       [31m│[0m
+[31m│[0m   [2m584 [0m                                                                       [31m│[0m
+[31m│[0m   [2m585 [0m[94mclass[0m[90m [0m[4;92mInstrumentedDefaultGroup[0m(InstrumentedGroupMixin, DefaultGroup, D [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m [2m/venv/lib/python3.9/site-packages/click/[0m[1mcore.py[0m:1697 in invoke               [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m   [2m1694 [0m[2m│   │   │   │   [0m[96msuper[0m().invoke(ctx)                                   [31m│[0m
+[31m│[0m   [2m1695 [0m[2m│   │   │   │   [0msub_ctx = cmd.make_context(cmd_name, args, parent=ctx [31m│[0m
+[31m│[0m   [2m1696 [0m[2m│   │   │   │   [0m[94mwith[0m sub_ctx:                                         [31m│[0m
+[31m│[0m [31m❱ [0m1697 [2m│   │   │   │   │   [0m[94mreturn[0m _process_result(sub_ctx.command.invoke(sub [31m│[0m
+[31m│[0m   [2m1698 [0m[2m│   │   [0m                                                              [31m│[0m
+[31m│[0m   [2m1699 [0m[2m│   │   [0m[2m# In chain mode we create the contexts step by step, but afte[0m [31m│[0m
+[31m│[0m   [2m1700 [0m[2m│   │   [0m[2m# base command has been invoked.  Because at that point we do[0m [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m [2m/venv/lib/python3.9/site-packages/meltano/cli/[0m[1mutils.py[0m:631 in invoke         [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m   [2m628 [0m[2m│   │   [0m[94mif[0m ctx.obj.get([33m"[0m[33mtracker[0m[33m"[0m):                                     [31m│[0m
+[31m│[0m   [2m629 [0m[2m│   │   │   [0mctx.obj[[33m"[0m[33mtracker[0m[33m"[0m].add_contexts(CliContext.from_click_cont [31m│[0m
+[31m│[0m   [2m630 [0m[2m│   │   │   [0mctx.obj[[33m"[0m[33mtracker[0m[33m"[0m].track_command_event(CliEvent.started)   [31m│[0m
+[31m│[0m [31m❱ [0m631 [2m│   │   [0m[96msuper[0m().invoke(ctx)                                            [31m│[0m
+[31m│[0m   [2m632 [0m                                                                       [31m│[0m
+[31m│[0m   [2m633 [0m                                                                       [31m│[0m
+[31m│[0m   [2m634 [0m[94mclass[0m[90m [0m[4;92mAutoInstallBehavior[0m(StrEnum):                                    [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m [2m/venv/lib/python3.9/site-packages/click/[0m[1mcore.py[0m:1443 in invoke               [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m   [2m1440 [0m[2m│   │   │   [0mecho(style(message, fg=[33m"[0m[33mred[0m[33m"[0m), err=[94mTrue[0m)                  [31m│[0m
+[31m│[0m   [2m1441 [0m[2m│   │   [0m                                                              [31m│[0m
+[31m│[0m   [2m1442 [0m[2m│   │   [0m[94mif[0m [96mself[0m.callback [95mis[0m [95mnot[0m [94mNone[0m:                                 [31m│[0m
+[31m│[0m [31m❱ [0m1443 [2m│   │   │   [0m[94mreturn[0m ctx.invoke([96mself[0m.callback, **ctx.params)            [31m│[0m
+[31m│[0m   [2m1444 [0m[2m│   [0m                                                                  [31m│[0m
+[31m│[0m   [2m1445 [0m[2m│   [0m[94mdef[0m[90m [0m[92mshell_complete[0m([96mself[0m, ctx: Context, incomplete: [96mstr[0m) -> t.List [31m│[0m
+[31m│[0m   [2m1446 [0m[2;90m│   │   [0m[33m"""Return a list of completions for the incomplete value. Loo[0m [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m [2m/venv/lib/python3.9/site-packages/click/[0m[1mcore.py[0m:788 in invoke                [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m   [2m 785 [0m[2m│   │   [0m                                                              [31m│[0m
+[31m│[0m   [2m 786 [0m[2m│   │   [0m[94mwith[0m augment_usage_errors(__self):                            [31m│[0m
+[31m│[0m   [2m 787 [0m[2m│   │   │   [0m[94mwith[0m ctx:                                                 [31m│[0m
+[31m│[0m [31m❱ [0m 788 [2m│   │   │   │   [0m[94mreturn[0m __callback(*args, **kwargs)                    [31m│[0m
+[31m│[0m   [2m 789 [0m[2m│   [0m                                                                  [31m│[0m
+[31m│[0m   [2m 790 [0m[2m│   [0m[94mdef[0m[90m [0m[92mforward[0m(__self, __cmd: [33m"[0m[33mCommand[0m[33m"[0m, *args: t.Any, **kwargs: t.A [31m│[0m
+[31m│[0m   [2m 791 [0m[2;90m│   │   [0m[33m"""Similar to :meth:`invoke` but fills in default keyword[0m     [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m [2m/venv/lib/python3.9/site-packages/click/[0m[1mdecorators.py[0m:33 in new_func         [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m   [2m 30 [0m[2;33m│   [0m[33m"""[0m                                                                [31m│[0m
+[31m│[0m   [2m 31 [0m[2m│   [0m                                                                   [31m│[0m
+[31m│[0m   [2m 32 [0m[2m│   [0m[94mdef[0m[90m [0m[92mnew_func[0m(*args: [33m"[0m[33mP.args[0m[33m"[0m, **kwargs: [33m"[0m[33mP.kwargs[0m[33m"[0m) -> [33m"[0m[33mR[0m[33m"[0m:        [31m│[0m
+[31m│[0m [31m❱ [0m 33 [2m│   │   [0m[94mreturn[0m f(get_current_context(), *args, **kwargs)               [31m│[0m
+[31m│[0m   [2m 34 [0m[2m│   [0m                                                                   [31m│[0m
+[31m│[0m   [2m 35 [0m[2m│   [0m[94mreturn[0m update_wrapper(new_func, f)                                 [31m│[0m
+[31m│[0m   [2m 36 [0m                                                                       [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m [2m/venv/lib/python3.9/site-packages/meltano/cli/[0m[1mparams.py[0m:75 in decorate       [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m   [2m 72 [0m[2m│   │   [0m[94mif[0m database_uri:                                               [31m│[0m
+[31m│[0m   [2m 73 [0m[2m│   │   │   [0mProjectSettingsService.config_override[[33m"[0m[33mdatabase_uri[0m[33m"[0m] = d [31m│[0m
+[31m│[0m   [2m 74 [0m[2m│   │   [0m                                                               [31m│[0m
+[31m│[0m [31m❱ [0m 75 [2m│   │   [0m[94mreturn[0m func(*args, **kwargs)                                   [31m│[0m
+[31m│[0m   [2m 76 [0m[2m│   [0m                                                                   [31m│[0m
+[31m│[0m   [2m 77 [0m[2m│   [0m[94mreturn[0m functools.update_wrapper(decorate, func)                    [31m│[0m
+[31m│[0m   [2m 78 [0m                                                                       [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m [2m/venv/lib/python3.9/site-packages/meltano/cli/[0m[1mparams.py[0m:165 in decorate      [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m   [2m162 [0m[2m│   │   │   │   [0m[94mexcept[0m MigrationError [94mas[0m err:                          [31m│[0m
+[31m│[0m   [2m163 [0m[2m│   │   │   │   │   [0m[94mraise[0m CliError([96mstr[0m(err)) [94mfrom[0m[90m [0m[4;96merr[0m                  [31m│[0m
+[31m│[0m   [2m164 [0m[2m│   │   │   [0m                                                           [31m│[0m
+[31m│[0m [31m❱ [0m165 [2m│   │   │   [0mfunc(project, *args, **kwargs)                             [31m│[0m
+[31m│[0m   [2m166 [0m[2m│   │   [0m                                                               [31m│[0m
+[31m│[0m   [2m167 [0m[2m│   │   [0m[94mreturn[0m functools.update_wrapper(decorate, func)                [31m│[0m
+[31m│[0m   [2m168 [0m                                                                       [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m [2m/venv/lib/python3.9/site-packages/meltano/core/utils/[0m[1m__init__.py[0m:80 in       [31m│[0m
+[31m│[0m wrapper                                                                      [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m   [2m 77 [0m[2m│   [0m                                                                   [31m│[0m
+[31m│[0m   [2m 78 [0m[2m│   [0m[1;95m@functools[0m.wraps(func)                                             [31m│[0m
+[31m│[0m   [2m 79 [0m[2m│   [0m[94mdef[0m[90m [0m[92mwrapper[0m(*args, **kwargs):  [2m# noqa: ANN002, ANN003, ANN202[0m      [31m│[0m
+[31m│[0m [31m❱ [0m 80 [2m│   │   [0m[94mreturn[0m asyncio.run(func(*args, **kwargs))                      [31m│[0m
+[31m│[0m   [2m 81 [0m[2m│   [0m                                                                   [31m│[0m
+[31m│[0m   [2m 82 [0m[2m│   [0m[94mreturn[0m wrapper                                                     [31m│[0m
+[31m│[0m   [2m 83 [0m                                                                       [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m [2m/usr/local/lib/python3.9/asyncio/[0m[1mrunners.py[0m:44 in run                        [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m   [2m41 [0m[2m│   │   [0mevents.set_event_loop(loop)                                     [31m│[0m
+[31m│[0m   [2m42 [0m[2m│   │   [0m[94mif[0m debug [95mis[0m [95mnot[0m [94mNone[0m:                                           [31m│[0m
+[31m│[0m   [2m43 [0m[2m│   │   │   [0mloop.set_debug(debug)                                       [31m│[0m
+[31m│[0m [31m❱ [0m44 [2m│   │   [0m[94mreturn[0m loop.run_until_complete(main)                            [31m│[0m
+[31m│[0m   [2m45 [0m[2m│   [0m[94mfinally[0m:                                                            [31m│[0m
+[31m│[0m   [2m46 [0m[2m│   │   [0m[94mtry[0m:                                                            [31m│[0m
+[31m│[0m   [2m47 [0m[2m│   │   │   [0m_cancel_all_tasks(loop)                                     [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m [2m/usr/local/lib/python3.9/asyncio/[0m[1mbase_events.py[0m:647 in run_until_complete    [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m   [2m 644 [0m[2m│   │   [0m[94mif[0m [95mnot[0m future.done():                                         [31m│[0m
+[31m│[0m   [2m 645 [0m[2m│   │   │   [0m[94mraise[0m [96mRuntimeError[0m([33m'[0m[33mEvent loop stopped before Future comp[0m [31m│[0m
+[31m│[0m   [2m 646 [0m[2m│   │   [0m                                                              [31m│[0m
+[31m│[0m [31m❱ [0m 647 [2m│   │   [0m[94mreturn[0m future.result()                                        [31m│[0m
+[31m│[0m   [2m 648 [0m[2m│   [0m                                                                  [31m│[0m
+[31m│[0m   [2m 649 [0m[2m│   [0m[94mdef[0m[90m [0m[92mstop[0m([96mself[0m):                                                   [31m│[0m
+[31m│[0m   [2m 650 [0m[2;90m│   │   [0m[33m"""Stop running the event loop.[0m                               [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m [2m/venv/lib/python3.9/site-packages/meltano/cli/[0m[1melt.py[0m:180 in el               [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m   [2m177 [0m[2;33m│   [0m[33m\b[0m                                                                 [31m│[0m
+[31m│[0m   [2m178 [0m[2;33m│   [0m[33mRead more at https://docs.meltano.com/reference/command-line-inter[0m [31m│[0m
+[31m│[0m   [2m179 [0m[2;33m│   [0m[33m"""[0m  [2m# noqa: D301[0m                                                  [31m│[0m
+[31m│[0m [31m❱ [0m180 [2m│   [0m[94mawait[0m _run_el_command(                                             [31m│[0m
+[31m│[0m   [2m181 [0m[2m│   │   [0mproject=project,                                               [31m│[0m
+[31m│[0m   [2m182 [0m[2m│   │   [0mctx=ctx,                                                       [31m│[0m
+[31m│[0m   [2m183 [0m[2m│   │   [0mextractor=extractor,                                           [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m [2m/venv/lib/python3.9/site-packages/meltano/cli/[0m[1melt.py[0m:362 in _run_el_command  [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m   [2m359 [0m[2m│   │   │   [0m)                                                          [31m│[0m
+[31m│[0m   [2m360 [0m[2m│   [0m[94mexcept[0m [96mException[0m [94mas[0m err:                                           [31m│[0m
+[31m│[0m   [2m361 [0m[2m│   │   [0mtracker.track_command_event(CliEvent.failed)                   [31m│[0m
+[31m│[0m [31m❱ [0m362 [2m│   │   [0m[94mraise[0m err                                                      [31m│[0m
+[31m│[0m   [2m363 [0m[2m│   [0m[94mfinally[0m:                                                           [31m│[0m
+[31m│[0m   [2m364 [0m[2m│   │   [0msession.close()                                                [31m│[0m
+[31m│[0m   [2m365 [0m                                                                       [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m [2m/venv/lib/python3.9/site-packages/meltano/cli/[0m[1melt.py[0m:351 in _run_el_command  [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m   [2m348 [0m[2m│   │   [0m[94mif[0m dump:                                                       [31m│[0m
+[31m│[0m   [2m349 [0m[2m│   │   │   [0m[94mawait[0m dump_file(context_builder, dump)                     [31m│[0m
+[31m│[0m   [2m350 [0m[2m│   │   [0m[94melse[0m:                                                          [31m│[0m
+[31m│[0m [31m❱ [0m351 [2m│   │   │   [0m[94mawait[0m _run_job(                                            [31m│[0m
+[31m│[0m   [2m352 [0m[2m│   │   │   │   [0mtracker,                                               [31m│[0m
+[31m│[0m   [2m353 [0m[2m│   │   │   │   [0mproject,                                               [31m│[0m
+[31m│[0m   [2m354 [0m[2m│   │   │   │   [0mjob,                                                   [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m [2m/venv/lib/python3.9/site-packages/meltano/cli/[0m[1melt.py[0m:456 in _run_job         [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m   [2m453 [0m[2m│   │   [0m                                                               [31m│[0m
+[31m│[0m   [2m454 [0m[2m│   │   [0mlog = logger.bind(name=[33m"[0m[33mmeltano[0m[33m"[0m, run_id=[96mstr[0m(job.run_id), stat [31m│[0m
+[31m│[0m   [2m455 [0m[2m│   │   [0m                                                               [31m│[0m
+[31m│[0m [31m❱ [0m456 [2m│   │   [0m[94mawait[0m _run_elt(tracker, log, context_builder, output_logger, i [31m│[0m
+[31m│[0m   [2m457 [0m                                                                       [31m│[0m
+[31m│[0m   [2m458 [0m                                                                       [31m│[0m
+[31m│[0m   [2m459 [0m[1;95m@asynccontextmanager[0m                                                   [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m [2m/venv/lib/python3.9/site-packages/meltano/cli/[0m[1melt.py[0m:519 in _run_elt         [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m   [2m516 [0m[2m│   │   │   [0m[94melse[0m:                                                      [31m│[0m
+[31m│[0m   [2m517 [0m[2m│   │   │   │   [0mlog.info([33m"[0m[33mTransformation skipped.[0m[33m"[0m)                    [31m│[0m
+[31m│[0m   [2m518 [0m[2m│   │   [0m[94mexcept[0m RunnerError [94mas[0m err:                                     [31m│[0m
+[31m│[0m [31m❱ [0m519 [2m│   │   │   [0m[94mraise[0m CliError(                                            [31m│[0m
+[31m│[0m   [2m520 [0m[2m│   │   │   │   [0m[33mf[0m[33m"[0m[33mELT could not be completed: [0m[33m{[0merr[33m}[0m[33m.[0m[33m\n[0m[33mFor more detaile[0m [31m│[0m
+[31m│[0m   [2m521 [0m[2m│   │   │   │   [0m[33m"[0m[33mmessages re-run the command using [0m[33m'[0m[33mmeltano [0m[33m"[0m          [31m│[0m
+[31m│[0m   [2m522 [0m[2m│   │   │   │   [0m[33m"[0m[33m--log-level=debug ...[0m[33m'[0m[33m CLI flag.[0m[33m\n[0m[33mNote that you can a[0m [31m│[0m
+[31m╰──────────────────────────────────────────────────────────────────────────────╯[0m
+[1;91mCliError: [0mELT could not be completed: Extractor failed.
+For more detailed log messages re-run the command using [32m'meltano [0m
+[32m--log-[0m[32mlevel[0m[32m=[0m[32mdebug[0m[32m ...'[0m CLI flag.
+Note that you can also check the generated log file at 
+[32m'/opt/meltano/.meltano/logs/elt/2025-07-01T200549--tap-csv-latest-
+[2025-07-01T20:05:52.706+0000] {docker.py:429} INFO - -target-postgr[0m
+[32mes/2dd3b5cf-f616-4897-ad8d-af94093cfb76/elt.log'[0m.
+For more information on debugging and logging: 
+[4;94mhttps://docs.meltano.com/reference/command-line-interface#debugging[0m
+
+[3mThe above exception was the direct cause of the following exception:[0m
+
+[31m╭─[0m[31m────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────[0m[31m─╮[0m
+[31m│[0m [2m/venv/lib/python3.9/site-packages/meltano/cli/[0m[1m__init__.py[0m:114 in _run_cli    [31m│[0m
+[31m│[0m                                                                              [31m│[0m
+[31m│[0m   [2m111 [0m[2m│   │   [0m[94mexcept[0m MeltanoError [94mas[0m err:                                    [31m│[0m
+[31m│[0m   [2m112 [0m[2m│   │   │   [0mhandle_meltano_error(err)                                  [31m│[0m
+[31m│[0m   [2m113 [0m[2m│   │   [0m[94mexcept[0m [96mException[0m [94mas[0m err:                                       [31m│[0m
+[31m│[0m [31m❱ [0m114 [2m│   │   │   [0m[94mraise[0m CliError([33mf[0m[33m"[0m[33m{[0mtroubleshooting_message[33m}[0m[33m\n[0m[33m{[0merr[33m}[0m[33m"[0m) [94mfrom[0m[90m [0m[4;96me[0m [31m│[0m
+[31m│[0m   [2m115 [0m[2m│   [0m[94mexcept[0m CliError [94mas[0m cli_error:                                      [31m│[0m
+[31m│[0m   [2m116 [0m[2m│   │   [0mcli_error.print()                                              [31m│[0m
+[31m│[0m   [2m117 [0m[2m│   │   [0msys.exit(cli_error.exit_code)                                  [31m│[0m
+[31m╰──────────────────────────────────────────────────────────────────────────────╯[0m
+[1;91mCliError: [0mNeed help fixing this problem? Visit [4;94mhttp://melta.no/[0m for 
+troubleshooting steps, or to
+join our friendly Slack community.
+
+ELT could not be completed: Extractor failed.
+For more detailed log messages re-run the command using [32m'meltano [0m
+[32m--log-[0m[32mlevel[0m[32m=[0m[32mdebug[0m[32m ...'[0m CLI flag.
+Note that you can also check the generated log file at 
+[32m'/opt/meltano/.meltano/logs/elt/2025-07-01T200549--tap-csv-latest--target-postgr[0m
+[32mes/2dd3b5cf-f616-4897-ad8d-af94093cfb76/elt.log'[0m.
+For more information on debugging and logging: 
+[4;94mhttps://docs.meltano.com/reference/command-line-interface#debugging[0m
+[2025-07-01T20:05:52.707+0000] {docker.py:429} INFO - Need help fixing this problem? Visit http://melta.no/ for troubleshooting steps, or to
+join our friendly Slack community.
+
+ELT could not be completed: Extractor failed.
+For more detailed log messages re-run the command using 'meltano --log-level=debug ...' CLI flag.
+Note that you can also check the generated log file at '/opt/meltano/.meltano/logs/elt/2025-07-01T200549--tap-csv-latest--target-postgres/2dd3b5cf-f616-4897-ad8d-af94093cfb76/elt.log'.
+For more information on debugging and logging: https://docs.meltano.com/reference/command-line-interface#debugging
+[2025-07-01T20:05:53.704+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/docker/operators/docker.py", line 502, in execute
+    return self._run_image()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/docker/operators/docker.py", line 376, in _run_image
+    return self._run_image_with_mounts(self.mounts, add_tmp_variable=False)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/docker/operators/docker.py", line 437, in _run_image_with_mounts
+    raise DockerContainerFailedException(f"Docker container failed: {result!r}", logs=log_lines)
+airflow.providers.docker.exceptions.DockerContainerFailedException: Docker container failed: {'StatusCode': 1}
+[2025-07-01T20:05:53.707+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=northwind, task_id=carregamento_postgres, execution_date=20250701T195927, start_date=20250701T200537, end_date=20250701T200553
+[2025-07-01T20:05:53.726+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 10 for task carregamento_postgres (Docker container failed: {'StatusCode': 1}; 251)
+[2025-07-01T20:05:53.743+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-07-01T20:05:53.759+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,246 @@
+[2025-06-17T14:11:48.255+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: northwind.extração_postgres manual__2025-06-17T13:49:08.118244+00:00 [queued]>
+[2025-06-17T14:11:48.261+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: northwind.extração_postgres manual__2025-06-17T13:49:08.118244+00:00 [queued]>
+[2025-06-17T14:11:48.261+0000] {taskinstance.py:2170} INFO - Starting attempt 2 of 2
+[2025-06-17T14:11:48.272+0000] {taskinstance.py:2191} INFO - Executing <Task(DockerOperator): extração_postgres> on 2025-06-17 13:49:08.118244+00:00
+[2025-06-17T14:11:48.279+0000] {standard_task_runner.py:60} INFO - Started process 171 to run task
+[2025-06-17T14:11:48.284+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'northwind', 'extração_postgres', 'manual__2025-06-17T13:49:08.118244+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpx3yvl9ty']
+[2025-06-17T14:11:48.288+0000] {standard_task_runner.py:88} INFO - Job 4: Subtask extração_postgres
+[2025-06-17T14:11:48.392+0000] {task_command.py:423} INFO - Running <TaskInstance: northwind.extração_postgres manual__2025-06-17T13:49:08.118244+00:00 [running]> on host fd5ecc5ed749
+[2025-06-17T14:11:48.488+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='lrbf@cin.ufpe.br' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='northwind' AIRFLOW_CTX_TASK_ID='extração_postgres' AIRFLOW_CTX_EXECUTION_DATE='2025-06-17T13:49:08.118244+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-17T13:49:08.118244+00:00'
+[2025-06-17T14:11:48.492+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 791, in urlopen
+    response = self._make_request(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 497, in _make_request
+    conn.request(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connection.py", line 395, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.10/http/client.py", line 1278, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.10/http/client.py", line 1038, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.10/http/client.py", line 976, in send
+    self.connect()
+  File "/home/airflow/.local/lib/python3.10/site-packages/docker/transport/unixconn.py", line 27, in connect
+    sock.connect(self.unix_socket)
+PermissionError: [Errno 13] Permission denied
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 845, in urlopen
+    retries = retries.increment(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/util/retry.py", line 470, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 791, in urlopen
+    response = self._make_request(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 497, in _make_request
+    conn.request(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connection.py", line 395, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.10/http/client.py", line 1278, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.10/http/client.py", line 1038, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.10/http/client.py", line 976, in send
+    self.connect()
+  File "/home/airflow/.local/lib/python3.10/site-packages/docker/transport/unixconn.py", line 27, in connect
+    sock.connect(self.unix_socket)
+urllib3.exceptions.ProtocolError: ('Connection aborted.', PermissionError(13, 'Permission denied'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/docker/api/client.py", line 213, in _retrieve_server_version
+    return self.version(api_version=False)["ApiVersion"]
+  File "/home/airflow/.local/lib/python3.10/site-packages/docker/api/daemon.py", line 181, in version
+    return self._result(self._get(url), json=True)
+  File "/home/airflow/.local/lib/python3.10/site-packages/docker/utils/decorators.py", line 44, in inner
+    return f(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/docker/api/client.py", line 236, in _get
+    return self.get(url, **self._set_request_timeout(kwargs))
+  File "/home/airflow/.local/lib/python3.10/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/requests/adapters.py", line 501, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', PermissionError(13, 'Permission denied'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/docker/operators/docker.py", line 485, in execute
+    if self.force_pull or not self.cli.images(name=self.image):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/docker/operators/docker.py", line 355, in cli
+    return self.hook.api_client
+  File "/usr/local/lib/python3.10/functools.py", line 981, in __get__
+    val = self.func(instance)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/docker/hooks/docker.py", line 120, in api_client
+    client = APIClient(
+  File "/home/airflow/.local/lib/python3.10/site-packages/docker/api/client.py", line 197, in __init__
+    self._version = self._retrieve_server_version()
+  File "/home/airflow/.local/lib/python3.10/site-packages/docker/api/client.py", line 220, in _retrieve_server_version
+    raise DockerException(
+docker.errors.DockerException: Error while fetching server API version: ('Connection aborted.', PermissionError(13, 'Permission denied'))
+[2025-06-17T14:11:48.511+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=northwind, task_id=extração_postgres, execution_date=20250617T134908, start_date=20250617T141148, end_date=20250617T141148
+[2025-06-17T14:11:48.541+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.10/site-packages/***/utils/email.py:154 RemovedInAirflow3Warning: Fetching SMTP credentials from configuration variables will be deprecated in a future release. Please set credentials using a connection instead.
+[2025-06-17T14:11:48.542+0000] {configuration.py:1046} WARNING - section/key [smtp/smtp_user] not found in config
+[2025-06-17T14:11:48.542+0000] {email.py:270} INFO - Email alerting: attempt 1
+[2025-06-17T14:11:48.555+0000] {configuration.py:1046} WARNING - section/key [smtp/smtp_user] not found in config
+[2025-06-17T14:11:48.556+0000] {email.py:270} INFO - Email alerting: attempt 1
+[2025-06-17T14:11:48.557+0000] {taskinstance.py:826} ERROR - Failed to send email to: ['lrbf@cin.ufpe.br']
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 791, in urlopen
+    response = self._make_request(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 497, in _make_request
+    conn.request(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connection.py", line 395, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.10/http/client.py", line 1278, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.10/http/client.py", line 1038, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.10/http/client.py", line 976, in send
+    self.connect()
+  File "/home/airflow/.local/lib/python3.10/site-packages/docker/transport/unixconn.py", line 27, in connect
+    sock.connect(self.unix_socket)
+PermissionError: [Errno 13] Permission denied
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 845, in urlopen
+    retries = retries.increment(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/util/retry.py", line 470, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 791, in urlopen
+    response = self._make_request(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 497, in _make_request
+    conn.request(
+  File "/home/airflow/.local/lib/python3.10/site-packages/urllib3/connection.py", line 395, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.10/http/client.py", line 1278, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.10/http/client.py", line 1038, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.10/http/client.py", line 976, in send
+    self.connect()
+  File "/home/airflow/.local/lib/python3.10/site-packages/docker/transport/unixconn.py", line 27, in connect
+    sock.connect(self.unix_socket)
+urllib3.exceptions.ProtocolError: ('Connection aborted.', PermissionError(13, 'Permission denied'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/docker/api/client.py", line 213, in _retrieve_server_version
+    return self.version(api_version=False)["ApiVersion"]
+  File "/home/airflow/.local/lib/python3.10/site-packages/docker/api/daemon.py", line 181, in version
+    return self._result(self._get(url), json=True)
+  File "/home/airflow/.local/lib/python3.10/site-packages/docker/utils/decorators.py", line 44, in inner
+    return f(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/docker/api/client.py", line 236, in _get
+    return self.get(url, **self._set_request_timeout(kwargs))
+  File "/home/airflow/.local/lib/python3.10/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/requests/adapters.py", line 501, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', PermissionError(13, 'Permission denied'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 2334, in _run_raw_task
+    self._execute_task_with_callbacks(context, test_mode, session=session)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 2499, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 2516, in _execute_task
+    return _execute_task(self, context, task_orig)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/docker/operators/docker.py", line 485, in execute
+    if self.force_pull or not self.cli.images(name=self.image):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/docker/operators/docker.py", line 355, in cli
+    return self.hook.api_client
+  File "/usr/local/lib/python3.10/functools.py", line 981, in __get__
+    val = self.func(instance)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/docker/hooks/docker.py", line 120, in api_client
+    client = APIClient(
+  File "/home/airflow/.local/lib/python3.10/site-packages/docker/api/client.py", line 197, in __init__
+    self._version = self._retrieve_server_version()
+  File "/home/airflow/.local/lib/python3.10/site-packages/docker/api/client.py", line 220, in _retrieve_server_version
+    raise DockerException(
+docker.errors.DockerException: Error while fetching server API version: ('Connection aborted.', PermissionError(13, 'Permission denied'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 1000, in _email_alert
+    send_email(task.email, subject, html_content)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 80, in send_email
+    return backend(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 154, in send_email_smtp
+    send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 272, in send_mime_email
+    smtp_conn = _get_smtp_connection(smtp_host, smtp_port, smtp_timeout, smtp_ssl)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 316, in _get_smtp_connection
+    return smtplib.SMTP(host=host, port=port, timeout=timeout)
+  File "/usr/local/lib/python3.10/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/local/lib/python3.10/smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/usr/local/lib/python3.10/smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "/usr/local/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/local/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 824, in _handle_failure
+    task_instance.email_alert(error, failure_context["task"])
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 2946, in email_alert
+    _email_alert(task_instance=self, exception=exception, task=task)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 1002, in _email_alert
+    send_email(task.email, subject, html_content_err)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 80, in send_email
+    return backend(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 154, in send_email_smtp
+    send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 272, in send_mime_email
+    smtp_conn = _get_smtp_connection(smtp_host, smtp_port, smtp_timeout, smtp_ssl)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 316, in _get_smtp_connection
+    return smtplib.SMTP(host=host, port=port, timeout=timeout)
+  File "/usr/local/lib/python3.10/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/local/lib/python3.10/smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/usr/local/lib/python3.10/smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "/usr/local/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/local/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+[2025-06-17T14:11:48.573+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 4 for task extração_postgres (Error while fetching server API version: ('Connection aborted.', PermissionError(13, 'Permission denied')); 171)
+[2025-06-17T14:11:48.618+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-06-17T14:11:48.639+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

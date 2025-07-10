@@ -1,0 +1,222 @@
+[2025-06-23T21:50:50.724+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: northwind.extração_csv manual__2025-06-23T21:45:15.293595+00:00 [queued]>
+[2025-06-23T21:50:50.731+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: northwind.extração_csv manual__2025-06-23T21:45:15.293595+00:00 [queued]>
+[2025-06-23T21:50:50.732+0000] {taskinstance.py:2170} INFO - Starting attempt 2 of 2
+[2025-06-23T21:50:50.742+0000] {taskinstance.py:2191} INFO - Executing <Task(DockerOperator): extração_csv> on 2025-06-23 21:45:15.293595+00:00
+[2025-06-23T21:50:50.747+0000] {standard_task_runner.py:60} INFO - Started process 260 to run task
+[2025-06-23T21:50:50.750+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'northwind', 'extração_csv', 'manual__2025-06-23T21:45:15.293595+00:00', '--job-id', '17', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpd8ro50n3']
+[2025-06-23T21:50:50.752+0000] {standard_task_runner.py:88} INFO - Job 17: Subtask extração_csv
+[2025-06-23T21:50:50.800+0000] {task_command.py:423} INFO - Running <TaskInstance: northwind.extração_csv manual__2025-06-23T21:45:15.293595+00:00 [running]> on host a06304be4538
+[2025-06-23T21:50:50.873+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='lrbf@cin.ufpe.br' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='northwind' AIRFLOW_CTX_TASK_ID='extração_csv' AIRFLOW_CTX_EXECUTION_DATE='2025-06-23T21:45:15.293595+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-23T21:45:15.293595+00:00'
+[2025-06-23T21:50:50.972+0000] {docker.py:359} INFO - Starting docker container from image indicium_pipeline-meltano:latest
+[2025-06-23T21:50:51.270+0000] {docker.py:429} INFO - Running meltano install...
+[2025-06-23T21:50:52.921+0000] {docker.py:429} INFO - [2m2025-06-23T21:50:52.920839Z[0m [[32m[1minfo     [0m] [1mInstalling 7 plugins          [0m
+[2025-06-23T21:50:52.937+0000] {docker.py:429} INFO - [2m2025-06-23T21:50:52.936545Z[0m [[32m[1minfo     [0m] [1mInstalling extractor 'tap-postgres'[0m
+[2025-06-23T21:50:52.960+0000] {docker.py:429} INFO - [2m2025-06-23T21:50:52.959280Z[0m [[32m[1minfo     [0m] [1mInstalling extractor 'tap-csv'[0m
+[2025-06-23T21:50:52.987+0000] {docker.py:429} INFO - [2m2025-06-23T21:50:52.986713Z[0m [[32m[1minfo     [0m] [1mInstalling extractor 'tap-csv-latest'[0m
+[2025-06-23T21:50:53.009+0000] {docker.py:429} INFO - [2m2025-06-23T21:50:53.009005Z[0m [[32m[1minfo     [0m] [1mInstalling loader 'target-postgres'[0m
+[2025-06-23T21:50:53.039+0000] {docker.py:429} INFO - [2m2025-06-23T21:50:53.038790Z[0m [[32m[1minfo     [0m] [1mInstalling loader 'target-csv'[0m
+[2025-06-23T21:50:53.069+0000] {docker.py:429} INFO - [2m2025-06-23T21:50:53.068486Z[0m [[32m[1minfo     [0m] [1mInstalling loader 'target-csv-postgres'[0m
+[2025-06-23T21:50:53.103+0000] {docker.py:429} INFO - [2m2025-06-23T21:50:53.102456Z[0m [[32m[1minfo     [0m] [1mInstalling loader 'target-csv-csv'[0m
+[2025-06-23T21:50:55.012+0000] {docker.py:429} INFO - [2m2025-06-23T21:50:55.012082Z[0m [[32m[1minfo     [0m] [1mInstalled extractor 'tap-postgres'[0m
+[2025-06-23T21:50:55.013+0000] {docker.py:429} INFO - [2m2025-06-23T21:50:55.012614Z[0m [[32m[1minfo     [0m] [1mInstalled loader 'target-postgres'[0m
+[2025-06-23T21:51:00.796+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:00.795063Z[0m [[32m[1minfo     [0m] [1mInstalled extractor 'tap-csv-latest'[0m
+[2025-06-23T21:51:00.803+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:00.803153Z[0m [[32m[1minfo     [0m] [1mInstalled extractor 'tap-csv' [0m
+[2025-06-23T21:51:01.340+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:01.340044Z[0m [[32m[1minfo     [0m] [1mInstalled loader 'target-csv' [0m
+[2025-06-23T21:51:01.862+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:01.861812Z[0m [[32m[1minfo     [0m] [1mInstalled loader 'target-csv-csv'[0m
+[2025-06-23T21:51:01.935+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:01.934141Z[0m [[32m[1minfo     [0m] [1mInstalled loader 'target-csv-postgres'[0m
+[2m2025-06-23T21:51:01.934386Z[0m [[32m[1minfo     [0m] [1mInstalled 7/7 plugins         [0m
+[2025-06-23T21:51:02.924+0000] {docker.py:429} INFO - Meltano install completed. Executing command: meltano el tap-csv target-csv-csv
+[2025-06-23T21:51:04.072+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:04.072151Z[0m [[32m[1minfo     [0m] [1mEnvironment 'dev' is active   [0m
+[2025-06-23T21:51:04.430+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:04.430009Z[0m [[32m[1minfo     [0m] [1mRunning extract & load...     [0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m
+[2025-06-23T21:51:05.131+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.129809Z[0m [[32m[1minfo     [0m] [1mELT could not be completed: Cannot start extractor: Catalog discovery failed: command ['/opt/meltano/.meltano/extractors/tap-csv/venv/bin/tap-csv', '--config', '/opt/meltano/.meltano/run/elt/2025-06-23T215104--tap-csv--target-csv-csv/0b3e9470-51f7-4e6f-972e-2a32beaaac12/tap.1b854720-0c1f-4b59-a3b6-124fe8648850.config.json', '--discover'] returned 1 with stderr:[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.132+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.131134Z[0m [[32m[1minfo     [0m] [1m Traceback (most recent call last):[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.132+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.131418Z[0m [[32m[1minfo     [0m] [1m  File "/opt/meltano/.meltano/extractors/tap-csv/venv/bin/tap-csv", line 8, in <module>[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.132+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.131642Z[0m [[32m[1minfo     [0m] [1m    sys.exit(TapCSV.cli())    [0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.133+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.131865Z[0m [[32m[1minfo     [0m] [1m  File "/opt/meltano/.meltano/extractors/tap-csv/venv/lib/python3.10/site-packages/click/core.py", line 1442, in __call__[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.133+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.132123Z[0m [[32m[1minfo     [0m] [1m    return self.main(*args, **kwargs)[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.133+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.132372Z[0m [[32m[1minfo     [0m] [1m  File "/opt/meltano/.meltano/extractors/tap-csv/venv/lib/python3.10/site-packages/click/core.py", line 1362, in main[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.134+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.132589Z[0m [[32m[1minfo     [0m] [1m    with self.make_context(prog_name, args, **extra) as ctx:[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.134+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.132930Z[0m [[32m[1minfo     [0m] [1m  File "/opt/meltano/.meltano/extractors/tap-csv/venv/lib/python3.10/site-packages/click/core.py", line 1186, in make_context[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.134+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.133219Z[0m [[32m[1minfo     [0m] [1m    self.parse_args(ctx, args)[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.134+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.133519Z[0m [[32m[1minfo     [0m] [1m  File "/opt/meltano/.meltano/extractors/tap-csv/venv/lib/python3.10/site-packages/click/core.py", line 1197, in parse_args[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.135+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.133825Z[0m [[32m[1minfo     [0m] [1m    value, args = param.handle_parse_result(ctx, opts, args)[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.135+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.134091Z[0m [[32m[1minfo     [0m] [1m  File "/opt/meltano/.meltano/extractors/tap-csv/venv/lib/python3.10/site-packages/click/core.py", line 2416, in handle_parse_result[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.135+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.134324Z[0m [[32m[1minfo     [0m] [1m    value = self.process_value(ctx, value)[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.136+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.134569Z[0m [[32m[1minfo     [0m] [1m  File "/opt/meltano/.meltano/extractors/tap-csv/venv/lib/python3.10/site-packages/click/core.py", line 2355, in process_value[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.136+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.134924Z[0m [[32m[1minfo     [0m] [1m    value = self.callback(ctx, self, value)[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.136+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.135205Z[0m [[32m[1minfo     [0m] [1m  File "/opt/meltano/.meltano/extractors/tap-csv/venv/lib/python3.10/site-packages/singer_sdk/tap_base.py", line 555, in cb_discover[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.136+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.135503Z[0m [[32m[1minfo     [0m] [1m    tap.run_discovery()       [0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.137+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.135854Z[0m [[32m[1minfo     [0m] [1m  File "/opt/meltano/.meltano/extractors/tap-csv/venv/lib/python3.10/site-packages/singer_sdk/tap_base.py", line 309, in run_discovery[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.137+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.136131Z[0m [[32m[1minfo     [0m] [1m    catalog_text = self.catalog_json_text[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.137+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.136395Z[0m [[32m[1minfo     [0m] [1m  File "/opt/meltano/.meltano/extractors/tap-csv/venv/lib/python3.10/site-packages/singer_sdk/tap_base.py", line 329, in catalog_json_text[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.137+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.136633Z[0m [[32m[1minfo     [0m] [1m    return dump_json(self.catalog_dict, indent=2)[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.138+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.136890Z[0m [[32m[1minfo     [0m] [1m  File "/opt/meltano/.meltano/extractors/tap-csv/venv/lib/python3.10/site-packages/singer_sdk/tap_base.py", line 320, in catalog_dict[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.138+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.137165Z[0m [[32m[1minfo     [0m] [1m    return t.cast("dict", self._singer_catalog.to_dict())[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.138+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.137414Z[0m [[32m[1minfo     [0m] [1m  File "/opt/meltano/.meltano/extractors/tap-csv/venv/lib/python3.10/site-packages/singer_sdk/tap_base.py", line 340, in _singer_catalog[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.138+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.137653Z[0m [[32m[1minfo     [0m] [1m    for stream in self.streams.values()[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.139+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.137881Z[0m [[32m[1minfo     [0m] [1m  File "/opt/meltano/.meltano/extractors/tap-csv/venv/lib/python3.10/site-packages/singer_sdk/tap_base.py", line 149, in streams[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.139+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.138146Z[0m [[32m[1minfo     [0m] [1m    for stream in self.load_streams():[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.139+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.138452Z[0m [[32m[1minfo     [0m] [1m  File "/opt/meltano/.meltano/extractors/tap-csv/venv/lib/python3.10/site-packages/singer_sdk/tap_base.py", line 373, in load_streams[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.140+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.138742Z[0m [[32m[1minfo     [0m] [1m    for stream in self.discover_streams():[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.140+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.139036Z[0m [[32m[1minfo     [0m] [1m  File "/opt/meltano/.meltano/extractors/tap-csv/venv/lib/python3.10/site-packages/tap_csv/tap.py", line 89, in discover_streams[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.140+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.139345Z[0m [[32m[1minfo     [0m] [1m    return [                  [0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.140+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.139675Z[0m [[32m[1minfo     [0m] [1m  File "/opt/meltano/.meltano/extractors/tap-csv/venv/lib/python3.10/site-packages/tap_csv/tap.py", line 90, in <listcomp>[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.140+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.140127Z[0m [[32m[1minfo     [0m] [1m    CSVStream(                [0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.141+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.140543Z[0m [[32m[1minfo     [0m] [1m  File "/opt/meltano/.meltano/extractors/tap-csv/venv/lib/python3.10/site-packages/tap_csv/client.py", line 32, in __init__[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.141+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.140932Z[0m [[32m[1minfo     [0m] [1m    super().__init__(*args, **kwargs)[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.141+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.141351Z[0m [[32m[1minfo     [0m] [1m  File "/opt/meltano/.meltano/extractors/tap-csv/venv/lib/python3.10/site-packages/singer_sdk/streams/core.py", line 182, in __init__[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.142+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.141692Z[0m [[32m[1minfo     [0m] [1m    if not self.schema:       [0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.142+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.142202Z[0m [[32m[1minfo     [0m] [1m  File "/usr/local/lib/python3.10/functools.py", line 981, in __get__[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.143+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.142620Z[0m [[32m[1minfo     [0m] [1m    val = self.func(instance) [0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.143+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.143021Z[0m [[32m[1minfo     [0m] [1m  File "/opt/meltano/.meltano/extractors/tap-csv/venv/lib/python3.10/site-packages/tap_csv/client.py", line 137, in schema[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.144+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.143589Z[0m [[32m[1minfo     [0m] [1m    for file_path in self.get_file_paths():[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.144+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.143946Z[0m [[32m[1minfo     [0m] [1m  File "/opt/meltano/.meltano/extractors/tap-csv/venv/lib/python3.10/site-packages/tap_csv/client.py", line 82, in get_file_paths[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.144+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.144352Z[0m [[32m[1minfo     [0m] [1m    raise Exception(f"File path does not exist {file_path}")[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.145+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.144685Z[0m [[32m[1minfo     [0m] [1mException: File path does not exist /mnt/d/Downloads/order_details.csv[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.145+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.145288Z[0m [[32m[1minfo     [0m] [1m.                             [0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.146+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.145567Z[0m [[32m[1minfo     [0m] [1mFor more detailed log messages re-run the command using 'meltano --log-level=debug ...' CLI flag.[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.146+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.145841Z[0m [[32m[1minfo     [0m] [1mNote that you can also check the generated log file at '/opt/meltano/.meltano/logs/elt/2025-06-23T215104--tap-csv--target-csv-csv/0b3e9470-51f7-4e6f-972e-2a32beaaac12/elt.log'.[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.147+0000] {docker.py:429} INFO - [2m2025-06-23T21:51:05.146556Z[0m [[32m[1minfo     [0m] [1mFor more information on debugging and logging: https://docs.meltano.com/reference/command-line-interface#debugging[0m [36mcmd_type[0m=[35melt[0m [36mname[0m=[35mmeltano[0m [36mrun_id[0m=[35m0b3e9470-51f7-4e6f-972e-2a32beaaac12[0m [36mstate_id[0m=[35m2025-06-23T215104--tap-csv--target-csv-csv[0m [36mstdio[0m=[35mstderr[0m
+[2025-06-23T21:51:05.162+0000] {docker.py:429} INFO - Need help fixing this problem? Visit http://melta.no/ for troubleshooting steps, or to
+join our friendly Slack community.
+
+ELT could not be completed: Cannot start extractor: Catalog discovery failed: command ['/opt/meltano/.meltano/extractors/tap-csv/venv/bin/tap-csv', '--config', '/opt/meltano/.meltano/run/elt/2025-06-23T215104--tap-csv--target-csv-csv/0b3e9470-51f7-4e6f-972e-2a32beaaac12/tap.1b854720-0c1f-4b59-a3b6-124fe8648850.config.json', '--discover'] returned 1 with stderr:
+ Traceback (most recent call last):
+  File "/opt/meltano/.meltano/extractors/tap-csv/venv/bin/tap-csv", line 8, in <module>
+    sys.exit(TapCSV.cli())
+  File "/opt/meltano/.meltano/extractors/tap-csv/venv/lib/python3.10/site-packages/click/core.py", line 1442, in __call__
+    return self.main(*args, **kwargs)
+  File "/opt/meltano/.meltano/extractors/tap-csv/venv/lib/python3.10/site-packages/click/core.py", line 1362, in main
+    with self.make_context(prog_name, args, **extra) as ctx:
+  File "/opt/meltano/.meltano/extractors/tap-csv/venv/lib/python3.10/site-packages/click/core.py", line 1186, in make_context
+    self.parse_args(ctx, args)
+  File "/opt/meltano/.meltano/extractors/tap-csv/venv/lib/python3.10/site-packages/click/core.py", line 1197, in parse_args
+    value, args = param.handle_parse_result(ctx, opts, args)
+  File "/opt/meltano/.meltano/extractors/tap-csv/venv/lib/python3.10/site-packages/click/core.py", line 2416, in handle_parse_result
+    value = self.process_value(ctx, value)
+  File "/opt/meltano/.meltano/extractors/tap-csv/venv/lib/python3.10/site-packages/click/core.py", line 2355, in process_value
+    value = self.callback(ctx, self, value)
+  File "/opt/meltano/.meltano/extractors/tap-csv/venv/lib/python3.10/site-packages/singer_sdk/tap_base.py", line 555, in cb_discover
+    tap.run_discovery()
+  File "/opt/meltano/.meltano/extractors/tap-csv/venv/lib/python3.10/site-packages/singer_sdk/tap_base.py", line 309, in run_discovery
+    catalog_text = self.catalog_json_text
+  File "/opt/meltano/.meltano/extractors/tap-csv/venv/lib/python3.10/site-packages/singer_sdk/tap_base.py", line 329, in catalog_json_text
+    return dump_json(self.catalog_dict, indent=2)
+  File "/opt/meltano/.meltano/extractors/tap-csv/venv/lib/python3.10/site-packages/singer_sdk/tap_base.py", line 320, in catalog_dict
+    return t.cast("dict", self._singer_catalog.to_dict())
+  File "/opt/meltano/.meltano/extractors/tap-csv/venv/lib/python3.10/site-packages/singer_sdk/tap_base.py", line 340, in _singer_catalog
+    for stream in self.streams.values()
+  File "/opt/meltano/.meltano/extractors/tap-csv/venv/lib/python3.10/site-packages/singer_sdk/tap_base.py", line 149, in streams
+    for stream in self.load_streams():
+  File "/opt/meltano/.meltano/extractors/tap-csv/venv/lib/python3.10/site-packages/singer_sdk/tap_base.py", line 373, in load_streams
+    for stream in self.discover_streams():
+  File "/opt/meltano/.meltano/extractors/tap-csv/venv/lib/python3.10/site-packages/tap_csv/tap.py", line 89, in discover_streams
+    return [
+  File "/opt/meltano/.meltano/extractors/tap-csv/venv/lib/python3.10/site-packages/tap_csv/tap.py", line 90, in <listcomp>
+    CSVStream(
+  File "/opt/meltano/.meltano/extractors/tap-csv/venv/lib/python3.10/site-packages/tap_csv/client.py", line 32, in __init__
+    super().__init__(*args, **kwargs)
+  File "/opt/meltano/.meltano/extractors/tap-csv/venv/lib/python3.10/site-packages/singer_sdk/streams/core.py", line 182, in __init__
+    if not self.schema:
+  File "/usr/local/lib/python3.10/functools.py", line 981, in __get__
+    val = self.func(instance)
+  File "/opt/meltano/.meltano/extractors/tap-csv/venv/lib/python3.10/site-packages/tap_csv/client.py", line 137, in schema
+    for file_path in self.get_file_paths():
+  File "/opt/meltano/.meltano/extractors/tap-csv/venv/lib/python3.10/site-packages/tap_csv/client.py", line 82, in get_file_paths
+    raise Exception(f"File path does not exist {file_path}")
+Exception: File path does not exist /mnt/d/Downloads/order_details.csv
+.
+For more detailed log messages re-run the command using 'meltano --log-level=debug ...' CLI flag.
+Note that you can also check the generated log file at '/opt/meltano/.meltano/logs/elt/2025-06-23T215104--tap-csv--target-csv-csv/0b3e9470-51f7-4e6f-972e-2a32beaaac12/elt.log'.
+For more information on debugging and logging: https://docs.meltano.com/reference/command-line-interface#debugging
+[2025-06-23T21:51:06.347+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/docker/operators/docker.py", line 502, in execute
+    return self._run_image()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/docker/operators/docker.py", line 376, in _run_image
+    return self._run_image_with_mounts(self.mounts, add_tmp_variable=False)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/docker/operators/docker.py", line 437, in _run_image_with_mounts
+    raise DockerContainerFailedException(f"Docker container failed: {result!r}", logs=log_lines)
+airflow.providers.docker.exceptions.DockerContainerFailedException: Docker container failed: {'StatusCode': 1}
+[2025-06-23T21:51:06.350+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=northwind, task_id=extração_csv, execution_date=20250623T214515, start_date=20250623T215050, end_date=20250623T215106
+[2025-06-23T21:51:06.369+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.10/site-packages/***/utils/email.py:154 RemovedInAirflow3Warning: Fetching SMTP credentials from configuration variables will be deprecated in a future release. Please set credentials using a connection instead.
+[2025-06-23T21:51:06.370+0000] {configuration.py:1046} WARNING - section/key [smtp/smtp_user] not found in config
+[2025-06-23T21:51:06.370+0000] {email.py:270} INFO - Email alerting: attempt 1
+[2025-06-23T21:51:06.379+0000] {configuration.py:1046} WARNING - section/key [smtp/smtp_user] not found in config
+[2025-06-23T21:51:06.380+0000] {email.py:270} INFO - Email alerting: attempt 1
+[2025-06-23T21:51:06.381+0000] {taskinstance.py:826} ERROR - Failed to send email to: ['lrbf@cin.ufpe.br']
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 2334, in _run_raw_task
+    self._execute_task_with_callbacks(context, test_mode, session=session)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 2499, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 2516, in _execute_task
+    return _execute_task(self, context, task_orig)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/docker/operators/docker.py", line 502, in execute
+    return self._run_image()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/docker/operators/docker.py", line 376, in _run_image
+    return self._run_image_with_mounts(self.mounts, add_tmp_variable=False)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/docker/operators/docker.py", line 437, in _run_image_with_mounts
+    raise DockerContainerFailedException(f"Docker container failed: {result!r}", logs=log_lines)
+airflow.providers.docker.exceptions.DockerContainerFailedException: Docker container failed: {'StatusCode': 1}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 1000, in _email_alert
+    send_email(task.email, subject, html_content)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 80, in send_email
+    return backend(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 154, in send_email_smtp
+    send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 272, in send_mime_email
+    smtp_conn = _get_smtp_connection(smtp_host, smtp_port, smtp_timeout, smtp_ssl)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 316, in _get_smtp_connection
+    return smtplib.SMTP(host=host, port=port, timeout=timeout)
+  File "/usr/local/lib/python3.10/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/local/lib/python3.10/smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/usr/local/lib/python3.10/smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "/usr/local/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/local/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 824, in _handle_failure
+    task_instance.email_alert(error, failure_context["task"])
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 2946, in email_alert
+    _email_alert(task_instance=self, exception=exception, task=task)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 1002, in _email_alert
+    send_email(task.email, subject, html_content_err)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 80, in send_email
+    return backend(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 154, in send_email_smtp
+    send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 272, in send_mime_email
+    smtp_conn = _get_smtp_connection(smtp_host, smtp_port, smtp_timeout, smtp_ssl)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 316, in _get_smtp_connection
+    return smtplib.SMTP(host=host, port=port, timeout=timeout)
+  File "/usr/local/lib/python3.10/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/local/lib/python3.10/smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/usr/local/lib/python3.10/smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "/usr/local/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/local/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+[2025-06-23T21:51:06.395+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 17 for task extração_csv (Docker container failed: {'StatusCode': 1}; 260)
+[2025-06-23T21:51:06.424+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-06-23T21:51:06.444+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

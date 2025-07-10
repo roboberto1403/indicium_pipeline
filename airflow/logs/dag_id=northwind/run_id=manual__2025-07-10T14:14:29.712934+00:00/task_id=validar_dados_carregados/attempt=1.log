@@ -1,0 +1,46 @@
+[2025-07-10T14:20:06.896+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: northwind.validar_dados_carregados manual__2025-07-10T14:14:29.712934+00:00 [queued]>
+[2025-07-10T14:20:07.014+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: northwind.validar_dados_carregados manual__2025-07-10T14:14:29.712934+00:00 [queued]>
+[2025-07-10T14:20:07.017+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-07-10T14:20:07.275+0000] {taskinstance.py:2191} INFO - Executing <Task(PostgresOperator): validar_dados_carregados> on 2025-07-10 14:14:29.712934+00:00
+[2025-07-10T14:20:07.331+0000] {standard_task_runner.py:60} INFO - Started process 268 to run task
+[2025-07-10T14:20:07.385+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'northwind', 'validar_dados_carregados', 'manual__2025-07-10T14:14:29.712934+00:00', '--job-id', '68', '--raw', '--subdir', 'DAGS_FOLDER/northwind.py', '--cfg-path', '/tmp/tmp_afmv44u']
+[2025-07-10T14:20:07.445+0000] {standard_task_runner.py:88} INFO - Job 68: Subtask validar_dados_carregados
+[2025-07-10T14:20:08.237+0000] {task_command.py:423} INFO - Running <TaskInstance: northwind.validar_dados_carregados manual__2025-07-10T14:14:29.712934+00:00 [running]> on host 914f2848bf48
+[2025-07-10T14:20:09.722+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='lrbf@cin.ufpe.br' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='northwind' AIRFLOW_CTX_TASK_ID='validar_dados_carregados' AIRFLOW_CTX_EXECUTION_DATE='2025-07-10T14:14:29.712934+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-07-10T14:14:29.712934+00:00'
+[2025-07-10T14:20:09.739+0000] {sql.py:276} INFO - Executing: 
+            SELECT
+                o.order_id,
+                o.order_date,
+                o.customer_id,
+                od.product_id,
+                od.unit_price,
+                od.quantity,
+                od.discount
+            FROM
+                orders o
+            JOIN
+                order_details od ON o.order_id = od.order_id
+        
+[2025-07-10T14:20:10.404+0000] {base.py:83} INFO - Using connection ID '***_target_conn' for task execution.
+[2025-07-10T14:20:10.846+0000] {base.py:83} INFO - Using connection ID '***_target_conn' for task execution.
+[2025-07-10T14:20:10.881+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/common/sql/operators/sql.py", line 282, in execute
+    output = hook.run(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/common/sql/hooks/sql.py", line 391, in run
+    with closing(self.get_conn()) as conn:
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/postgres/hooks/postgres.py", line 158, in get_conn
+    self.conn = psycopg2.connect(**conn_args)
+  File "/home/airflow/.local/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server on socket "/var/run/***ql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+
+[2025-07-10T14:20:11.077+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=northwind, task_id=validar_dados_carregados, execution_date=20250710T141429, start_date=20250710T142006, end_date=20250710T142011
+[2025-07-10T14:20:11.339+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 68 for task validar_dados_carregados (connection to server on socket "/var/run/***ql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+; 268)
+[2025-07-10T14:20:11.527+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-07-10T14:20:11.984+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

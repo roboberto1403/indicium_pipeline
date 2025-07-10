@@ -1,0 +1,1 @@
+[2025-06-23T20:22:28.175+0000] {scheduler_job_runner.py:781} ERROR - Executor reports task instance <TaskInstance: northwind.extração_postgres manual__2025-06-23T20:22:27.820876+00:00 [queued]> finished (success) although the task says it's queued. (Info: None) Was the task killed externally?

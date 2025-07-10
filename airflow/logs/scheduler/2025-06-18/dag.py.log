@@ -1,0 +1,305 @@
+[2025-06-18T00:38:43.807+0000] {processor.py:161} INFO - Started process (PID=181) to work on /opt/airflow/dags/dag.py
+[2025-06-18T00:38:43.808+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-06-18T00:38:43.809+0000] {logging_mixin.py:188} INFO - [2025-06-18T00:38:43.808+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-06-18T00:38:43.878+0000] {processor.py:840} INFO - DAG(s) 'northwind' retrieved from /opt/airflow/dags/dag.py
+[2025-06-18T00:38:45.040+0000] {logging_mixin.py:188} INFO - [2025-06-18T00:38:45.040+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-18T00:38:45.089+0000] {logging_mixin.py:188} INFO - [2025-06-18T00:38:45.089+0000] {dag.py:3823} INFO - Setting next_dagrun for northwind to None, run_after=None
+[2025-06-18T00:38:45.170+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag.py took 1.367 seconds
+[2025-06-18T19:17:16.677+0000] {processor.py:161} INFO - Started process (PID=192) to work on /opt/airflow/dags/dag.py
+[2025-06-18T19:17:16.703+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-06-18T19:17:16.708+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:17:16.708+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-06-18T19:17:18.085+0000] {processor.py:840} INFO - DAG(s) 'northwind' retrieved from /opt/airflow/dags/dag.py
+[2025-06-18T19:17:18.367+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:17:18.366+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-18T19:17:18.490+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:17:18.490+0000] {dag.py:3823} INFO - Setting next_dagrun for northwind to None, run_after=None
+[2025-06-18T19:17:18.562+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag.py took 2.008 seconds
+[2025-06-18T19:17:48.705+0000] {processor.py:161} INFO - Started process (PID=197) to work on /opt/airflow/dags/dag.py
+[2025-06-18T19:17:48.705+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-06-18T19:17:48.706+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:17:48.706+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-06-18T19:17:48.773+0000] {processor.py:840} INFO - DAG(s) 'northwind' retrieved from /opt/airflow/dags/dag.py
+[2025-06-18T19:17:48.813+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:17:48.813+0000] {taskinstance.py:2700} ERROR - {'DAG Id': 'northwind', 'Task Id': 'extração_postgres', 'Run Id': 'manual__2025-06-17T21:37:53.006384+00:00', 'Hostname': 'bc7f7065c66f'}
+[2025-06-18T19:17:48.841+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:17:48.840+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=northwind, task_id=extração_postgres, execution_date=20250617T213753, start_date=20250618T003845, end_date=20250618T191748
+[2025-06-18T19:17:48.929+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py:154 RemovedInAirflow3Warning: Fetching SMTP credentials from configuration variables will be deprecated in a future release. Please set credentials using a connection instead.
+[2025-06-18T19:17:48.930+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:17:48.930+0000] {configuration.py:1046} WARNING - section/key [smtp/smtp_user] not found in config
+[2025-06-18T19:17:48.930+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:17:48.930+0000] {email.py:270} INFO - Email alerting: attempt 1
+[2025-06-18T19:17:48.944+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:17:48.944+0000] {configuration.py:1046} WARNING - section/key [smtp/smtp_user] not found in config
+[2025-06-18T19:17:48.945+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:17:48.945+0000] {email.py:270} INFO - Email alerting: attempt 1
+[2025-06-18T19:17:48.953+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:17:48.945+0000] {taskinstance.py:826} ERROR - Failed to send email to: ['lrbf@cin.ufpe.br']
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 1000, in _email_alert
+    send_email(task.email, subject, html_content)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 80, in send_email
+    return backend(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 154, in send_email_smtp
+    send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 272, in send_mime_email
+    smtp_conn = _get_smtp_connection(smtp_host, smtp_port, smtp_timeout, smtp_ssl)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 316, in _get_smtp_connection
+    return smtplib.SMTP(host=host, port=port, timeout=timeout)
+  File "/usr/local/lib/python3.10/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/local/lib/python3.10/smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/usr/local/lib/python3.10/smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "/usr/local/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/local/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 824, in _handle_failure
+    task_instance.email_alert(error, failure_context["task"])
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 2946, in email_alert
+    _email_alert(task_instance=self, exception=exception, task=task)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 1002, in _email_alert
+    send_email(task.email, subject, html_content_err)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 80, in send_email
+    return backend(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 154, in send_email_smtp
+    send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 272, in send_mime_email
+    smtp_conn = _get_smtp_connection(smtp_host, smtp_port, smtp_timeout, smtp_ssl)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/email.py", line 316, in _get_smtp_connection
+    return smtplib.SMTP(host=host, port=port, timeout=timeout)
+  File "/usr/local/lib/python3.10/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/local/lib/python3.10/smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/usr/local/lib/python3.10/smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "/usr/local/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/local/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+[2025-06-18T19:17:48.969+0000] {processor.py:791} INFO - Executed failure callback for <TaskInstance: northwind.extração_postgres manual__2025-06-17T21:37:53.006384+00:00 [failed]> in state failed
+[2025-06-18T19:17:48.989+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:17:48.988+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-18T19:17:48.999+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:17:48.999+0000] {dag.py:3823} INFO - Setting next_dagrun for northwind to None, run_after=None
+[2025-06-18T19:17:49.022+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag.py took 0.322 seconds
+[2025-06-18T19:18:20.266+0000] {processor.py:161} INFO - Started process (PID=202) to work on /opt/airflow/dags/dag.py
+[2025-06-18T19:18:20.321+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-06-18T19:18:20.353+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:18:20.340+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-06-18T19:18:23.322+0000] {processor.py:840} INFO - DAG(s) 'northwind' retrieved from /opt/airflow/dags/dag.py
+[2025-06-18T19:18:24.139+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:18:24.138+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-18T19:18:24.536+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:18:24.534+0000] {dag.py:3823} INFO - Setting next_dagrun for northwind to None, run_after=None
+[2025-06-18T19:18:24.747+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag.py took 4.694 seconds
+[2025-06-18T19:19:02.232+0000] {processor.py:161} INFO - Started process (PID=207) to work on /opt/airflow/dags/dag.py
+[2025-06-18T19:19:02.284+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-06-18T19:19:02.352+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:19:02.326+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-06-18T19:19:05.561+0000] {processor.py:840} INFO - DAG(s) 'northwind' retrieved from /opt/airflow/dags/dag.py
+[2025-06-18T19:19:06.499+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:19:06.495+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-18T19:19:06.727+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:19:06.726+0000] {dag.py:3823} INFO - Setting next_dagrun for northwind to None, run_after=None
+[2025-06-18T19:19:06.942+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag.py took 8.739 seconds
+[2025-06-18T19:19:39.667+0000] {processor.py:161} INFO - Started process (PID=212) to work on /opt/airflow/dags/dag.py
+[2025-06-18T19:19:39.694+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-06-18T19:19:39.721+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:19:39.705+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-06-18T19:19:42.105+0000] {processor.py:840} INFO - DAG(s) 'northwind' retrieved from /opt/airflow/dags/dag.py
+[2025-06-18T19:19:42.803+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:19:42.802+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-18T19:19:43.205+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:19:43.204+0000] {dag.py:3823} INFO - Setting next_dagrun for northwind to None, run_after=None
+[2025-06-18T19:19:43.309+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag.py took 4.071 seconds
+[2025-06-18T19:20:13.890+0000] {processor.py:161} INFO - Started process (PID=217) to work on /opt/airflow/dags/dag.py
+[2025-06-18T19:20:13.894+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-06-18T19:20:13.896+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:20:13.895+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-06-18T19:20:14.153+0000] {processor.py:840} INFO - DAG(s) 'northwind' retrieved from /opt/airflow/dags/dag.py
+[2025-06-18T19:20:14.307+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:20:14.307+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-18T19:20:14.345+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:20:14.344+0000] {dag.py:3823} INFO - Setting next_dagrun for northwind to None, run_after=None
+[2025-06-18T19:20:14.408+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag.py took 0.525 seconds
+[2025-06-18T19:20:44.591+0000] {processor.py:161} INFO - Started process (PID=222) to work on /opt/airflow/dags/dag.py
+[2025-06-18T19:20:44.594+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-06-18T19:20:44.596+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:20:44.595+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-06-18T19:20:44.692+0000] {processor.py:840} INFO - DAG(s) 'northwind' retrieved from /opt/airflow/dags/dag.py
+[2025-06-18T19:20:44.752+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:20:44.751+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-18T19:20:44.774+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:20:44.774+0000] {dag.py:3823} INFO - Setting next_dagrun for northwind to None, run_after=None
+[2025-06-18T19:20:44.826+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag.py took 0.251 seconds
+[2025-06-18T19:21:15.362+0000] {processor.py:161} INFO - Started process (PID=227) to work on /opt/airflow/dags/dag.py
+[2025-06-18T19:21:15.363+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-06-18T19:21:15.364+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:21:15.363+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-06-18T19:21:15.442+0000] {processor.py:840} INFO - DAG(s) 'northwind' retrieved from /opt/airflow/dags/dag.py
+[2025-06-18T19:21:15.488+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:21:15.488+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-18T19:21:15.507+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:21:15.507+0000] {dag.py:3823} INFO - Setting next_dagrun for northwind to None, run_after=None
+[2025-06-18T19:21:15.547+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag.py took 0.191 seconds
+[2025-06-18T19:21:46.201+0000] {processor.py:161} INFO - Started process (PID=232) to work on /opt/airflow/dags/dag.py
+[2025-06-18T19:21:46.203+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-06-18T19:21:46.205+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:21:46.204+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-06-18T19:21:46.383+0000] {processor.py:840} INFO - DAG(s) 'northwind' retrieved from /opt/airflow/dags/dag.py
+[2025-06-18T19:21:46.535+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:21:46.534+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-18T19:21:46.640+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:21:46.639+0000] {dag.py:3823} INFO - Setting next_dagrun for northwind to None, run_after=None
+[2025-06-18T19:21:46.719+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag.py took 0.523 seconds
+[2025-06-18T19:22:16.953+0000] {processor.py:161} INFO - Started process (PID=237) to work on /opt/airflow/dags/dag.py
+[2025-06-18T19:22:16.955+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-06-18T19:22:16.956+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:22:16.956+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-06-18T19:22:17.038+0000] {processor.py:840} INFO - DAG(s) 'northwind' retrieved from /opt/airflow/dags/dag.py
+[2025-06-18T19:22:17.077+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:22:17.077+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-18T19:22:17.093+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:22:17.093+0000] {dag.py:3823} INFO - Setting next_dagrun for northwind to None, run_after=None
+[2025-06-18T19:22:17.136+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag.py took 0.193 seconds
+[2025-06-18T19:22:47.800+0000] {processor.py:161} INFO - Started process (PID=242) to work on /opt/airflow/dags/dag.py
+[2025-06-18T19:22:47.804+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-06-18T19:22:47.806+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:22:47.805+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-06-18T19:22:47.901+0000] {processor.py:840} INFO - DAG(s) 'northwind' retrieved from /opt/airflow/dags/dag.py
+[2025-06-18T19:22:47.940+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:22:47.940+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-18T19:22:47.967+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:22:47.966+0000] {dag.py:3823} INFO - Setting next_dagrun for northwind to None, run_after=None
+[2025-06-18T19:22:48.012+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag.py took 0.222 seconds
+[2025-06-18T19:23:18.892+0000] {processor.py:161} INFO - Started process (PID=247) to work on /opt/airflow/dags/dag.py
+[2025-06-18T19:23:18.894+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-06-18T19:23:18.898+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:23:18.897+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-06-18T19:23:19.028+0000] {processor.py:840} INFO - DAG(s) 'northwind' retrieved from /opt/airflow/dags/dag.py
+[2025-06-18T19:23:19.083+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:23:19.082+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-18T19:23:19.104+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:23:19.103+0000] {dag.py:3823} INFO - Setting next_dagrun for northwind to None, run_after=None
+[2025-06-18T19:23:19.141+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag.py took 0.256 seconds
+[2025-06-18T19:23:50.014+0000] {processor.py:161} INFO - Started process (PID=252) to work on /opt/airflow/dags/dag.py
+[2025-06-18T19:23:50.018+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-06-18T19:23:50.021+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:23:50.020+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-06-18T19:23:50.171+0000] {processor.py:840} INFO - DAG(s) 'northwind' retrieved from /opt/airflow/dags/dag.py
+[2025-06-18T19:23:50.226+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:23:50.226+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-18T19:23:50.243+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:23:50.243+0000] {dag.py:3823} INFO - Setting next_dagrun for northwind to None, run_after=None
+[2025-06-18T19:23:50.278+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag.py took 0.280 seconds
+[2025-06-18T19:24:21.088+0000] {processor.py:161} INFO - Started process (PID=257) to work on /opt/airflow/dags/dag.py
+[2025-06-18T19:24:21.089+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-06-18T19:24:21.091+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:24:21.090+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-06-18T19:24:21.227+0000] {processor.py:840} INFO - DAG(s) 'northwind' retrieved from /opt/airflow/dags/dag.py
+[2025-06-18T19:24:21.318+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:24:21.318+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-18T19:24:21.351+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:24:21.351+0000] {dag.py:3823} INFO - Setting next_dagrun for northwind to None, run_after=None
+[2025-06-18T19:24:21.393+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag.py took 0.311 seconds
+[2025-06-18T19:24:52.083+0000] {processor.py:161} INFO - Started process (PID=262) to work on /opt/airflow/dags/dag.py
+[2025-06-18T19:24:52.090+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-06-18T19:24:52.092+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:24:52.091+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-06-18T19:24:52.204+0000] {processor.py:840} INFO - DAG(s) 'northwind' retrieved from /opt/airflow/dags/dag.py
+[2025-06-18T19:24:52.249+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:24:52.248+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-18T19:24:52.272+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:24:52.272+0000] {dag.py:3823} INFO - Setting next_dagrun for northwind to None, run_after=None
+[2025-06-18T19:24:52.323+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag.py took 0.252 seconds
+[2025-06-18T19:25:23.100+0000] {processor.py:161} INFO - Started process (PID=267) to work on /opt/airflow/dags/dag.py
+[2025-06-18T19:25:23.101+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-06-18T19:25:23.103+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:25:23.102+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-06-18T19:25:23.219+0000] {processor.py:840} INFO - DAG(s) 'northwind' retrieved from /opt/airflow/dags/dag.py
+[2025-06-18T19:25:23.281+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:25:23.280+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-18T19:25:23.305+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:25:23.305+0000] {dag.py:3823} INFO - Setting next_dagrun for northwind to None, run_after=None
+[2025-06-18T19:25:23.345+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag.py took 0.257 seconds
+[2025-06-18T19:25:54.119+0000] {processor.py:161} INFO - Started process (PID=272) to work on /opt/airflow/dags/dag.py
+[2025-06-18T19:25:54.123+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-06-18T19:25:54.126+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:25:54.125+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-06-18T19:25:54.220+0000] {processor.py:840} INFO - DAG(s) 'northwind' retrieved from /opt/airflow/dags/dag.py
+[2025-06-18T19:25:54.265+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:25:54.265+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-18T19:25:54.282+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:25:54.281+0000] {dag.py:3823} INFO - Setting next_dagrun for northwind to None, run_after=None
+[2025-06-18T19:25:54.430+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag.py took 0.324 seconds
+[2025-06-18T19:26:25.000+0000] {processor.py:161} INFO - Started process (PID=277) to work on /opt/airflow/dags/dag.py
+[2025-06-18T19:26:25.003+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-06-18T19:26:25.004+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:26:25.004+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-06-18T19:26:25.093+0000] {processor.py:840} INFO - DAG(s) 'northwind' retrieved from /opt/airflow/dags/dag.py
+[2025-06-18T19:26:25.132+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:26:25.132+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-18T19:26:25.158+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:26:25.157+0000] {dag.py:3823} INFO - Setting next_dagrun for northwind to None, run_after=None
+[2025-06-18T19:26:25.282+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag.py took 0.290 seconds
+[2025-06-18T19:26:55.884+0000] {processor.py:161} INFO - Started process (PID=282) to work on /opt/airflow/dags/dag.py
+[2025-06-18T19:26:55.887+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-06-18T19:26:55.890+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:26:55.888+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-06-18T19:26:56.008+0000] {processor.py:840} INFO - DAG(s) 'northwind' retrieved from /opt/airflow/dags/dag.py
+[2025-06-18T19:26:56.062+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:26:56.061+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-18T19:26:56.077+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:26:56.076+0000] {dag.py:3823} INFO - Setting next_dagrun for northwind to None, run_after=None
+[2025-06-18T19:26:56.101+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag.py took 0.226 seconds
+[2025-06-18T19:27:27.152+0000] {processor.py:161} INFO - Started process (PID=287) to work on /opt/airflow/dags/dag.py
+[2025-06-18T19:27:27.155+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-06-18T19:27:27.156+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:27:27.155+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-06-18T19:27:27.268+0000] {processor.py:840} INFO - DAG(s) 'northwind' retrieved from /opt/airflow/dags/dag.py
+[2025-06-18T19:27:27.327+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:27:27.326+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-18T19:27:27.400+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:27:27.399+0000] {dag.py:3823} INFO - Setting next_dagrun for northwind to None, run_after=None
+[2025-06-18T19:27:27.516+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag.py took 0.372 seconds
+[2025-06-18T19:27:57.961+0000] {processor.py:161} INFO - Started process (PID=292) to work on /opt/airflow/dags/dag.py
+[2025-06-18T19:27:57.965+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-06-18T19:27:57.967+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:27:57.967+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-06-18T19:27:58.068+0000] {processor.py:840} INFO - DAG(s) 'northwind' retrieved from /opt/airflow/dags/dag.py
+[2025-06-18T19:27:58.138+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:27:58.138+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-18T19:27:58.225+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:27:58.224+0000] {dag.py:3823} INFO - Setting next_dagrun for northwind to None, run_after=None
+[2025-06-18T19:27:58.304+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag.py took 0.357 seconds
+[2025-06-18T19:28:28.715+0000] {processor.py:161} INFO - Started process (PID=297) to work on /opt/airflow/dags/dag.py
+[2025-06-18T19:28:28.717+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-06-18T19:28:28.718+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:28:28.718+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-06-18T19:28:28.831+0000] {processor.py:840} INFO - DAG(s) 'northwind' retrieved from /opt/airflow/dags/dag.py
+[2025-06-18T19:28:28.879+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:28:28.879+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-18T19:28:28.902+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:28:28.902+0000] {dag.py:3823} INFO - Setting next_dagrun for northwind to None, run_after=None
+[2025-06-18T19:28:28.955+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag.py took 0.246 seconds
+[2025-06-18T19:29:00.017+0000] {processor.py:161} INFO - Started process (PID=302) to work on /opt/airflow/dags/dag.py
+[2025-06-18T19:29:00.019+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-06-18T19:29:00.020+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:29:00.020+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-06-18T19:29:00.103+0000] {processor.py:840} INFO - DAG(s) 'northwind' retrieved from /opt/airflow/dags/dag.py
+[2025-06-18T19:29:00.145+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:29:00.144+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-18T19:29:00.162+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:29:00.162+0000] {dag.py:3823} INFO - Setting next_dagrun for northwind to None, run_after=None
+[2025-06-18T19:29:00.190+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag.py took 0.176 seconds
+[2025-06-18T19:29:31.205+0000] {processor.py:161} INFO - Started process (PID=307) to work on /opt/airflow/dags/dag.py
+[2025-06-18T19:29:31.207+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-06-18T19:29:31.208+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:29:31.208+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-06-18T19:29:31.327+0000] {processor.py:840} INFO - DAG(s) 'northwind' retrieved from /opt/airflow/dags/dag.py
+[2025-06-18T19:29:31.363+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:29:31.363+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-18T19:29:31.375+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:29:31.375+0000] {dag.py:3823} INFO - Setting next_dagrun for northwind to None, run_after=None
+[2025-06-18T19:29:31.396+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag.py took 0.200 seconds
+[2025-06-18T19:30:02.106+0000] {processor.py:161} INFO - Started process (PID=312) to work on /opt/airflow/dags/dag.py
+[2025-06-18T19:30:02.108+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-06-18T19:30:02.109+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:30:02.108+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-06-18T19:30:02.196+0000] {processor.py:840} INFO - DAG(s) 'northwind' retrieved from /opt/airflow/dags/dag.py
+[2025-06-18T19:30:02.231+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:30:02.231+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-18T19:30:02.245+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:30:02.245+0000] {dag.py:3823} INFO - Setting next_dagrun for northwind to None, run_after=None
+[2025-06-18T19:30:02.276+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag.py took 0.174 seconds
+[2025-06-18T19:30:33.000+0000] {processor.py:161} INFO - Started process (PID=317) to work on /opt/airflow/dags/dag.py
+[2025-06-18T19:30:33.002+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-06-18T19:30:33.004+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:30:33.003+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-06-18T19:30:33.111+0000] {processor.py:840} INFO - DAG(s) 'northwind' retrieved from /opt/airflow/dags/dag.py
+[2025-06-18T19:30:33.164+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:30:33.164+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-18T19:30:33.191+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:30:33.191+0000] {dag.py:3823} INFO - Setting next_dagrun for northwind to None, run_after=None
+[2025-06-18T19:30:33.237+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag.py took 0.244 seconds
+[2025-06-18T19:31:03.914+0000] {processor.py:161} INFO - Started process (PID=322) to work on /opt/airflow/dags/dag.py
+[2025-06-18T19:31:03.916+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-06-18T19:31:03.917+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:31:03.916+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-06-18T19:31:04.061+0000] {processor.py:840} INFO - DAG(s) 'northwind' retrieved from /opt/airflow/dags/dag.py
+[2025-06-18T19:31:04.145+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:31:04.144+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-18T19:31:04.165+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:31:04.165+0000] {dag.py:3823} INFO - Setting next_dagrun for northwind to None, run_after=None
+[2025-06-18T19:31:04.190+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag.py took 0.280 seconds
+[2025-06-18T19:31:34.751+0000] {processor.py:161} INFO - Started process (PID=327) to work on /opt/airflow/dags/dag.py
+[2025-06-18T19:31:34.754+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-06-18T19:31:34.757+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:31:34.756+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-06-18T19:31:34.944+0000] {processor.py:840} INFO - DAG(s) 'northwind' retrieved from /opt/airflow/dags/dag.py
+[2025-06-18T19:31:35.012+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:31:35.011+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-18T19:31:35.031+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:31:35.031+0000] {dag.py:3823} INFO - Setting next_dagrun for northwind to None, run_after=None
+[2025-06-18T19:31:35.056+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag.py took 0.315 seconds
+[2025-06-18T19:32:05.945+0000] {processor.py:161} INFO - Started process (PID=332) to work on /opt/airflow/dags/dag.py
+[2025-06-18T19:32:05.947+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-06-18T19:32:05.949+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:32:05.948+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-06-18T19:32:06.068+0000] {processor.py:840} INFO - DAG(s) 'northwind' retrieved from /opt/airflow/dags/dag.py
+[2025-06-18T19:32:06.100+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:32:06.100+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-18T19:32:06.112+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:32:06.112+0000] {dag.py:3823} INFO - Setting next_dagrun for northwind to None, run_after=None
+[2025-06-18T19:32:06.134+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag.py took 0.195 seconds
+[2025-06-18T19:32:36.535+0000] {processor.py:161} INFO - Started process (PID=337) to work on /opt/airflow/dags/dag.py
+[2025-06-18T19:32:36.552+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-06-18T19:32:36.560+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:32:36.557+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-06-18T19:32:36.872+0000] {processor.py:840} INFO - DAG(s) 'northwind' retrieved from /opt/airflow/dags/dag.py
+[2025-06-18T19:32:36.923+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:32:36.922+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-18T19:32:36.941+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:32:36.941+0000] {dag.py:3823} INFO - Setting next_dagrun for northwind to None, run_after=None
+[2025-06-18T19:32:36.968+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag.py took 0.488 seconds
+[2025-06-18T19:33:07.353+0000] {processor.py:161} INFO - Started process (PID=342) to work on /opt/airflow/dags/dag.py
+[2025-06-18T19:33:07.356+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-06-18T19:33:07.358+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:33:07.357+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-06-18T19:33:07.458+0000] {processor.py:840} INFO - DAG(s) 'northwind' retrieved from /opt/airflow/dags/dag.py
+[2025-06-18T19:33:07.527+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:33:07.527+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-18T19:33:07.551+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:33:07.551+0000] {dag.py:3823} INFO - Setting next_dagrun for northwind to None, run_after=None
+[2025-06-18T19:33:07.579+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag.py took 0.234 seconds
+[2025-06-18T19:33:37.686+0000] {processor.py:161} INFO - Started process (PID=347) to work on /opt/airflow/dags/dag.py
+[2025-06-18T19:33:37.687+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-06-18T19:33:37.688+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:33:37.688+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-06-18T19:33:37.787+0000] {processor.py:840} INFO - DAG(s) 'northwind' retrieved from /opt/airflow/dags/dag.py
+[2025-06-18T19:33:37.825+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:33:37.825+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-18T19:33:37.846+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:33:37.846+0000] {dag.py:3823} INFO - Setting next_dagrun for northwind to None, run_after=None
+[2025-06-18T19:33:37.876+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag.py took 0.201 seconds
+[2025-06-18T19:34:08.870+0000] {processor.py:161} INFO - Started process (PID=352) to work on /opt/airflow/dags/dag.py
+[2025-06-18T19:34:08.872+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-06-18T19:34:08.873+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:34:08.872+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-06-18T19:34:08.939+0000] {processor.py:840} INFO - DAG(s) 'northwind' retrieved from /opt/airflow/dags/dag.py
+[2025-06-18T19:34:08.980+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:34:08.979+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-18T19:34:08.993+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:34:08.993+0000] {dag.py:3823} INFO - Setting next_dagrun for northwind to None, run_after=None
+[2025-06-18T19:34:09.017+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag.py took 0.152 seconds
+[2025-06-18T19:34:39.315+0000] {processor.py:161} INFO - Started process (PID=357) to work on /opt/airflow/dags/dag.py
+[2025-06-18T19:34:39.321+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-06-18T19:34:39.324+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:34:39.323+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-06-18T19:34:39.496+0000] {processor.py:840} INFO - DAG(s) 'northwind' retrieved from /opt/airflow/dags/dag.py
+[2025-06-18T19:34:39.550+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:34:39.549+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-18T19:34:39.588+0000] {logging_mixin.py:188} INFO - [2025-06-18T19:34:39.588+0000] {dag.py:3823} INFO - Setting next_dagrun for northwind to None, run_after=None
+[2025-06-18T19:34:39.656+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag.py took 0.352 seconds

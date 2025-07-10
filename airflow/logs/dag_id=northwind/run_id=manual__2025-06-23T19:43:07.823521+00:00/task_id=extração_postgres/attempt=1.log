@@ -1,0 +1,2 @@
+[2025-06-23T19:43:07.574+0000] {taskinstance.py:1946} INFO - Dependencies not met for <TaskInstance: northwind.extração_postgres manual__2025-06-23T19:43:07.823521+00:00 [queued]>, dependency 'Execution Date' FAILED: Execution date 2025-06-23T19:43:07.823521+00:00 is in the future (the current date is 2025-06-23T19:43:07.574726+00:00).
+[2025-06-23T19:43:07.576+0000] {local_task_job_runner.py:160} INFO - Task is not able to be run

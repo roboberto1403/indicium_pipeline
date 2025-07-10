@@ -1,0 +1,51 @@
+[2025-06-24T17:53:51.307+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: northwind.gerar_config_py manual__2025-06-24T17:53:09.378068+00:00 [queued]>
+[2025-06-24T17:53:51.315+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: northwind.gerar_config_py manual__2025-06-24T17:53:09.378068+00:00 [queued]>
+[2025-06-24T17:53:51.316+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-06-24T17:53:51.327+0000] {taskinstance.py:2191} INFO - Executing <Task(DockerOperator): gerar_config_py> on 2025-06-24 17:53:09.378068+00:00
+[2025-06-24T17:53:51.333+0000] {standard_task_runner.py:60} INFO - Started process 565 to run task
+[2025-06-24T17:53:51.336+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'northwind', 'gerar_config_py', 'manual__2025-06-24T17:53:09.378068+00:00', '--job-id', '49', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpquqqbn8q']
+[2025-06-24T17:53:51.338+0000] {standard_task_runner.py:88} INFO - Job 49: Subtask gerar_config_py
+[2025-06-24T17:53:51.383+0000] {task_command.py:423} INFO - Running <TaskInstance: northwind.gerar_config_py manual__2025-06-24T17:53:09.378068+00:00 [running]> on host a06304be4538
+[2025-06-24T17:53:51.452+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='lrbf@cin.ufpe.br' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='northwind' AIRFLOW_CTX_TASK_ID='gerar_config_py' AIRFLOW_CTX_EXECUTION_DATE='2025-06-24T17:53:09.378068+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-24T17:53:09.378068+00:00'
+[2025-06-24T17:53:51.609+0000] {docker.py:359} INFO - Starting docker container from image indicium_pipeline-meltano:latest
+[2025-06-24T17:53:51.935+0000] {docker.py:429} INFO - Running meltano install...
+[2025-06-24T17:53:53.166+0000] {docker.py:429} INFO - [2m2025-06-24T17:53:53.165396Z[0m [[32m[1minfo     [0m] [1mInstalling 7 plugins          [0m
+[2025-06-24T17:53:53.176+0000] {docker.py:429} INFO - [2m2025-06-24T17:53:53.175332Z[0m [[32m[1minfo     [0m] [1mInstalling extractor 'tap-postgres'[0m
+[2025-06-24T17:53:53.186+0000] {docker.py:429} INFO - [2m2025-06-24T17:53:53.185728Z[0m [[32m[1minfo     [0m] [1mInstalling extractor 'tap-csv'[0m
+[2025-06-24T17:53:53.199+0000] {docker.py:429} INFO - [2m2025-06-24T17:53:53.198525Z[0m [[32m[1minfo     [0m] [1mInstalling extractor 'tap-csv-latest'[0m
+[2025-06-24T17:53:53.214+0000] {docker.py:429} INFO - [2m2025-06-24T17:53:53.213874Z[0m [[32m[1minfo     [0m] [1mInstalling loader 'target-postgres'[0m
+[2025-06-24T17:53:53.231+0000] {docker.py:429} INFO - [2m2025-06-24T17:53:53.230513Z[0m [[32m[1minfo     [0m] [1mInstalling loader 'target-csv'[0m
+[2025-06-24T17:53:53.249+0000] {docker.py:429} INFO - [2m2025-06-24T17:53:53.249086Z[0m [[32m[1minfo     [0m] [1mInstalling loader 'target-csv-postgres'[0m
+[2025-06-24T17:53:53.277+0000] {docker.py:429} INFO - [2m2025-06-24T17:53:53.271335Z[0m [[32m[1minfo     [0m] [1mInstalling loader 'target-csv-csv'[0m
+[2025-06-24T17:53:54.599+0000] {docker.py:429} INFO - [2m2025-06-24T17:53:54.598855Z[0m [[32m[1minfo     [0m] [1mInstalled extractor 'tap-postgres'[0m
+[2025-06-24T17:53:54.612+0000] {docker.py:429} INFO - [2m2025-06-24T17:53:54.611294Z[0m [[32m[1minfo     [0m] [1mInstalled loader 'target-postgres'[0m
+[2025-06-24T17:53:59.870+0000] {docker.py:429} INFO - [2m2025-06-24T17:53:59.869378Z[0m [[32m[1minfo     [0m] [1mInstalled extractor 'tap-csv' [0m
+[2025-06-24T17:53:59.881+0000] {docker.py:429} INFO - [2m2025-06-24T17:53:59.880473Z[0m [[32m[1minfo     [0m] [1mInstalled extractor 'tap-csv-latest'[0m
+[2025-06-24T17:53:59.888+0000] {docker.py:429} INFO - [2m2025-06-24T17:53:59.887321Z[0m [[32m[1minfo     [0m] [1mInstalled loader 'target-csv' [0m
+[2025-06-24T17:54:00.094+0000] {docker.py:429} INFO - [2m2025-06-24T17:54:00.094228Z[0m [[32m[1minfo     [0m] [1mInstalled loader 'target-csv-csv'[0m
+[2025-06-24T17:54:00.122+0000] {docker.py:429} INFO - [2m2025-06-24T17:54:00.121511Z[0m [[32m[1minfo     [0m] [1mInstalled loader 'target-csv-postgres'[0m
+[2m2025-06-24T17:54:00.121792Z[0m [[32m[1minfo     [0m] [1mInstalled 7/7 plugins         [0m
+[2025-06-24T17:54:01.049+0000] {docker.py:429} INFO - Meltano install completed. Executing command: python3 scripts/generate_csv_config.py
+[2025-06-24T17:54:01.080+0000] {docker.py:429} INFO - Traceback (most recent call last):
+  File "/opt/meltano/scripts/generate_csv_config.py", line 17, in <module>
+    latest_date_path = max([d for d in csv_base.iterdir() if d.is_dir()], key=os.path.getmtime, default=None)
+  File "/opt/meltano/scripts/generate_csv_config.py", line 17, in <listcomp>
+    latest_date_path = max([d for d in csv_base.iterdir() if d.is_dir()], key=os.path.getmtime, default=None)
+  File "/usr/local/lib/python3.10/pathlib.py", line 1017, in iterdir
+[2025-06-24T17:54:01.081+0000] {docker.py:429} INFO - for name in self._accessor.listdir(self):
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/data/csv/order_details'
+[2025-06-24T17:54:01.302+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/docker/operators/docker.py", line 502, in execute
+    return self._run_image()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/docker/operators/docker.py", line 376, in _run_image
+    return self._run_image_with_mounts(self.mounts, add_tmp_variable=False)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/docker/operators/docker.py", line 437, in _run_image_with_mounts
+    raise DockerContainerFailedException(f"Docker container failed: {result!r}", logs=log_lines)
+airflow.providers.docker.exceptions.DockerContainerFailedException: Docker container failed: {'StatusCode': 1}
+[2025-06-24T17:54:01.315+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=northwind, task_id=gerar_config_py, execution_date=20250624T175309, start_date=20250624T175351, end_date=20250624T175401
+[2025-06-24T17:54:01.339+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 49 for task gerar_config_py (Docker container failed: {'StatusCode': 1}; 565)
+[2025-06-24T17:54:01.383+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-06-24T17:54:01.406+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

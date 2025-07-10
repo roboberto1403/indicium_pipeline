@@ -1,0 +1,45 @@
+[2025-07-09T21:20:36.818+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: northwind.validar_dados_carregados manual__2025-07-09T21:14:05.861123+00:00 [queued]>
+[2025-07-09T21:20:36.827+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: northwind.validar_dados_carregados manual__2025-07-09T21:14:05.861123+00:00 [queued]>
+[2025-07-09T21:20:36.827+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-07-09T21:20:36.839+0000] {taskinstance.py:2191} INFO - Executing <Task(PostgresOperator): validar_dados_carregados> on 2025-07-09 21:14:05.861123+00:00
+[2025-07-09T21:20:36.847+0000] {standard_task_runner.py:60} INFO - Started process 245 to run task
+[2025-07-09T21:20:36.852+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'northwind', 'validar_dados_carregados', 'manual__2025-07-09T21:14:05.861123+00:00', '--job-id', '105', '--raw', '--subdir', 'DAGS_FOLDER/northwind.py', '--cfg-path', '/tmp/tmpuipixobg']
+[2025-07-09T21:20:36.856+0000] {standard_task_runner.py:88} INFO - Job 105: Subtask validar_dados_carregados
+[2025-07-09T21:20:36.918+0000] {task_command.py:423} INFO - Running <TaskInstance: northwind.validar_dados_carregados manual__2025-07-09T21:14:05.861123+00:00 [running]> on host 9d65785a077b
+[2025-07-09T21:20:37.001+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='lrbf@cin.ufpe.br' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='northwind' AIRFLOW_CTX_TASK_ID='validar_dados_carregados' AIRFLOW_CTX_EXECUTION_DATE='2025-07-09T21:14:05.861123+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-07-09T21:14:05.861123+00:00'
+[2025-07-09T21:20:37.001+0000] {sql.py:276} INFO - Executing: 
+            SELECT
+                o.order_id,
+                o.order_date,
+                o.customer_id,
+                od.product_id,
+                od.unit_price,
+                od.quantity,
+                od.discount
+            FROM
+                orders o
+            JOIN
+                order_details od ON o.order_id = od.order_id
+            LIMIT 20; -- Limitar a 20 linhas para não lotar os logs, se necessário
+        
+[2025-07-09T21:20:37.032+0000] {base.py:83} INFO - Using connection ID 'postgres_target_conn' for task execution.
+[2025-07-09T21:20:37.054+0000] {base.py:83} INFO - Using connection ID 'postgres_target_conn' for task execution.
+[2025-07-09T21:20:45.076+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/common/sql/operators/sql.py", line 282, in execute
+    output = hook.run(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/common/sql/hooks/sql.py", line 391, in run
+    with closing(self.get_conn()) as conn:
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/postgres/hooks/postgres.py", line 158, in get_conn
+    self.conn = psycopg2.connect(**conn_args)
+  File "/home/airflow/.local/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "db_target" to address: Temporary failure in name resolution
+
+[2025-07-09T21:20:45.090+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=northwind, task_id=validar_dados_carregados, execution_date=20250709T211405, start_date=20250709T212036, end_date=20250709T212045
+[2025-07-09T21:20:45.103+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 105 for task validar_dados_carregados (could not translate host name "db_target" to address: Temporary failure in name resolution
+; 245)
+[2025-07-09T21:20:45.117+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-07-09T21:20:45.131+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

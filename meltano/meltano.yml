@@ -1,0 +1,87 @@
+# ~/indicium_pipeline/meltano/meltano.yml
+version: 1
+default_environment: dev
+project_id: 27934c9d-b36b-496d-97b1-46c3823b815c
+environments:
+- name: dev
+- name: staging
+- name: prod
+plugins:
+  extractors:
+  - name: tap-postgres
+    variant: meltanolabs
+    pip_url: meltanolabs-tap-postgres
+    config:
+      host: db_source
+      port: 5432
+      user: roboberto
+      password: beto12345
+      database: northwind
+    select:
+    - public-us_states
+    - public-categories
+    - public-customer_demographics
+    - public-customers
+    - public-employee_territories
+    - public-employees
+    - public-orders
+    - public-products
+    - public-region
+    - public-shippers
+    - public-suppliers
+    - public-territories
+    - '!information_schema.*'
+    - '!pg_catalog.*'
+    - '!_sdc_*'
+
+  - name: tap-csv
+    variant: meltanolabs
+    pip_url: git+https://github.com/MeltanoLabs/tap-csv.git
+    config:
+      files:
+      - entity: order_details
+        path: order_details.csv
+        keys: [order_id, product_id]
+        delimiter: ','
+        encoding: utf-8
+  - name: tap-csv-latest
+    namespace: tap-csv
+    variant: meltanolabs
+    pip_url: git+https://github.com/MeltanoLabs/tap-csv.git
+    executable: tap-csv
+    config:
+      csv_files_definition: /opt/meltano/config/tap-csv-latest.json
+
+  loaders:
+  - name: target-postgres
+    variant: meltanolabs
+    pip_url: meltanolabs-target-postgres
+    config:
+      host: ${TARGET_POSTGRES_HOST}
+      port: ${TARGET_POSTGRES_PORT}
+      user: ${TARGET_POSTGRES_USER}
+      password: ${TARGET_POSTGRES_PASSWORD}
+      database: ${TARGET_POSTGRES_DATABASE}
+      default_target_schema: public
+
+  - name: target-csv
+    variant: singer-io
+    pip_url: git+https://github.com/singer-io/target-csv.git
+  - name: target-csv-postgres
+    namespace: target-csv-postgres
+    variant: local
+    pip_url: git+https://github.com/roboberto1403/target-csv-1
+    config:
+      destination_path: /opt/output_data/postgres
+      dialect: excel
+      schema: public
+    after_install:
+    - .meltano/loaders/target-csv-postgres/venv/bin/pip install setuptools
+
+  - name: target-csv-csv
+    namespace: target-csv-csv
+    variant: local
+    pip_url: git+https://github.com/roboberto1403/target-csv-2
+    config:
+      destination_path: /opt/output_data/csv
+      dialect: excel

@@ -1,0 +1,28 @@
+[2025-07-01T14:05:21.388+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: northwind.extração_postgres manual__2025-07-01T14:04:56.539714+00:00 [queued]>
+[2025-07-01T14:05:21.713+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: northwind.extração_postgres manual__2025-07-01T14:04:56.539714+00:00 [queued]>
+[2025-07-01T14:05:21.719+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-07-01T14:05:22.097+0000] {taskinstance.py:2191} INFO - Executing <Task(DockerOperator): extração_postgres> on 2025-07-01 14:04:56.539714+00:00
+[2025-07-01T14:05:22.208+0000] {standard_task_runner.py:60} INFO - Started process 187 to run task
+[2025-07-01T14:05:22.458+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'northwind', 'extração_postgres', 'manual__2025-07-01T14:04:56.539714+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpf4_553cc']
+[2025-07-01T14:05:22.569+0000] {standard_task_runner.py:88} INFO - Job 3: Subtask extração_postgres
+[2025-07-01T14:05:25.991+0000] {task_command.py:423} INFO - Running <TaskInstance: northwind.extração_postgres manual__2025-07-01T14:04:56.539714+00:00 [running]> on host 7c2081bdf6a2
+[2025-07-01T14:05:33.503+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='lrbf@cin.ufpe.br' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='northwind' AIRFLOW_CTX_TASK_ID='extração_postgres' AIRFLOW_CTX_EXECUTION_DATE='2025-07-01T14:04:56.539714+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-07-01T14:04:56.539714+00:00'
+[2025-07-01T14:05:38.995+0000] {docker.py:359} INFO - Starting docker container from image meltano:latest
+[2025-07-01T14:05:48.157+0000] {docker.py:429} INFO - Running meltano install...
+[2025-07-01T14:06:38.933+0000] {docker.py:429} INFO - [2m2025-07-01T14:06:38.925920Z[0m [[32m[1minfo     [0m] [1mInstalling 7 plugins          [0m
+[2025-07-01T14:06:39.229+0000] {docker.py:429} INFO - [2m2025-07-01T14:06:39.221057Z[0m [[32m[1minfo     [0m] [1mInstalling extractor 'tap-postgres'[0m
+[2025-07-01T14:06:39.739+0000] {docker.py:429} INFO - [2m2025-07-01T14:06:39.733305Z[0m [[32m[1minfo     [0m] [1mInstalling extractor 'tap-csv'[0m
+[2025-07-01T14:06:40.301+0000] {docker.py:429} INFO - [2m2025-07-01T14:06:40.294960Z[0m [[32m[1minfo     [0m] [1mInstalling extractor 'tap-csv-latest'[0m
+[2025-07-01T14:06:40.971+0000] {docker.py:429} INFO - [2m2025-07-01T14:06:40.962172Z[0m [[32m[1minfo     [0m] [1mInstalling loader 'target-postgres'[0m
+[2025-07-01T14:06:41.879+0000] {docker.py:429} INFO - [2m2025-07-01T14:06:41.813196Z[0m [[32m[1minfo     [0m] [1mInstalling loader 'target-csv'[0m
+[2025-07-01T14:06:45.236+0000] {docker.py:429} INFO - [2m2025-07-01T14:06:45.203303Z[0m [[32m[1minfo     [0m] [1mInstalling loader 'target-csv-postgres'[0m
+[2025-07-01T14:06:47.502+0000] {docker.py:429} INFO - [2m2025-07-01T14:06:47.433442Z[0m [[32m[1minfo     [0m] [1mInstalling loader 'target-csv-csv'[0m
+[2025-07-01T14:08:36.258+0000] {docker.py:429} INFO - [2m2025-07-01T14:08:36.185540Z[0m [[32m[1minfo     [0m] [1mInstalled extractor 'tap-postgres'[0m
+[2025-07-01T14:08:38.827+0000] {docker.py:429} INFO - [2m2025-07-01T14:08:38.806409Z[0m [[32m[1minfo     [0m] [1mInstalled loader 'target-postgres'[0m
+[2025-07-01T14:10:34.232+0000] {docker.py:429} INFO - [2m2025-07-01T14:10:34.207400Z[0m [[32m[1minfo     [0m] [1mInstalled extractor 'tap-csv' [0m
+[2025-07-01T14:10:34.250+0000] {docker.py:429} INFO - [2m2025-07-01T14:10:34.230954Z[0m [[32m[1minfo     [0m] [1mInstalled extractor 'tap-csv-latest'[0m
+[2025-07-01T14:10:47.089+0000] {local_task_job_runner.py:121} ERROR - Received SIGTERM. Terminating subprocesses
+[2025-07-01T14:10:49.056+0000] {process_utils.py:131} INFO - Sending 15 to group 187. PIDs of all processes in the group: [187]
+[2025-07-01T14:10:49.169+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 187
+[2025-07-01T14:10:49.247+0000] {taskinstance.py:2450} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-07-01T14:10:49.305+0000] {docker.py:521} INFO - Stopping docker container

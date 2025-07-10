@@ -1,0 +1,193 @@
+version: '3.9'
+
+networks:
+  airflow_meltano_network: # Definição da nova rede
+    driver: bridge
+
+services:
+  # Serviço PostgreSQL para o Airflow
+  postgres:
+    image: postgres:13
+    container_name: airflow_postgres
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+    ports:
+      - "5432:5432"
+    healthcheck: # Verifica se o PostgreSQL está pronto para aceitar conexões
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - airflow_meltano_network
+
+  # Serviço PostgreSQL de ORIGEM (ex: Northwind) para o Meltano
+  db_source:
+    image: postgres:15
+    restart: always
+    container_name: db_source
+    environment:
+      POSTGRES_USER: ${TAP_POSTGRES_USER_ORIGEM}
+      POSTGRES_PASSWORD: ${TAP_POSTGRES_PASSWORD_ORIGEM}
+      POSTGRES_DB: ${TAP_POSTGRES_DB_ORIGEM}
+    volumes:
+      - db_source_data:/var/lib/postgresql/data
+      - ./northwind.sql:/northwind.sql  
+    ports:
+      - "5434:5432"
+    healthcheck: # Verifica se o PostgreSQL está pronto para aceitar conexões
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - airflow_meltano_network
+
+  # Serviço temporário para inicializar o banco de dados do Airflow, criar o usuário admin E AS VARIÁVEIS!
+  airflow-init:
+    build:
+      context: ./airflow
+    container_name: airflow_init
+    entrypoint: |
+      /bin/bash -c " \
+        set -e; \
+        echo 'Iniciando airflow-init: Aguardando o PostgreSQL...'; \
+        while ! pg_isready -h postgres -p 5432 -U airflow; do \
+          echo 'Postgres não está pronto ainda. Tentando novamente em 2 segundos...'; \
+          sleep 2; \
+        done; \
+        echo 'Postgres está UP! Executando migrações do banco de dados do Airflow...'; \
+        airflow db migrate; \
+        echo 'Migrações do DB do Airflow concluídas. Criando usuário admin e variáveis...'; \
+        airflow users create --username admin --password admin --firstname Admin --lastname User --role Admin --email admin@example.com || true; \
+        airflow variables set tap_postgres_user_origem ${TAP_POSTGRES_USER_ORIGEM} || true; \
+        airflow variables set tap_postgres_password_origem ${TAP_POSTGRES_PASSWORD_ORIGEM} || true; \
+        airflow variables set tap_postgres_db_origem ${TAP_POSTGRES_DB_ORIGEM} || true; \
+        airflow variables set postgres_user_destino ${POSTGRES_USER_DESTINO} || true; \
+        airflow variables set postgres_password_destino ${POSTGRES_PASSWORD_DESTINO} || true; \
+        airflow variables set postgres_db_destino ${POSTGRES_DB_DESTINO} || true; \
+        echo 'Configuração inicial do Airflow concluída com sucesso.'; \
+      "
+    environment:
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'False'
+      AIRFLOW__CORE__FERNET_KEY: ${AIRFLOW_FERNET_KEY}
+      TAP_POSTGRES_USER_ORIGEM: ${TAP_POSTGRES_USER_ORIGEM}
+      TAP_POSTGRES_PASSWORD_ORIGEM: ${TAP_POSTGRES_PASSWORD_ORIGEM}
+      TAP_POSTGRES_DB_ORIGEM: ${TAP_POSTGRES_DB_ORIGEM}
+      POSTGRES_USER_DESTINO: ${POSTGRES_USER_DESTINO}
+      POSTGRES_PASSWORD_DESTINO: ${POSTGRES_PASSWORD_DESTINO}
+      POSTGRES_DB_DESTINO: ${POSTGRES_DB_DESTINO}
+      AIRFLOW_CONN_POSTGRES_TARGET_CONN: ${AIRFLOW_CONN_POSTGRES_TARGET_CONN}
+    depends_on:
+      postgres:
+        condition: service_healthy 
+    networks:
+      - airflow_meltano_network
+
+  # Serviço Webserver do Airflow
+  airflow-webserver:
+    build:
+      context: ./airflow
+    container_name: airflow_webserver
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
+      AIRFLOW__CORE__FERNET_KEY: ${AIRFLOW_FERNET_KEY}
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'False'
+      AIRFLOW_CONN_POSTGRES_TARGET_CONN: ${AIRFLOW_CONN_POSTGRES_TARGET_CONN}
+    depends_on:
+      airflow-init:
+        condition: service_completed_successfully
+      postgres:
+        condition: service_healthy
+      db_source:
+        condition: service_healthy
+    volumes:
+      - ./airflow:/opt/airflow
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/logs:/opt/airflow/logs
+      - ./meltano:/opt/meltano # Mapeia o diretório meltano do host para /opt/meltano no Airflow
+      - ./data:/opt/output_data # NOVO: Mapeia o diretório data do host para /opt/output_data no Airflow
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: bash -c "rm -f /opt/airflow/airflow-webserver.pid && airflow webserver"
+    networks:
+      - airflow_meltano_network
+
+  # Serviço Scheduler do Airflow
+  airflow-scheduler:
+    build:
+      context: ./airflow
+    container_name: airflow_scheduler
+    restart: always
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
+      AIRFLOW__CORE__FERNET_KEY: ${AIRFLOW_FERNET_KEY}
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'False'
+      AIRFLOW_CONN_POSTGRES_TARGET_CONN: ${AIRFLOW_CONN_POSTGRES_TARGET_CONN}
+    depends_on:
+      airflow-init:
+        condition: service_completed_successfully
+      postgres:
+        condition: service_healthy
+      airflow-webserver:
+        condition: service_started
+      db_source:
+        condition: service_healthy
+    volumes:
+      - ./airflow:/opt/airflow
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/logs:/opt/airflow/logs
+      - ./meltano:/opt/meltano # Mapeia o diretório meltano do host para /opt/meltano no Airflow
+      - ./data:/opt/output_data # NOVO: Mapeia o diretório data do host para /opt/output_data no Airflow
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: airflow scheduler
+    networks:
+      - airflow_meltano_network
+
+  # Serviço Meltano
+  meltano:
+    build:
+      context: ./meltano
+    container_name: meltano
+    image: meltano:latest
+    depends_on:
+      db_source:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+    environment:
+      TAP_POSTGRES_HOST: db_source
+      TAP_POSTGRES_PORT: 5432
+      TAP_POSTGRES_USER: ${TAP_POSTGRES_USER_ORIGEM}
+      TAP_POSTGRES_PASSWORD: ${TAP_POSTGRES_PASSWORD_ORIGEM}
+      TAP_POSTGRES_DATABASE: ${TAP_POSTGRES_DB_ORIGEM}
+      TARGET_POSTGRES_HOST: ${HOST_MACHINE_IP}
+      TARGET_POSTGRES_PORT: ${TARGET_POSTGRES_PORT}
+      TARGET_POSTGRES_USER: ${POSTGRES_USER_DESTINO}
+      TARGET_POSTGRES_PASSWORD: ${POSTGRES_PASSWORD_DESTINO}
+      TARGET_POSTGRES_DATABASE: ${POSTGRES_DB_DESTINO}
+    working_dir: /opt/meltano
+    volumes:
+      - ./data:/opt/output_data
+      - ./meltano:/opt/meltano
+      - ./meltano/config:/opt/meltano/config
+    ports:
+      - "5000:5000"
+    networks:
+      - airflow_meltano_network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+volumes:
+  postgres_data:
+  db_source_data:

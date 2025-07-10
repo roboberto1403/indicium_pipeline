@@ -1,0 +1,43 @@
+[2025-07-10T15:28:19.180+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: northwind.validar_dados_carregados manual__2025-07-10T15:22:25.351332+00:00 [queued]>
+[2025-07-10T15:28:19.192+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: northwind.validar_dados_carregados manual__2025-07-10T15:22:25.351332+00:00 [queued]>
+[2025-07-10T15:28:19.192+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-07-10T15:28:19.205+0000] {taskinstance.py:2191} INFO - Executing <Task(PostgresOperator): validar_dados_carregados> on 2025-07-10 15:22:25.351332+00:00
+[2025-07-10T15:28:19.211+0000] {standard_task_runner.py:60} INFO - Started process 247 to run task
+[2025-07-10T15:28:19.216+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'northwind', 'validar_dados_carregados', 'manual__2025-07-10T15:22:25.351332+00:00', '--job-id', '116', '--raw', '--subdir', 'DAGS_FOLDER/northwind.py', '--cfg-path', '/tmp/tmp9__1gcf9']
+[2025-07-10T15:28:19.218+0000] {standard_task_runner.py:88} INFO - Job 116: Subtask validar_dados_carregados
+[2025-07-10T15:28:19.270+0000] {task_command.py:423} INFO - Running <TaskInstance: northwind.validar_dados_carregados manual__2025-07-10T15:22:25.351332+00:00 [running]> on host 8ddbac0a6dc1
+[2025-07-10T15:28:19.367+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='lrbf@cin.ufpe.br' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='northwind' AIRFLOW_CTX_TASK_ID='validar_dados_carregados' AIRFLOW_CTX_EXECUTION_DATE='2025-07-10T15:22:25.351332+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-07-10T15:22:25.351332+00:00'
+[2025-07-10T15:28:19.368+0000] {sql.py:276} INFO - Executing: 
+            SELECT
+                o.order_id AS ID_Pedido,
+                o.order_date AS Data_Pedido,
+                o.customer_id AS ID_Cliente,
+                od.product_id AS ID_Produto,
+                od.unit_price AS Preco_Unitario,
+                od.quantity AS Quantidade,
+                od.discount AS Desconto
+            FROM
+                orders o
+            JOIN
+                order_details od ON o.order_id = od.order_id
+        
+[2025-07-10T15:28:19.396+0000] {base.py:83} INFO - Using connection ID '***_target_conn' for task execution.
+[2025-07-10T15:28:19.422+0000] {base.py:83} INFO - Using connection ID '***_target_conn' for task execution.
+[2025-07-10T15:28:19.595+0000] {sql.py:450} INFO - Running statement: 
+            SELECT
+                o.order_id AS ID_Pedido,
+                o.order_date AS Data_Pedido,
+                o.customer_id AS ID_Cliente,
+                od.product_id AS ID_Produto,
+                od.unit_price AS Preco_Unitario,
+                od.quantity AS Quantidade,
+                od.discount AS Desconto
+            FROM
+                orders o
+            JOIN
+                order_details od ON o.order_id = od.order_id
+        , parameters: None
+[2025-07-10T15:28:19.621+0000] {sql.py:459} INFO - Rows affected: 2155
+[2025-07-10T15:28:19.664+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=northwind, task_id=validar_dados_carregados, execution_date=20250710T152225, start_date=20250710T152819, end_date=20250710T152819
+[2025-07-10T15:28:19.702+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-07-10T15:28:19.716+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
