@@ -1,4 +1,3 @@
-<img width="647" height="513" alt="image" src="https://github.com/user-attachments/assets/14c64525-8cef-44f0-b17c-b83ab7815724" />
 # Projeto Indicium Data Pipeline
 
 Este projeto implementa um pipeline de dados para extrair informações de um banco de dados PostgreSQL (Northwind) e um arquivo CSV (`order_details`), salvá-los no disco local e, em seguida, carregá-los em um banco de dados PostgreSQL de destino. A orquestração é feita com Apache Airflow e a movimentação de dados com Meltano, tudo conteinerizado com Docker Compose.
@@ -77,14 +76,14 @@ Na UI do Airflow:
 2. Ative o DAG (toggle switch)
 3. Clique em "Play" (Trigger DAG)
 
-## 🔁 Diagrama do Fluxo ELT
+#### 🔁 Diagrama do Fluxo ELT
 O fluxo completo do pipeline de dados pode ser visualizado a seguir:
 
 <img width="647" height="513" alt="image" src="https://github.com/user-attachments/assets/14c64525-8cef-44f0-b17c-b83ab7815724" />
 
 ### 5. Verificação e Evidência
 
-## 📁 Verifique os dados locais
+#### 📁 Verifique os dados locais
 Os arquivos .parquet estarão organizados da seguinte forma:
 
 ```bash
@@ -92,7 +91,7 @@ Os arquivos .parquet estarão organizados da seguinte forma:
 /data/csv/{table}/{YYY-MM-DD}/file.csv
 ```
 
-## 🧾 Uma evidência é gerada na última etapa da DAG (validate_data_in_postgres), a qual roda o seguinte comando SQL:
+#### 🧾 Uma evidência é gerada na última etapa da DAG (validate_data_in_postgres), a qual roda o seguinte comando SQL:
 
 ```bash
 SELECT
@@ -121,6 +120,8 @@ Para parar e remover volumes/dados completamente:
 make clean
 ```
 
-### 📬 Contato
+---
+
+## 📬 Contato
 
 Caso tenha dúvidas ou sugestões, fique à vontade para me contatar pelo meu email [lrbf@cin.ufpe.br](mailto:lrbf@cin.ufpe.br). 
