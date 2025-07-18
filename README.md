@@ -84,7 +84,7 @@ O fluxo completo do pipeline de dados pode ser visualizado a seguir:
 ### 5. Verificação e Evidência
 
 #### 📁 Verifique os dados locais
-Os arquivos .parquet estarão organizados da seguinte forma:
+Os arquivos estarão organizados da seguinte forma:
 
 ```bash
 /data/postgres/{table}/{YYY-MM-DD}/file.csv
